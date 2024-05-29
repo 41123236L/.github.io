@@ -1,3 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Leaflet Map with Overlay Layer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+    #map {
+        height: 100%;
+        width: 100%;
+    }
+
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+</head>
+
 <body>
-    <h1>Hello World</h1>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+    var map = L.map('map').setView([23.8859, 121.5409], 10);
+
+    // 基礎地圖圖層
+    var baseLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // 自訂座標資料
+    var Hualien_homestay = [
+        { name: '東畔民宿', lat: 23.89596, lng: 121.55367, address: '花蓮縣壽豐鄉大學路二段63巷39號', roomtype1: '四人房－附陽台 1524', roomtype2: '', score: '8.1' },
+        { name: '夏舞民宿', lat: 23.99037, lng: 121.60506, address: '花蓮縣花蓮市國聯三路81號', roomtype1: '四人房－有獨立衛浴 2694', roomtype2: '家庭房（六人房）－附私人衛浴 3878', roomtype3: '經濟雙人房 1497', score: '8.5' },
+        { name: '松邑莊園', lat: 23.485, lng: 121.35157, address: '花蓮縣瑞穗鄉溫泉路三段2巷37號', roomtype1: '四人住－帳篷 3172', roomtype2: '家庭房（四人房） 2683', roomtype3: '山景雙人房 4202', roomtype4: '小型套房（雙人房）－有露臺 5132', score: '8.8' },
+        { name: '宿里旅行舍', lat: 23.97533, lng: 121.61577, address: '花蓮縣花蓮市光華街10號', roomtype1: '四人房（單人床*4）－附陽臺 3324', roomtype2: '四人房（雙人床*2）－附陽臺2371', roomtype3: '加大雙人床房－附陽臺 3324', score: '9.8' },
+        { name: '好漾民宿1館', lat: 23.33997, lng: 121.31595, address: '花蓮縣玉里鎮中華路255號', roomtype1: '標準四人房 1652', roomtype2: '標準雙人房 1043', roomtype3: '豪華雙人房 1217', score: '7.8' },
+        { name: '悅庭民宿', lat: 23.90456, lng: 121.52694, address: '花蓮縣壽豐鄉路內136號', roomtype1: '標準四人房 2095', roomtype2: '加大雙人床房（四人房） 2381', roomtype3: '豪華四人房 2667', roomtype4: '家庭套房（六人房） 3333', roomtype5: '加大雙人床房（雙人房） 1619', score: '8.8' },
+        { name: '回憶民宿', lat: 24.12477, lng: 121.65145, address: '花蓮縣新城鄉中山路6-7號', roomtype1: '日式四人房 1870', roomtype2: '海景四人房 2338', roomtype3: '四人房 1870', roomtype4: '雙人房 2338', roomtype5: '客房（單人床*2） 1870', score: '8.9' },
+        { name: '好漾民宿2館', lat: 23.33125, lng: 121.31423, address: '花蓮縣玉里鎮光復路109-3號', roomtype1: '標準四人房 1645', roomtype2: '標準雙人房 1039', roomtype3: '豪華雙人房 1212', score: '7.7' },
+        { name: '鳳林好日子', lat: 23.7458, lng: 121.45194, address: '花蓮縣鳳林鎮大同街6-6號', roomtype1: '四人房－附陽台 2165', roomtype2: '四人房 2165', roomtype3: '標準雙人房（大床） 1472', roomtype4: '標準雙人房（特大床） 1472', score: '8.8' },
+        { name: '旅人の宿', lat: 23.98568, lng: 121.60083, address: '花蓮縣花蓮市建中街56號', roomtype1: '四人房－附共用衛浴 1086', roomtype2: '四人房－附衛浴 1207', roomtype3: '四人房－附浴缸 1478', roomtype4: '五臥室度假屋 1642', roomtype5: '雙人房－附私人衛浴 1478', roomtype6: '加大雙人床房 1642', score: '9.2' },
+        { name: '信號腳ㄟ厝', lat: 23.49553, lng: 121.37632, address: '花蓮縣瑞穗鄉成功南路12號', roomtype1: '四人房－附衛浴 1299', roomtype2: '', score: '8.3' },
+        { name: '芳草古樹花園民宿', lat: 23.7467, lng: 121.45398, address: '花蓮縣鳳林鎮中和路71號', roomtype1: '標準四人房 2597', roomtype2: '園景四人房 3117', roomtype3: ' 標準家庭房（四人房） 3117', score: '8.7' },
+        { name: '蘋果樹青年旅社', lat: 23.99293, lng: 121.60375, address: '花蓮縣花蓮市國聯一路43號', roomtype1: '豪華四人房 1747', roomtype2: '雙人房 1924', score: '8.5' },
+        { name: '田園民宿', lat: 23.42019, lng: 121.34462, address: '花蓮縣玉里鎮號', roomtype1: '四人房－附共用衛浴 1385', roomtype2: '家庭房（四人房）－附共用衛浴 1039', roomtype3: '標準四人房 1732', roomtype4: '標準雙人房－附共用衛浴 1732', roomtype5: '標準雙人房 1385', score: '6.9' },
+        { name: '19窩窩', lat: 3.97214, lng: 121.60102, address: '花蓮縣花蓮市上海街19號', roomtype1: '標準四人房 1473', roomtype2: '雙人房－附外部私人衛浴 1145', roomtype3: '標準雙人房 1145', score: '8.0' },
+        { name: '達魯瑪民宿', lat: 23.9803, lng: 121.60563, address: '花蓮縣花蓮市大同街31號', roomtype1: '標準四人房 1983', roomtype2: '經典四人房 2157', roomtype3: '豪華雙人房 1461', roomtype4: '標準三人房 1722', score: '9.2' },
+        { name: '花漾·夏卡爾', lat: 23.98823, lng: 121.60329, address: '花蓮縣花蓮市國興五街138-2號', roomtype1: '金輝四人房 3429', roomtype2: '四人房－附衛浴 3429', roomtype5: '三人房 - 有陽台 2857', score: '8.5' },
+        { name: '吉美民宿', lat: 23.98371, lng: 121.58391, address: '花蓮縣吉安鄉民治路436號', roomtype1: '標準房 - 四人用 1979', roomtype2: '四人房 - 有陽台 2424', roomtype3: '標準雙人房 2262', roomtype4: '舒適雙人房 2771', roomtype5: '', score: '8.8' },
+        { name: '發現七星潭海景民宿', lat: 24.02806, lng: 121.62938, address: '花蓮縣新城鄉明潭街58號', roomtype1: '海景四人房 3377', roomtype2: '豪華四人房 3636', roomtype3: '頂級四人房 5714', roomtype4: '海景雙人房－附陽台 2494', roomtype5: '海景豪華雙人房－附陽台 2857', score: '8.8' },
+        { name: '玉里東好民宿', lat: 23.33221, lng: 121.31853, address: '花蓮縣玉里鎮仁愛路一段199號', roomtype1: '四人房 2580', roomtype2: '雙人房－附陽台 1974', roomtype3: '', roomtype4: '', roomtype5: '', score: '9.3' },
+        { name: '東華八號民宿', lat: 23.88739, lng: 121.53981, address: '花蓮縣壽豐鄉平和村三區8號', roomtype1: '四人房 - 有獨立衛浴 1558', roomtype2: '四人房 - 有獨立衛浴 1299', roomtype3: '雙人房－附私人衛浴 1645', roomtype4: '雙人房－附私人衛浴 693', roomtype5: '', score: '9' },
+        { name: '看見七星潭民宿', lat: 24.02659, lng: 121.63058, address: '花蓮縣新城鄉七星街106號', roomtype1: '海景雙人房 1796', roomtype2: '山景房(兩床) 2313', roomtype3: '山景雙人房 1796', roomtype4: '海景標準房 1796', roomtype5: '海景三人房 2313', score: '8.8' },
+        { name: '迴音谷森林民宿', lat: 24.0171, lng: 121.57794, address: '花蓮縣花蓮市國福街289巷168弄21號', roomtype1: '四人房 - 有獨立衛浴 9524', roomtype2: '山景雙人房 5108', roomtype3: '山景雙人房 5108', roomtype4: '', roomtype5: '', score: '9.2' },
+        { name: '輝太郎民宿', lat: 23.32612, lng: 121.32262, address: '花蓮縣玉里鎮興國路一段45-1號', roomtype1: '四人房 - 有獨立衛浴 2166', roomtype2: '雙人房－附私人衛浴 1733', roomtype3: '標準雙人或雙床房 1248', roomtype4: '', roomtype5: '', score: '8.9' },
+        { name: '像個家plus民宿', lat: 23.97376, lng: 121.61447, address: '花蓮縣花蓮市北濱街12巷16號', roomtype1: '家庭房－附浴缸 3636', roomtype2: '高級房(兩床) 6646', roomtype3: '雙人房－附加床 2338', roomtype4: '豪華雙人房－附浴缸 2468', roomtype5: '', score: '9.7' },
+        { name: '海芸旅人窩', lat: 23.97339, lng: 121.61482, address: '花蓮縣花蓮市海濱街43號', roomtype1: '四人房 2597', roomtype2: '側面海景豪華雙人房 1645', roomtype3: '三人房 1905', roomtype4: '', roomtype5: '', score: '8.7' },
+        { name: '7街160民宿', lat: 23.94642, lng: 121.59174, address: '花蓮縣吉安鄉南海七街160號', roomtype1: '加大雙人床房－附 2 張加大雙人床 2095', roomtype2: '', roomtype3: '', roomtype4: '', roomtype5: '', score: '7.6' },
+        { name: '地球村車站民宿', lat: 23.99374, lng: 121.60548, address: '花蓮縣花蓮市國盛一街193號', roomtype1: '家庭房－附私人衛浴 9809', roomtype2: '雙人房－附私人衛浴 10094', roomtype3: '', roomtype4: '', roomtype5: '', score: '7.2' },
+        { name: '文創輕旅民宿', lat: 23.97203, lng: 121.60713, address: '花蓮縣花蓮市仁愛街2-11號', roomtype1: '四人房 3505', roomtype2: '小型雙人房 2267', roomtype3: '大型雙人房 2552', score: '8.8' },
+        { name: '白色地中海民宿', lat: 24.02509, lng: 121.63286, address: '花蓮縣新城鄉七星街19之1號', roomtype1: '四人房 3577', roomtype2: '海景雙人房 4261', roomtype3: '雙人房 - 有陽台 2710', roomtype4: '海景豪華雙人房 3043', score: '9.1' },
+        { name: '鏷石民宿', lat: 23.32677, lng: 121.31657, address: '花蓮縣玉里鎮忠勇路62號', roomtype1: '四人房 2121', roomtype2: '三臥室房屋 10823', roomtype3: '雙人房 1558', score: '8.4' },
+        { name: '歡迎光臨_Welcome Hostel', lat: 23.97645, lng: 121.60925, address: '花蓮縣花蓮市大禹街4號', roomtype1: '6 床女性宿舍房的 1 個床位 416', score: '9.2' },
+        { name: '瑞穗伍壹民宿', lat: 23.4948, lng: 121.38022, address: '花蓮縣瑞穗鄉中興路51號', roomtype1: '標準四人房 2165', roomtype2: '標準雙人房 1385', score: '9.4' },
+        { name: 'S.E.A.民宿', lat: 23.97347, lng: 121.61515, address: '花蓮縣花蓮市海濱街72號', roomtype1: '海景豪華雙床房 11169', roomtype2: '標準雙人房－附陽台和浴缸 3896', roomtype3: '豪華雙人房－附陽台和浴缸 4502', roomtype4: '豪華海景雙人房－附陽台和浴缸 5195', score: '9.1' },
+        { name: '渡日號Dotoday.teahouse', lat: 23.97471, lng: 121.61482, address: '花蓮縣花蓮市北濱街34號', roomtype1: '加大雙人床房 3463', roomtype2: '加大雙人床房－附陽台 2944', roomtype3: '加大雙人床房 2165', score: '9.5' },
+        { name: '去七星潭海景民宿', lat: 24.02709, lng: 121.63073, address: '花蓮縣新城鄉明潭街8-1號', roomtype1: '四人房－附陽台 3429', roomtype2: '海景四人房 2762', roomtype3: '海景四人房 4286', roomtype4: '雙人房－附陽台 3619', roomtype5: '海景雙人房 4952', score: '9.1' },
+        { name: '愛放假 Pourquoi pas', lat: 23.97451, lng: 121.61465, address: '花蓮縣花蓮市北濱街26號', roomtype1: '四人房－附陽台 2210', roomtype2: '雙人房－附私人衛浴 1448', roomtype3: '雙人房－附私人衛浴 1562', roomtype4: '雙人房－附陽台 1790', roomtype5: '海景雙人房－附陽台 1867', score: '9.0' },
+        { name: '茉白電梯民宿', lat: 23.97329, lng: 121.6137, address: '花蓮縣花蓮市北濱街8號', roomtype1: '山景四人房 4095', roomtype2: '雙人房 2381', roomtype3: '雙人房 2381', roomtype4: '標準雙人房 2381', score: '9.2' },
+        { name: '春沐七星潭海岸旅店', lat: 24.02667, lng: 121.63083, address: '花蓮縣新城鄉七星街69號', roomtype1: '高級套房 13304', roomtype2: '豪華雙人房 9609', roomtype3: '加大雙人床房 10348', score: '8.8' },
+        { name: '天空之城民宿', lat: 23.66503, lng: 121.54273, address: '花蓮縣豐濱鄉11號', roomtype1: '海景四人房 4242', roomtype2: '海景標準雙人或雙床房 2251', roomtype3: '海景雙人房－附陽台 2251', roomtype4: '海景豪華雙人房－附陽台 2944', roomtype5: '海景三人房 3463', score: '8.8' },
+        { name: '漫庭民宿', lat: 23.99627, lng: 121.59723, address: '花蓮縣花蓮市富陽路109號', roomtype1: '四人房－附衛浴 2580', roomtype2: '標準雙床房 1801', roomtype3: '加大雙人床房－附陽台 1801', score: '9.3' },
+        { name: '單行道民宿', lat: 23.97518, lng: 121.61606, address: '花蓮縣花蓮市海濱街103號', roomtype1: '海景雙人房－附陽台 4416', roomtype2: '標準雙人房 3030', roomtype3: '海景豪華雙人房－附陽台 1714', roomtype4: '海景豪華雙人房－附陽台 3290', score: '9.2' },
+        { name: '花蓮吉安福星民宿', lat: 23.96636, lng: 121.56138, address: '花蓮縣吉安鄉舊村六街146號', roomtype1: '豪華四人房 1576', roomtype2: '四人房 - 有獨立衛浴 1688', roomtype3: '標準雙人房 1013', roomtype4: '標準雙人房 1463', roomtype5: '雙人房－附私人衛浴 1463', score: '8.8' },
+        { name: '海傳民宿', lat: 23.97158, lng: 121.61373, address: '花蓮縣花蓮市海濱街4號', roomtype1: '海景豪華雙床房 4364', roomtype2: '標準雙人房 4713', roomtype3: '海景豪華雙人房 3315', roomtype4: '海景高級雙人房 3581', roomtype5: '豪華雙人房 3570', score: '8.7' },
+        { name: '花蓮浪淘沙看海民宿', lat: 23.97228, lng: 121.6143, address: '花蓮縣花蓮市海濱街20號', roomtype1: '街景四人房 2251', roomtype2: '海景四人房 2684', roomtype3: '山景雙人房 1558', roomtype4: '海景豪華雙人房－附陽台 2251', roomtype5: '海景豪華雙人房 2251', score: '8.8' },
+        { name: '花蓮齊愔居電梯民宿', lat: 23.98725, lng: 121.59988, address: '花蓮縣花蓮市國興五街212號', roomtype1: '四人房－附陽台 1974', roomtype2: '附陽台的公寓 2078', roomtype3: '標準雙人房 4762', roomtype4: '市景標準雙床房 5195', roomtype5: '標準雙床房 1212', score: '9.4' },
+        { name: '歐客莊園', lat: 23.99625, lng: 121.57537, address: '花蓮縣花蓮市建興街122號', roomtype1: '經濟四人房 1368', roomtype2: '日式四人房 2234', roomtype3: '客房(兩床) 2540', score: '8.7' },
+        { name: '櫻田野民宿', lat: 23.95988, lng: 121.56303, address: '花蓮縣吉安鄉福興七街8號', roomtype1: '四人房 1978', roomtype2: '雙人房 1582', score: '8.5' },
+        { name: '幸福列車民宿', lat: 24.11722, lng: 121.63236, address: '花蓮縣秀林鄉秀林村民治78之30號', roomtype1: '標準四人房 3030', roomtype2: '標準雙人或雙床房 1905', score: '9.4' },
+        { name: '山禾曙旅宿', lat: 23.99441, lng: 121.60803, address: '花蓮縣花蓮市國盛五街67號', roomtype1: '日式四人房 4430', roomtype2: '豪華四人房 7623', roomtype3: '雙人／雙床房 8472', roomtype4: '高級雙人房 5673', roomtype5: '豪華雙人房－附浴缸 5673', score: '9.5' },
+        { name: '太魯閣767農莊民宿', lat: 24.1232, lng: 121.63931, address: '花蓮縣秀林鄉秀林村民治35-22號', roomtype1: '山景四人房 5314', score: '9.9' },
+        { name: '菓香101民宿', lat: 23.86905, lng: 121.50886, address: '花蓮縣壽豐鄉中山路五段101號', roomtype1: '雙人／雙床房－附陽台 1913', roomtype2: '豪華雙人／雙床房－附陽台 2087', roomtype3: '雙人或雙床房－附衛浴 1478', roomtype4: '雙人房－附私人衛浴 1478', score: '9' },
+        { name: '七里霧民宿', lat: 23.3422, lng: 121.3413, address: '花蓮縣玉里鎮四鄰石崗53-1號', roomtype1: '豪華加大雙人床房－附 2 張加大雙人床 3463', roomtype2: '標準雙人房－附共用衛浴 2944', roomtype3: '加大雙人床房－附陽台 1126', roomtype4: '豪華雙人房－附陽台 1732', score: '8.4' },
+        { name: '大方花園小木屋民宿', lat: 23.79568, lng: 121.46824, address: '花蓮縣鳳林鎮榮開路168號', roomtype1: '園景四人房 2771', roomtype2: '雙人房 2165', score: '8.5' },
+        { name: '東門小棧', lat: 23.97259, lng: 121.60793, address: '花蓮縣花蓮市廣東街276號', roomtype1: '四人房－附露台 3478', roomtype2: '四人房－附陽台 3478', roomtype3: '雙人房－附陽台 2261', roomtype4: '三人房－附陽台 2957', score: '9.2' },
+        { name: '花蓮站全民宿', lat: 23.99386, lng: 121.60805, address: '花蓮縣花蓮市國民八街135號', roomtype1: '四人房－附陽台 3029', roomtype2: '三臥室房屋 7863', roomtype3: '四臥室度假屋 7863', roomtype4: '雙人房－附陽台 2171', score: '8.4' },
+        { name: '喜揚揚民宿', lat: 23.32614, lng: 121.32256, address: '花蓮縣玉里鎮興國路一段45號', roomtype1: '四人房－附陽台 2165', roomtype2: '雙人房－附私人衛浴 1840', roomtype3: '標準雙人或雙床房 1247', score: '8.9' },
+        { name: '美村民宿', lat: 23.86819, lng: 121.55441, address: '花蓮縣壽豐鄉月眉路三段61-2號', roomtype1: '景觀四人房 3030', roomtype2: '標準雙人房 2485', roomtype3: '家庭房 3030', roomtype4: '雙人房 - 需共用浴室 2078', roomtype5: '景觀雙人房 3810', score: '9' },
+        { name: '童心童趣親子民宿', lat: 23.96449, lng: 121.58775, address: '花蓮縣吉安鄉吉豐路一段16巷1號', roomtype1: '四人房 - 有陽台 3463', roomtype2: '豪華家庭套房 3478', roomtype3: '家庭房 - 有陽台 3810', score: '9.1' },
+        { name: '上大和景觀民宿', lat: 23.67064, lng: 121.42882, address: '花蓮縣光復鄉中學街78號', roomtype1: '四人房 1991', roomtype2: '大型雙床房 1299', score: '8.8' },
+        { name: '花蓮安隱民宿', lat: 23.99452, lng: 121.60654, address: '花蓮縣花蓮市國民九街50號', roomtype1: '四人房－附衛浴 1255', roomtype2: '家庭套房 1558', roomtype3: '8 床混合宿舍房的 1 個床位 277', roomtype4: '雙人房－附共用衛浴 563', roomtype5: '經濟雙人房 736', score: '8' },
+        { name: 'Coffee&Drinks bnb公主咖啡', lat: 23.97381, lng: 121.60056, address: '花蓮縣花蓮市中福路197-1號1樓', roomtype1: '舒適四人房 2338', roomtype2: '雙人房－附私人衛浴 1714', score: '9.4' },
+        { name: '花蓮BV文旅民宿', lat: 23.98563, lng: 121.60517, address: '花蓮縣花蓮市明智街108-1號', roomtype1: '家庭套房－附陽台 2532', roomtype2: '家庭房－附浴缸 2597', roomtype3: '加大雙人床房 1740', score: '9.4' },
+        { name: '靜樹湖民宿', lat: 23.84255, lng: 121.48067, address: '花蓮壽豐鄉樹湖村荖山43-10號', roomtype1: '高級四人房 5437', roomtype2: '樓中樓四人房 5437', roomtype3: '雙人房 5351', roomtype4: '高級三人房 3792', score: '9.3' },
+        { name: '發現樹湖', lat: 23.83562, lng: 121.47533, address: '花蓮縣壽豐鄉大湖角1-1號', roomtype1: '標準雙人房 3838', roomtype2: '園景四人房 3483', roomtype3: '奢華四人房 4716', roomtype4: '高級雙人房 4990', score: '8.8' },
+        { name: '蒔菓民宿', lat: 24.05117, lng: 121.59593, address: '花蓮縣秀林鄉佳民101之12號', roomtype1: '四人房 2504', roomtype2: '雙人房 1896', score: '9.1' },
+        { name: '鼓道民宿', lat: 23.97417, lng: 121.60695, address: '花蓮縣花蓮市成功街213號', roomtype1: '標準四人房 2310', roomtype2: '標準雙人房 2079', roomtype3: '大型雙人房 1155', roomtype4: '', roomtype5: '', score: 8.4 },
+        { name: '佑尼可海景民宿 Unique Sea View Homestay', lat: 23.97259, lng: 121.6145, address: '花蓮縣花蓮市海濱街38-1號', roomtype1: '海景四人房－附陽台 3723', roomtype2: '山景雙人房－附陽台 2078', roomtype3: '海景雙人房－附陽台 2597', roomtype4: '海景豪華雙人房－附陽台 2857', roomtype5: '', score: 9.1 },
+        { name: '艾米爾電梯時尚民宿', lat: 23.99025, lng: 121.60252, address: '花蓮縣花蓮市國興二街100號', roomtype1: '雙人房－附私人衛浴 1603', roomtype2: '豪華房 1905', roomtype3: '雙人房 - 有陽台 2035', roomtype4: '', roomtype5: '', score: 8.5 },
+        { name: '迦南奇緣民宿', lat: 23.81598, lng: 121.4944, address: '花蓮縣壽豐鄉牧場90-28號', roomtype1: '四人房－附淋浴 2758', roomtype2: '四人房 2980', roomtype3: '雙人房 2165', roomtype4: '', roomtype5: '', score: 9 },
+        { name: '且市隱民宿', lat: 23.97589, lng: 121.60898, address: '花蓮縣花蓮市中華路43巷3之1號', roomtype1: '四人房 3048', roomtype2: '加大雙人床房－附陽台 1714', roomtype3: '大型雙人房 2095', roomtype4: '', roomtype5: '', score: 9.2 },
+        { name: '花蓮米拉賓民宿', lat: 23.97402, lng: 121.58526, address: '花蓮縣吉安鄉中華路二段120巷1號', roomtype1: '標準四人房 1826', roomtype2: '雙人房 1304', roomtype3: '', roomtype4: '', roomtype5: '', score: 8.1 },
+        { name: '藍色貓頭鷹民宿', lat: 23.99954, lng: 121.59171, address: '花蓮縣花蓮市中山路一段101號', roomtype1: '四人房－附陽台 2797', roomtype2: '園景四人房 2797', roomtype3: '四人房－附陽台 2797', roomtype4: '四人房－附陽台 2797', roomtype5: '雙人房－附陽台 1656', score: 8.8 },
+        { name: '牛轉乾坤(better future) 民宿', lat: 23.97388, lng: 121.59855, address: '花蓮縣花蓮市榮正街78巷20號', roomtype1: '四人房－附浴缸 1983', roomtype2: '家庭套房－附陽台 3652', roomtype3: '豪華雙人房 1113', roomtype4: '豪華雙人房 1113', roomtype5: '', score: 9.1 },
+        { name: '百合民宿', lat: 23.9747, lng: 121.58404, address: '花蓮縣吉安鄉吉祥四街20號', roomtype1: '四人房 1732', roomtype2: '家庭房（6 位成人） 2251', roomtype3: '雙人房 1299', roomtype4: '', roomtype5: '', score: 8.1 },
+        { name: '一宿來民宿', lat: 23.83108, lng: 121.5073, address: '花蓮縣壽豐鄉豐坪路二段12-2號', roomtype1: '四人房 1732', roomtype2: '雙人房 1385', roomtype3: '', roomtype4: '', roomtype5: '', score: 9.3 },
+        { name: '弘果民宿', lat: 23.49752, lng: 121.37731, address: '花蓮縣瑞穗鄉中山路一段16號', roomtype1: '家庭房 1948', roomtype2: '', roomtype3: '', roomtype4: '', roomtype5: '', score: 9 }, ,
+        { name: '淳境之光民宿 EasyTimeBnB', lat: 23.90514, lng: 121.52822, address: '花蓮縣壽豐鄉路內126號', roomtype1: '四人房－附陽台 3304', roomtype2: '雙人房－附陽台 2435', roomtype3: '', roomtype4: '', roomtype5: '', score: 9.3 },
+        { name: '七星潭118海景民宿', lat: 24.02658, lng: 121.62981, address: '花蓮縣新城鄉七星街118號', roomtype1: '四人房－附陽台 2857', roomtype2: '海景四人房 3238', roomtype3: '雙人雙床房－附陽台 1905', roomtype4: '海景豪華雙人房－附陽台 2095', roomtype5: '', score: 9.2 },
+        { name: '東立茶行民宿 (Dong Li Tea Homestay)', lat: 23.45671, lng: 121.35394, address: '花蓮縣瑞穗鄉中正南路二段251號', roomtype1: '經典四人房 1713', roomtype2: '家庭房 1142', roomtype3: '', roomtype4: '', roomtype5: '', score: 8.4 },
+        { name: '藍屋市區民宿 (Blue House Homestay)', lat: 23.98191, lng: 121.60769, address: '花蓮縣花蓮市三民街86號', roomtype1: '豪華 Villa 7429', roomtype2: '豪華 Villa 8667', roomtype3: '豪華 Villa 11143', roomtype4: '豪華 Villa 13371', roomtype5: '豪華 Villa 14610', score: 8.7 },
+        { name: '小小鋼琴家民宿-花蓮 (Pianist Homestay)', lat: 23.97691, lng: 121.60244, address: '花蓮縣花蓮市民國路23號', roomtype1: '客房(雙人床或兩床) - 有陽台 2295', roomtype2: '雙人房 - 有專用衛浴 2832', roomtype3: '', roomtype4: '', roomtype5: '', score: 8.9 },
+        { name: '橄欖樹農坊 (Oliver Tree B&B)', lat: 23.79906, lng: 121.47693, address: '花蓮縣鳳林鎮永豐路37號', roomtype1: '樓中樓四人房 3304', roomtype2: '加大雙人床房 2609', roomtype3: '', roomtype4: '', roomtype5: '', score: 9.3 },
+        { name: '藝田民宿 (Yi Tian Homestay)', lat: 23.84036, lng: 121.50957, address: '花蓮縣壽豐鄉中山路325號', roomtype1: '園景四人房 3463', roomtype2: '山景雙人房－附陽台 3117', roomtype3: '加大雙人床房－附陽台 2424', roomtype4: '', roomtype5: '', score: 9.3 },
+        { name: 'Light Time B&B', lat: 23.9938, lng: 121.59486, address: '花蓮縣花蓮市國富十街220號', roomtype1: '四人房 1732', roomtype2: '家庭套房 2165', roomtype3: '加大雙人床房 866', roomtype4: '標準雙床房 1126', roomtype5: '', score: 9 },
+        { name: '輕井澤民宿 (Qing Jing Ze Bed & Breakfast)', lat: 23.96688, lng: 121.60029, address: '花蓮縣花蓮市重慶路77號', roomtype1: '家庭房 2340', roomtype2: '四人房－附陽台 2424', roomtype3: '雙人房 1510', roomtype4: '', roomtype5: '', score: 9 },
+        { name: '花蓮鐵道手作民宿 (Railway Handmade Homestay)', lat: 24.11573, lng: 121.62983, address: '花蓮縣秀林鄉秀林村秀林路100號之1號', roomtype1: '舒適四人房 2944', roomtype2: '山景雙人房 1732', roomtype3: '', roomtype4: '', roomtype5: '', score: 8.3 }, ,
+        { name: '幸福圓民宿', lat: 23.89895, lng: 121.55825, address: '花蓮縣壽豐鄉豐坪路三段1135巷16號', roomtype1: '四人房 1732', roomtype2: '家庭套房 2165', roomtype3: '加大雙人床房 866', roomtype4: '標準雙床房 1126', roomtype5: '', score: 8.8 },
+        { name: '法羅米民宿-時尚館', lat: 23.49413, lng: 121.37935, address: '花蓮縣瑞穗鄉中興路80號', roomtype1: '四人房－附陽台 2165', roomtype2: '雙人房－附陽台 1385', roomtype3: '豪華雙人房－附陽台 1385', roomtype4: '', roomtype5: '', score: 8.7 },
+        { name: '星空說渡假A館', lat: 23.91154, lng: 121.53372, address: '花蓮縣壽豐鄉中山路三段158巷12號', roomtype1: '園景雙人／雙床房 4398', roomtype2: '雙人／雙床房－附陽台 2507', roomtype3: '高級豪華雙人或雙床房 4398', roomtype4: '高級雙人房 4398', roomtype5: '', score: 7.9 },
+        { name: '雅漾民宿', lat: 23.97198, lng: 121.60618, address: '花蓮縣花蓮市信義街8號', roomtype1: '四人房 - 有陽台 3551', roomtype2: '四人房-附露臺 3896', roomtype3: '客房(特大床) 3551', roomtype4: '雙人房 - 有陽台 3896', roomtype5: '奢華特大雙人床房 2592', score: 9.2 },
+        { name: 'I STAY B&B 愛思黛民宿', lat: 23.99082, lng: 121.60305, address: '花蓮縣花蓮市國興二街66號', roomtype1: '豪華四人房 2424', roomtype2: '豪華雙人房 1299', roomtype3: '', roomtype4: '', roomtype5: '', score: 8.9 },
+        { name: '花蓮遊民宿', lat: 24.0392, lng: 121.61067, address: '花蓮縣新城鄉立業街4巷16之1號', roomtype1: '日式四人房 1558', roomtype2: '山景四人房 1732', roomtype3: '標準雙人房 1126', roomtype4: '', roomtype5: '', score: 8.6 },
+        { name: '建物2', lat: 25.0422, lng: 121.6145, address: '地址2', openingHours: '營業時間2' },
+        { name: '建物3', lat: 25.0798, lng: 121.5574, address: '地址3', openingHours: '營業時間3' },
+    ];
+
+
+
+
+    // 自訂座標圖層
+    var hualienLayer = L.layerGroup();
+
+    // 在自訂座標圖層上添加標記
+    Hualien_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(hualienLayer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            homestay.address + "<br>" +
+            homestay.score + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    // 圖層控制器
+    var basemap = {
+        "底圖": baseLayer
+    };
+
+    var Hualien = {
+        "花蓮民宿": hualienLayer
+
+    };
+
+    L.control.layers(basemap, Hualien).addTo(map);
+
+    // 預設顯示基礎地圖
+    hualienLayer.addTo(map);
+    </script>
 </body>
+
+</html>
