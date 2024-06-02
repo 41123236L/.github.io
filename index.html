@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Leaflet Map with Overlay Layer</title>
+    <title>期末報告之民宿價格、評價、位置分析</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
@@ -25,7 +25,7 @@
     <div id="map"></div>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script>
-    var map = L.map('map').setView([23.8859, 121.5409], 10);
+    var map = L.map('map').setView([23.6330, 120.8654], 7);
 
     // 基礎地圖圖層
     var baseLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -100,33 +100,33 @@
         { name: '靜樹湖民宿', lat: 23.84255, lng: 121.48067, address: '花蓮壽豐鄉樹湖村荖山43-10號', roomtype1: '高級四人房 5437', roomtype2: '樓中樓四人房 5437', roomtype3: '雙人房 5351', roomtype4: '高級三人房 3792', score: '9.3' },
         { name: '發現樹湖', lat: 23.83562, lng: 121.47533, address: '花蓮縣壽豐鄉大湖角1-1號', roomtype1: '標準雙人房 3838', roomtype2: '園景四人房 3483', roomtype3: '奢華四人房 4716', roomtype4: '高級雙人房 4990', score: '8.8' },
         { name: '蒔菓民宿', lat: 24.05117, lng: 121.59593, address: '花蓮縣秀林鄉佳民101之12號', roomtype1: '四人房 2504', roomtype2: '雙人房 1896', score: '9.1' },
-        { name: '鼓道民宿', lat: 23.97417, lng: 121.60695, address: '花蓮縣花蓮市成功街213號', roomtype1: '標準四人房 2310', roomtype2: '標準雙人房 2079', roomtype3: '大型雙人房 1155', roomtype4: '', roomtype5: '', score: 8.4 },
-        { name: '佑尼可海景民宿 Unique Sea View Homestay', lat: 23.97259, lng: 121.6145, address: '花蓮縣花蓮市海濱街38-1號', roomtype1: '海景四人房－附陽台 3723', roomtype2: '山景雙人房－附陽台 2078', roomtype3: '海景雙人房－附陽台 2597', roomtype4: '海景豪華雙人房－附陽台 2857', roomtype5: '', score: 9.1 },
-        { name: '艾米爾電梯時尚民宿', lat: 23.99025, lng: 121.60252, address: '花蓮縣花蓮市國興二街100號', roomtype1: '雙人房－附私人衛浴 1603', roomtype2: '豪華房 1905', roomtype3: '雙人房 - 有陽台 2035', roomtype4: '', roomtype5: '', score: 8.5 },
-        { name: '迦南奇緣民宿', lat: 23.81598, lng: 121.4944, address: '花蓮縣壽豐鄉牧場90-28號', roomtype1: '四人房－附淋浴 2758', roomtype2: '四人房 2980', roomtype3: '雙人房 2165', roomtype4: '', roomtype5: '', score: 9 },
-        { name: '且市隱民宿', lat: 23.97589, lng: 121.60898, address: '花蓮縣花蓮市中華路43巷3之1號', roomtype1: '四人房 3048', roomtype2: '加大雙人床房－附陽台 1714', roomtype3: '大型雙人房 2095', roomtype4: '', roomtype5: '', score: 9.2 },
-        { name: '花蓮米拉賓民宿', lat: 23.97402, lng: 121.58526, address: '花蓮縣吉安鄉中華路二段120巷1號', roomtype1: '標準四人房 1826', roomtype2: '雙人房 1304', roomtype3: '', roomtype4: '', roomtype5: '', score: 8.1 },
-        { name: '藍色貓頭鷹民宿', lat: 23.99954, lng: 121.59171, address: '花蓮縣花蓮市中山路一段101號', roomtype1: '四人房－附陽台 2797', roomtype2: '園景四人房 2797', roomtype3: '四人房－附陽台 2797', roomtype4: '四人房－附陽台 2797', roomtype5: '雙人房－附陽台 1656', score: 8.8 },
-        { name: '牛轉乾坤(better future) 民宿', lat: 23.97388, lng: 121.59855, address: '花蓮縣花蓮市榮正街78巷20號', roomtype1: '四人房－附浴缸 1983', roomtype2: '家庭套房－附陽台 3652', roomtype3: '豪華雙人房 1113', roomtype4: '豪華雙人房 1113', roomtype5: '', score: 9.1 },
-        { name: '百合民宿', lat: 23.9747, lng: 121.58404, address: '花蓮縣吉安鄉吉祥四街20號', roomtype1: '四人房 1732', roomtype2: '家庭房（6 位成人） 2251', roomtype3: '雙人房 1299', roomtype4: '', roomtype5: '', score: 8.1 },
-        { name: '一宿來民宿', lat: 23.83108, lng: 121.5073, address: '花蓮縣壽豐鄉豐坪路二段12-2號', roomtype1: '四人房 1732', roomtype2: '雙人房 1385', roomtype3: '', roomtype4: '', roomtype5: '', score: 9.3 },
-        { name: '弘果民宿', lat: 23.49752, lng: 121.37731, address: '花蓮縣瑞穗鄉中山路一段16號', roomtype1: '家庭房 1948', roomtype2: '', roomtype3: '', roomtype4: '', roomtype5: '', score: 9 }, ,
-        { name: '淳境之光民宿', lat: 23.90514, lng: 121.52822, address: '花蓮縣壽豐鄉路內126號', roomtype1: '四人房－附陽台 3304', roomtype2: '雙人房－附陽台 2435', roomtype3: '', roomtype4: '', roomtype5: '', score: 9.3 },
-        { name: '七星潭118海景民宿', lat: 24.02658, lng: 121.62981, address: '花蓮縣新城鄉七星街118號', roomtype1: '四人房－附陽台 2857', roomtype2: '海景四人房 3238', roomtype3: '雙人雙床房－附陽台 1905', roomtype4: '海景豪華雙人房－附陽台 2095', roomtype5: '', score: 9.2 },
-        { name: '東立茶行民宿', lat: 23.45671, lng: 121.35394, address: '花蓮縣瑞穗鄉中正南路二段251號', roomtype1: '經典四人房 1713', roomtype2: '家庭房 1142', roomtype3: '', roomtype4: '', roomtype5: '', score: 8.4 },
-        { name: '藍屋民宿 ', lat: 23.98191, lng: 121.60769, address: '花蓮縣花蓮市三民街86號', roomtype1: '豪華 Villa 7429', roomtype2: '豪華 Villa 8667', roomtype3: '豪華 Villa 11143', roomtype4: '豪華 Villa 13371', roomtype5: '豪華 Villa 14610', score: 8.7 },
-        { name: '小小鋼琴家民宿', lat: 23.97691, lng: 121.60244, address: '花蓮縣花蓮市民國路23號', roomtype1: '客房(雙人床或兩床) - 有陽台 2295', roomtype2: '雙人房 - 有專用衛浴 2832', roomtype3: '', roomtype4: '', roomtype5: '', score: 8.9 },
-        { name: '橄欖樹農坊', lat: 23.79906, lng: 121.47693, address: '花蓮縣鳳林鎮永豐路37號', roomtype1: '樓中樓四人房 3304', roomtype2: '加大雙人床房 2609', roomtype3: '', roomtype4: '', roomtype5: '', score: 9.3 },
-        { name: '藝田民宿', lat: 23.84036, lng: 121.50957, address: '花蓮縣壽豐鄉中山路325號', roomtype1: '園景四人房 3463', roomtype2: '山景雙人房－附陽台 3117', roomtype3: '加大雙人床房－附陽台 2424', roomtype4: '', roomtype5: '', score: 9.3 },
-        { name: 'Light Time B&B', lat: 23.9938, lng: 121.59486, address: '花蓮縣花蓮市國富十街220號', roomtype1: '四人房 1732', roomtype2: '家庭套房 2165', roomtype3: '加大雙人床房 866', roomtype4: '標準雙床房 1126', roomtype5: '', score: 9 },
-        { name: '輕井澤民宿', lat: 23.96688, lng: 121.60029, address: '花蓮縣花蓮市重慶路77號', roomtype1: '家庭房 2340', roomtype2: '四人房－附陽台 2424', roomtype3: '雙人房 1510', roomtype4: '', roomtype5: '', score: 9 },
-        { name: '花蓮鐵道手作民宿', lat: 24.11573, lng: 121.62983, address: '花蓮縣秀林鄉秀林村秀林路100號之1號', roomtype1: '舒適四人房 2944', roomtype2: '山景雙人房 1732', roomtype3: '', roomtype4: '', roomtype5: '', score: 8.3 }, ,
-        { name: '幸福圓民宿', lat: 23.89895, lng: 121.55825, address: '花蓮縣壽豐鄉豐坪路三段1135巷16號', roomtype1: '四人房 1732', roomtype2: '家庭套房 2165', roomtype3: '加大雙人床房 866', roomtype4: '標準雙床房 1126', roomtype5: '', score: 8.8 },
-        { name: '法羅米民宿-時尚館', lat: 23.49413, lng: 121.37935, address: '花蓮縣瑞穗鄉中興路80號', roomtype1: '四人房－附陽台 2165', roomtype2: '雙人房－附陽台 1385', roomtype3: '豪華雙人房－附陽台 1385', roomtype4: '', roomtype5: '', score: 8.7 },
-        { name: '星空說渡假A館', lat: 23.91154, lng: 121.53372, address: '花蓮縣壽豐鄉中山路三段158巷12號', roomtype1: '園景雙人／雙床房 4398', roomtype2: '雙人／雙床房－附陽台 2507', roomtype3: '高級豪華雙人或雙床房 4398', roomtype4: '高級雙人房 4398', roomtype5: '', score: 7.9 },
-        { name: '雅漾民宿', lat: 23.97198, lng: 121.60618, address: '花蓮縣花蓮市信義街8號', roomtype1: '四人房 - 有陽台 3551', roomtype2: '四人房-附露臺 3896', roomtype3: '客房(特大床) 3551', roomtype4: '雙人房 - 有陽台 3896', roomtype5: '奢華特大雙人床房 2592', score: 9.2 },
-        { name: 'I STAY B&B 愛思黛民宿', lat: 23.99082, lng: 121.60305, address: '花蓮縣花蓮市國興二街66號', roomtype1: '豪華四人房 2424', roomtype2: '豪華雙人房 1299', roomtype3: '', roomtype4: '', roomtype5: '', score: 8.9 },
-        { name: '花蓮遊民宿', lat: 24.0392, lng: 121.61067, address: '花蓮縣新城鄉立業街4巷16之1號', roomtype1: '日式四人房 1558', roomtype2: '山景四人房 1732', roomtype3: '標準雙人房 1126', roomtype4: '', roomtype5: '', score: 8.6 },
+        { name: '鼓道民宿', lat: 23.97417, lng: 121.60695, address: '花蓮縣花蓮市成功街213號', roomtype1: '標準四人房 2310', roomtype2: '標準雙人房 2079', roomtype3: '大型雙人房 1155', roomtype4: '', roomtype5: '', score: '8.4' },
+        { name: '佑尼可海景民宿 Unique Sea View Homestay', lat: 23.97259, lng: 121.6145, address: '花蓮縣花蓮市海濱街38-1號', roomtype1: '海景四人房－附陽台 3723', roomtype2: '山景雙人房－附陽台 2078', roomtype3: '海景雙人房－附陽台 2597', roomtype4: '海景豪華雙人房－附陽台 2857', roomtype5: '', score: '9.1' },
+        { name: '艾米爾電梯時尚民宿', lat: 23.99025, lng: 121.60252, address: '花蓮縣花蓮市國興二街100號', roomtype1: '雙人房－附私人衛浴 1603', roomtype2: '豪華房 1905', roomtype3: '雙人房 - 有陽台 2035', roomtype4: '', roomtype5: '', score: '8.5' },
+        { name: '迦南奇緣民宿', lat: 23.81598, lng: 121.4944, address: '花蓮縣壽豐鄉牧場90-28號', roomtype1: '四人房－附淋浴 2758', roomtype2: '四人房 2980', roomtype3: '雙人房 2165', roomtype4: '', roomtype5: '', score: '9 ' },
+        { name: '且市隱民宿', lat: 23.97589, lng: 121.60898, address: '花蓮縣花蓮市中華路43巷3之1號', roomtype1: '四人房 3048', roomtype2: '加大雙人床房－附陽台 1714', roomtype3: '大型雙人房 2095', roomtype4: '', roomtype5: '', score: '9.2' },
+        { name: '花蓮米拉賓民宿', lat: 23.97402, lng: 121.58526, address: '花蓮縣吉安鄉中華路二段120巷1號', roomtype1: '標準四人房 1826', roomtype2: '雙人房 1304', roomtype3: '', roomtype4: '', roomtype5: '', score: '8.1' },
+        { name: '藍色貓頭鷹民宿', lat: 23.99954, lng: 121.59171, address: '花蓮縣花蓮市中山路一段101號', roomtype1: '四人房－附陽台 2797', roomtype2: '園景四人房 2797', roomtype3: '四人房－附陽台 2797', roomtype4: '四人房－附陽台 2797', roomtype5: '雙人房－附陽台 1656', score: '8.8' },
+        { name: '牛轉乾坤(better future) 民宿', lat: 23.97388, lng: 121.59855, address: '花蓮縣花蓮市榮正街78巷20號', roomtype1: '四人房－附浴缸 1983', roomtype2: '家庭套房－附陽台 3652', roomtype3: '豪華雙人房 1113', roomtype4: '豪華雙人房 1113', roomtype5: '', score: '9.1' },
+        { name: '百合民宿', lat: 23.9747, lng: 121.58404, address: '花蓮縣吉安鄉吉祥四街20號', roomtype1: '四人房 1732', roomtype2: '家庭房（6 位成人） 2251', roomtype3: '雙人房 1299', roomtype4: '', roomtype5: '', score: '8.1' },
+        { name: '一宿來民宿', lat: 23.83108, lng: 121.5073, address: '花蓮縣壽豐鄉豐坪路二段12-2號', roomtype1: '四人房 1732', roomtype2: '雙人房 1385', roomtype3: '', roomtype4: '', roomtype5: '', score: '9.3' },
+        { name: '弘果民宿', lat: 23.49752, lng: 121.37731, address: '花蓮縣瑞穗鄉中山路一段16號', roomtype1: '家庭房 1948', roomtype2: '', roomtype3: '', roomtype4: '', roomtype5: '', score: '9.0' }, ,
+        { name: '淳境之光民宿', lat: 23.90514, lng: 121.52822, address: '花蓮縣壽豐鄉路內126號', roomtype1: '四人房－附陽台 3304', roomtype2: '雙人房－附陽台 2435', roomtype3: '', roomtype4: '', roomtype5: '', score: '9.3' },
+        { name: '七星潭118海景民宿', lat: 24.02658, lng: 121.62981, address: '花蓮縣新城鄉七星街118號', roomtype1: '四人房－附陽台 2857', roomtype2: '海景四人房 3238', roomtype3: '雙人雙床房－附陽台 1905', roomtype4: '海景豪華雙人房－附陽台 2095', roomtype5: '', score: '9.2' },
+        { name: '東立茶行民宿', lat: 23.45671, lng: 121.35394, address: '花蓮縣瑞穗鄉中正南路二段251號', roomtype1: '經典四人房 1713', roomtype2: '家庭房 1142', roomtype3: '', roomtype4: '', roomtype5: '', score: '8.4' },
+        { name: '藍屋民宿 ', lat: 23.98191, lng: 121.60769, address: '花蓮縣花蓮市三民街86號', roomtype1: '豪華 Villa 7429', roomtype2: '豪華 Villa 8667', roomtype3: '豪華 Villa 11143', roomtype4: '豪華 Villa 13371', roomtype5: '豪華 Villa 14610', score: '8.7' },
+        { name: '小小鋼琴家民宿', lat: 23.97691, lng: 121.60244, address: '花蓮縣花蓮市民國路23號', roomtype1: '客房(雙人床或兩床) - 有陽台 2295', roomtype2: '雙人房 - 有專用衛浴 2832', roomtype3: '', roomtype4: '', roomtype5: '', score: '8.9' },
+        { name: '橄欖樹農坊', lat: 23.79906, lng: 121.47693, address: '花蓮縣鳳林鎮永豐路37號', roomtype1: '樓中樓四人房 3304', roomtype2: '加大雙人床房 2609', roomtype3: '', roomtype4: '', roomtype5: '', score: '9.3' },
+        { name: '藝田民宿', lat: 23.84036, lng: 121.50957, address: '花蓮縣壽豐鄉中山路325號', roomtype1: '園景四人房 3463', roomtype2: '山景雙人房－附陽台 3117', roomtype3: '加大雙人床房－附陽台 2424', roomtype4: '', roomtype5: '', score: '9.3' },
+        { name: 'Light Time B&B', lat: 23.9938, lng: 121.59486, address: '花蓮縣花蓮市國富十街220號', roomtype1: '四人房 1732', roomtype2: '家庭套房 2165', roomtype3: '加大雙人床房 866', roomtype4: '標準雙床房 1126', roomtype5: '', score: '9.0' },
+        { name: '輕井澤民宿', lat: 23.96688, lng: 121.60029, address: '花蓮縣花蓮市重慶路77號', roomtype1: '家庭房 2340', roomtype2: '四人房－附陽台 2424', roomtype3: '雙人房 1510', roomtype4: '', roomtype5: '', score: '9.0' },
+        { name: '花蓮鐵道手作民宿', lat: 24.11573, lng: 121.62983, address: '花蓮縣秀林鄉秀林村秀林路100號之1號', roomtype1: '舒適四人房 2944', roomtype2: '山景雙人房 1732', roomtype3: '', roomtype4: '', roomtype5: '', score: '8.3' }, ,
+        { name: '幸福圓民宿', lat: 23.89895, lng: 121.55825, address: '花蓮縣壽豐鄉豐坪路三段1135巷16號', roomtype1: '四人房 1732', roomtype2: '家庭套房 2165', roomtype3: '加大雙人床房 866', roomtype4: '標準雙床房 1126', roomtype5: '', score: '8.8' },
+        { name: '法羅米民宿-時尚館', lat: 23.49413, lng: 121.37935, address: '花蓮縣瑞穗鄉中興路80號', roomtype1: '四人房－附陽台 2165', roomtype2: '雙人房－附陽台 1385', roomtype3: '豪華雙人房－附陽台 1385', roomtype4: '', roomtype5: '', score: '8.7' },
+        { name: '星空說渡假A館', lat: 23.91154, lng: 121.53372, address: '花蓮縣壽豐鄉中山路三段158巷12號', roomtype1: '園景雙人／雙床房 4398', roomtype2: '雙人／雙床房－附陽台 2507', roomtype3: '高級豪華雙人或雙床房 4398', roomtype4: '高級雙人房 4398', roomtype5: '', score: ' 7.9' },
+        { name: '雅漾民宿', lat: 23.97198, lng: 121.60618, address: '花蓮縣花蓮市信義街8號', roomtype1: '四人房 - 有陽台 3551', roomtype2: '四人房-附露臺 3896', roomtype3: '客房(特大床) 3551', roomtype4: '雙人房 - 有陽台 3896', roomtype5: '奢華特大雙人床房 2592', score: '9.2' },
+        { name: 'I STAY B&B 愛思黛民宿', lat: 23.99082, lng: 121.60305, address: '花蓮縣花蓮市國興二街66號', roomtype1: '豪華四人房 2424', roomtype2: '豪華雙人房 1299', roomtype3: '', roomtype4: '', roomtype5: '', score: '8.9 ' },
+        { name: '花蓮遊民宿', lat: 24.0392, lng: 121.61067, address: '花蓮縣新城鄉立業街4巷16之1號', roomtype1: '日式四人房 1558', roomtype2: '山景四人房 1732', roomtype3: '標準雙人房 1126', roomtype4: '', roomtype5: '', score: '8.6' },
     ];
 
     var Taipei_homestay = [
@@ -153,12 +153,11 @@
         { name: '魚礁十五號民宿 Fish Home 15', lat: 25.13303, lng: 121.80719, address: '新北市瑞芳區建基路二段15號2樓', roomtype1: '海景家庭房 (Ocean View Family) 3,295', roomtype2: '四人房－附浴缸 3,896', roomtype3: '海景房 - 有陽台 3,896', roomtype4: '海景房 2,197', roomtype5: '', score: '9.5' },
         { name: '台北5號商旅 (chez taipei no5)', lat: 25.03794, lng: 121.50828, address: '台北市中正區延平南路160-5號', roomtype1: '精緻四人房 1,824', roomtype2: '豪華房(兩床) 2,338', roomtype3: '豪華雙人房 - 禁菸 1,792', roomtype4: '', roomtype5: '', score: '8.8' },
         { name: '九份九重町民宿 (Chiu Chunt Dint Inn)', lat: 25.10907, lng: 121.84561, address: '新北市瑞芳區基山街29號', roomtype1: '山景豪華房 4,788', roomtype2: 'VIP套房 (VIP Suite) 5,262', roomtype3: '標準單人房 6,580', roomtype4: '標準雙人房 6,840', roomtype5: '舒適房(兩床) 1,836', score: '8.5' },
-        { name: '九份溫莎堡香草庭院民宿', lat: 25.10903, lng: 121.84521, address: '新北市瑞芳區基山街62號', roomtype1: '景觀四人房 0', roomtype2: '家庭房 4,156', roomtype3: '景觀三人房 3,532', roomtype4: '', roomtype5: '', score: '9.4' },
+        { name: '九份溫莎堡香草庭院民宿', lat: 25.10903, lng: 121.84521, address: '新北市瑞芳區基山街62號', roomtype1: '景觀四人房 4156', roomtype2: '家庭房 4,156', roomtype3: '景觀三人房 3,532', roomtype4: '', roomtype5: '', score: '9.4' },
         { name: '烏來足立司拉溫泉會館', lat: 24.87286, lng: 121.54827, address: '新北市烏來區新烏路五段99號', roomtype1: '園景雙人／雙床房 6,026', roomtype2: '山景雙人／雙床房 6,234', roomtype3: '山景豪華房(雙人床或兩床) 7,567', roomtype4: '', roomtype5: '', score: '8.9' },
         { name: 'OwlStay 故事所 山中', lat: 25.10703, lng: 121.84141, address: '新北市瑞芳區基山街247號', roomtype1: '樹屋 3,247', roomtype2: '高級小屋 3,510', roomtype3: '小型雙人房 - 需共用衛浴 3,247', roomtype4: '雙人套房 3,510', roomtype5: '標準套房 1,277', score: '8.7' },
         { name: '九份山午', lat: 25.10967, lng: 121.84469, address: '新北市瑞芳區汽車路35之1號', roomtype1: '四人房-有浴缸 4,348', roomtype2: '雙人套房 4,087', roomtype3: '雙人房(小型雙人床) - 禁菸 2,174', roomtype4: '雙床房 B - 禁煙 2,174', roomtype5: '加大雙人床套房 2,609', score: '9' },
         { name: '九份風箏博物館民宿', lat: 25.11049, lng: 121.84428, address: '新北市瑞芳區頌德里坑尾巷20號', roomtype1: '標準四人房 2,141', roomtype2: '家庭房 2,966', roomtype3: '海景四人房 2,630', roomtype4: '高級雙人房(大床) 1,885', roomtype5: '標準雙人房 1,824', score: '8.2' },
-
         { name: '雨天晴民宿', lat: 25.10734, lng: 121.84652, address: '新北市瑞芳區烏勢巷146號', score: '8.3', roomtype1: '家庭房 2120', roomtype2: '海景標準雙人房 2597', roomtype3: '豪華房 1224' },
         { name: '淡水民宿-台北yes', lat: 25.17112, lng: 121.444, address: '新北市淡水區長興街24號', score: '8.7', roomtype1: '家庭房4 2088', roomtype2: '三人房－附私人衛浴 2424', roomtype3: '經濟雙人房 2147', roomtype4: '標準房(雙人床) 1714', roomtype5: '三臥室客房 1078' },
         { name: 'H& 九份龍門客棧', lat: 25.10741, lng: 121.84424, address: '新北市瑞芳區崙頂路110號', score: '9.2', roomtype1: '高級四人房 2878', roomtype2: '標準雙人房 - 無窗 1276', roomtype3: '標準雙人房 1509', roomtype4: '街景雙人房 1647', roomtype5: '豪華雙人房 - 有陽台 1809' },
@@ -169,7 +168,7 @@
         { name: '夢想旅行 (Dream Travel)', lat: 25.04091, lng: 121.50613, address: '台北市萬華區西寧南路211號', score: '7.1', roomtype1: '四人房 - 有專用衛浴 1565', roomtype2: '夾層樓家庭間 2174', roomtype3: '六人房 2348', roomtype4: '單人房 - 需共用衛浴 435', roomtype5: '雙人房 - 有專用衛浴 870' },
         { name: '苓旅萬年-LIN INN Wan Nian', lat: 25.04351, lng: 121.50589, address: '台北市萬華區西寧南路70號7樓', score: '8.3', roomtype1: '高級四人房 2100', roomtype2: '經濟單人房 1205', roomtype3: '經濟雙人房 1286', roomtype4: '豪華雙人房 1367', roomtype5: '經濟房(兩床) 1449' },
         { name: '小希臘民宿 (Ample Villa)', lat: 25.12291, lng: 121.86038, address: '新北市瑞芳區洞頂路335號', score: '8.8', roomtype1: '海景別墅 9972', roomtype2: '海景家庭房 12987', roomtype3: '海景家庭別墅 22034' },
-        { name: '九份岑品民宿', lat: 25.10823, lng: 121.84592, address: '新北市瑞芳區烏勢巷81號', score: '9', roomtype1: '和洋室客房 - 可住4人/禁菸 2404', roomtype2: '家庭房 - 可住4人 3614', roomtype3: '雙人房 - 可住2人 1603', roomtype4: '雙人房 - 2人 2445' },
+        { name: '九份岑品民宿', lat: 25.10823, lng: 121.84592, address: '新北市瑞芳區烏勢巷81號', score: '9.0', roomtype1: '和洋室客房 - 可住4人/禁菸 2404', roomtype2: '家庭房 - 可住4人 3614', roomtype3: '雙人房 - 可住2人 1603', roomtype4: '雙人房 - 2人 2445' },
         { name: '金瓜石101民宿', lat: 25.10896, lng: 121.8601, address: '新北勢瑞芳區祈堂路101號', score: '9.2', roomtype1: '四人房 3723', roomtype2: '山景四人房 3723', roomtype3: '山景四人間- A 3723', roomtype4: '山景雙人間- C 2424', roomtype5: '山景雙人間- B 2424' },
         { name: '魚旅背包客棧 (Fish Hostel)', lat: 24.95414, lng: 121.35559, address: '新北市鶯歌區文化路171號', score: '8.8', roomtype1: '雙人房 1086', roomtype2: '家庭房(2張雙人床) 1368', roomtype3: '四人房 - 有獨立衛浴 2070', roomtype4: '【1張床位】6人宿舍 - 限女性 2251', roomtype5: '【1張床位】8人宿舍 - 有空調/男女混合 2261' },
         { name: '九份緣憶民宿', lat: 25.10877, lng: 121.84594, address: '新北市瑞芳區烏勢巷52號', score: '7.4', roomtype1: '四人房 1948', roomtype2: '家庭房 - 需共用衛浴 2087', roomtype3: '海景四人房 2226', roomtype4: '8人日式客房- 共用浴室 2783', roomtype5: '家庭房 3130' },
@@ -197,13 +196,748 @@
         { name: '愉園 (Happy House B&B)', lat: 25.10827, lng: 121.80781, address: '新北市瑞芳區民權街鐵路巷3-1號', roomtype1: '豪華四人房 3695', roomtype2: '四人房－附浴缸 3810', roomtype3: '標準雙人房 4535', roomtype4: '高級雙人房 4909', roomtype5: '園景雙人房 2352', score: '8.3' },
         { name: '宰相民宿', lat: 25.17156, lng: 121.44558, address: '新北市淡水區英專路79巷2號', roomtype1: '四人房 - 有獨立衛浴 2424', roomtype2: '雙人房－附私人衛浴 1385', roomtype3: '三人房－附私人衛浴 2078', score: '7.6' },
         { name: '輕便露民宿', lat: 25.11058, lng: 121.84533, address: '新北市瑞芳區汽車路21-3號', roomtype1: '海景標準四人間- 帶陽台 3179', roomtype2: '標準四人間- 底層 4166', roomtype3: '標準雙人房 3179', score: '8.7' },
+        { name: '九份小町民宿', lat: 25.1069, lng: 121.84565, address: '新北市瑞芳區崙頂路70號', roomtype1: '標準房 1991', score: '8.6' },
+        { name: '良辰美瑾民宿', lat: 25.02836, lng: 121.83344, address: '新北市雙溪區內平林60號之 5', roomtype1: '四人房－附淋浴 3290', roomtype2: '家庭房－附淋浴 4675', roomtype3: '三人房－附淋浴 2251', roomtype4: '大型雙人房 2251', score: '8.7' },
+        { name: '悠然居', lat: 25.11151, lng: 121.84506, address: '新北市瑞芳區汽車路76號', roomtype1: '四人房 2424', roomtype2: '標準家庭房 3290', roomtype3: '雙人房 1558', score: '9' },
+        { name: '九份愛琴海民宿', lat: 25.10956, lng: 121.84383, address: '新北市瑞芳區汽車路79-1號', roomtype1: '山景四人房 3117', roomtype2: '海景雙人房 2251', roomtype3: '山景雙人房 2251', roomtype4: '海景雙人房－附陽台 2771', score: '8.6' },
+        { name: '酒內民宿', lat: 25.04528, lng: 121.6212, address: '新北市汐止區國興街21巷13號', roomtype1: '豪華家庭套房 4130', score: '9.6' },
+        { name: 'H& 九份龍門客棧', lat: 25.10741, lng: 121.84424, address: '新北市瑞芳區崙頂路110號, 九份, 台北市, 台灣, 224', roomtype1: '高級四人房 3585', roomtype2: '標準雙人房－無窗 4121', roomtype3: '標準雙人房 1741', roomtype4: '街景雙人房 2059', roomtype5: '豪華雙人房－附陽台 2246', roomtype6: '側面海景豪華雙人房 2468', score: '8.9' },
+        { name: '琚九屋', lat: 25.10916, lng: 121.84399, address: '新北市瑞芳區輕便路121號', roomtype1: '標準四人房 1806', roomtype2: '經典四人房 2579', roomtype3: '標準雙人房 1806', roomtype4: '高級雙人房 2579', score: '8.6' },
+        { name: '想住就住民宿', lat: 25.10997, lng: 121.84534, address: '新北市瑞芳區汽車路24號', roomtype1: '四人房 - 有獨立衛浴 2597', roomtype2: '四人房 - 有獨立衛浴 3030', roomtype3: '雙人房－附私人衛浴 1732', roomtype4: '雙人房－附私人衛浴 2165', score: '9.2' },
+        { name: '未央居景觀民宿', lat: 25.11155, lng: 121.84696, address: '新北市瑞芳區輕便路1-1號', roomtype1: '標準四人房－無窗戶 2571', roomtype2: 'Standard Double Room without Window 2857', roomtype3: '海景雙人房 1905', score: '8.4' },
+        { name: '緩慢金瓜石', lat: 25.11398, lng: 121.85452, address: '新北市瑞芳區山尖路93-1號 22450', roomtype1: 'Quad Room with Mountain View 8704', score: '8.9' },
+        { name: '淡水棧民宿', lat: 25.17125, lng: 121.444, address: '新北市淡水區長興街31號', roomtype1: '挑高套房 2424', roomtype2: '豪華 KTV 房 3290', roomtype3: '樓中樓家庭房 3619', roomtype4: '高級家庭房 3948', roomtype5: '公寓（1名成人） 4277', score: '9.2' },
+        { name: '九份安逸民宿', lat: 25.10921, lng: 121.84416, address: '新北市瑞芳區輕便路117號', roomtype1: '四人房 2364', roomtype2: '標準雙人房 1225', score: '7.9' },
+        { name: '井上天花', lat: 25.10682, lng: 121.81013, address: '新北市瑞芳區三爪子坑路6號', roomtype1: '混合宿舍房 2296', roomtype2: '四人房 - 有獨立衛浴 730', roomtype3: '豪華雙人房－附淋浴 2678', roomtype4: '豪華雙人房－附淋浴 2330', roomtype5: '混合宿舍房 3252', score: '8.8' },
+        { name: '九山八海民宿', lat: 25.10786, lng: 121.84491, address: '新北市瑞芳區街頂巷61之2號', roomtype1: '景觀雙人房 2775', roomtype2: '四人房 - 有衛浴 3664', roomtype3: '標準雙人房 2920', score: '9.6' },
+        { name: '雲山水小築', lat: 25.11503, lng: 121.85402, address: '新北市瑞芳區石山里山尖路72-1號', roomtype1: '海景別墅 6926', score: '9' },
+        { name: '九居', lat: 25.10781, lng: 121.84517, address: '新北市瑞芳區街頂巷20號', roomtype1: '海景四人房 3304', roomtype2: '海景豪華雙床房 3635', roomtype3: '家庭平房小屋 3913', roomtype4: '豪華小屋 4304', score: '8.3' }
     ];
+
+    var Taichung_homestay = [
+        { name: '想窩11餐旅館', lat: 24.2197, lng: 120.57832, address: '台中市沙鹿區東晉一街11號', roomtype1: '標準四人房 - 禁菸 3829', roomtype2: '標準雙人套房 4862', score: '9.1' },
+        { name: '默默旅宿', lat: 24.32144, lng: 120.69883, address: '台中市后里區安眉路116巷105號', roomtype1: '家庭房 3127', roomtype2: ' 客房(1張大床+1張大上下舖床) - 禁菸 3273', roomtype3: '六人房 3573', roomtype4: '一樓雙人間 3740', roomtype5: '頂樓房 - 有露台 4169', score: '8.5' },
+        { name: 'Inn 逢甲Home', lat: 24.17613, lng: 120.64709, address: '台中市西屯區慶和街51號', roomtype1: '標準四人房 866', roomtype2: '家庭房 1472', roomtype3: '家庭房 1732', roomtype4: '家庭房 1991', roomtype5: '家庭房 2424', roomtype6: '標準雙人房 519', roomtype7: '標準三人房 779', score: '7.6' },
+        { name: '想想逢甲', lat: 24.1801, lng: 120.6416, address: '台中市西屯區西安街76巷16弄26號', roomtype1: '豪華四人房 3446', roomtype2: '四人房 - 有獨立衛浴 2757', roomtype3: '單臥室別墅 3455', roomtype4: '度假屋 3948', roomtype5: '豪華家庭套房 4073', score: '8.1' },
+        { name: '和和旅宿', lat: 24.32157, lng: 120.69957, address: '台中市后里區安眉路134巷2弄19號', roomtype1: '標準四人房 3324', roomtype2: '商務雙床房 3891', roomtype3: '雙人房 1888', roomtype4: '客房(兩床) 2286', roomtype5: '三人房 1888', score: '9.1' },
+        { name: '逢甲 Toy RooM', lat: 24.17833, lng: 120.64558, address: '台中市西屯區逢甲路19巷10號5樓之5', roomtype1: '四人房 - 有獨立衛浴 1108', roomtype2: '標準雙人房 693', roomtype3: '雙人房－附私人衛浴 952', roomtype4: '經典三人房 1022', score: '8.2' },
+        { name: '豐原綠自住民宿', lat: 24.25296, lng: 120.7146, address: '台中市豐原區忠孝街105巷45號', roomtype1: '四人房 - 有陽台 2829', roomtype2: '標準房 - 四人用 2856', roomtype3: '經典四人房 2856', roomtype4: '標準家庭房 2856', roomtype5: '豪華家庭房 3142', roomtype6: '高級家庭房 3142', roomtype7: '平價雙人房 1905', score: '8.3' },
+        { name: '一中自在居', lat: 24.15423, lng: 120.68682, address: '台中市北區錦南街19-15號', roomtype1: '豪華四人房 1143', score: '8.6' },
+        { name: '逢甲樂愛度假', lat: 24.1769, lng: 120.64483, address: '台中市西屯區福星路526巷6號', roomtype1: '家庭房(3張雙人床) 1836', roomtype2: '雙人房－附陽台 2126', roomtype3: '舒適雙人房 - 有陽台 806', score: '8.3' },
+        { name: '台中住宿逢甲 Cinema lnn', lat: 24.17613, lng: 120.64709, address: '台中市西屯區慶和街51號', roomtype1: '四人房 - 有獨立衛浴 1170', roomtype2: '家庭房－附私人衛浴 1492', roomtype3: '家庭房－附私人衛浴 1600', roomtype4: '男性宿舍房的 1 個上下鋪床位 322', roomtype5: "標準雙人房 633", score: '7.9' },
+        { name: '一中迪士尼', lat: 24.15348, lng: 120.68688, address: '台中市北區一中街138號', roomtype1: '四人房 - 有獨立衛浴 957', roomtype2: '標準雙床房 609', score: '8.4' },
+        { name: '逢甲禮盒', lat: 24.18002, lng: 120.64558, address: '台中市西屯區逢甲路20巷37號之2', roomtype1: '標準四人房 996', roomtype2: '經濟四人房 1082', roomtype3: '家庭房－附私人衛浴 1472"', roomtype4: '家庭房－附私人衛浴 1905', roomtype5: '家庭房－附私人衛浴 2424', roomtype6: '小型雙人房 563', roomtype7: '大型雙人房 632', score: '8.1' },
+        { name: '后麗安心親子時尚旅宿（風自然2館）', lat: 24.33325, lng: 120.7155, address: '台中市后里區安眉路85-19號', roomtype1: '四人房 3794', roomtype2: '標準四人房 4918', roomtype3: '四人房-可住4人 3794', roomtype4: '豪華家庭房 4918', roomtype5: '四人家庭房 4073', roomtype6: '標準家庭房-可住5人 4220', roomtype7: '經濟四人房 5957', score: '8.1' },
+        { name: '一中小窩馨', lat: 24.15316, lng: 120.68684, address: '台中市北區錦新街70-2號', roomtype1: '豪華四人房 1237', roomtype2: '經濟雙人房 657', roomtype3: '小型雙人房 667', roomtype4: '標準雙人房 677', roomtype5: '標準雙人房 677', score: '8.6' },
+        { name: '風自然親子時尚旅宿1館', lat: 24.32461, lng: 120.71391, address: '台中市后里區月湖東路358巷102號', roomtype1: '四人房B 4553', roomtype2: '金輝四人房 4553', roomtype3: '四人房 4553', roomtype4: '四人房A 4553', roomtype5: '樓中樓四人房 6043', roomtype6: '樓中樓四人房 6043', roomtype7: '日式客房 6043', score: "8.8" },
+        { name: '逢甲旅樹', lat: 24.17769, lng: 120.6456, address: '台中市西屯區文華路55巷', roomtype1: '豪華四人房 1368', roomtype2: '高級家庭房 3896', roomtype3: '經濟雙人房 693', roomtype4: '豪華雙人房 779', score: '8.6' },
+        { name: '彩虹山舍', lat: 24.25682, lng: 120.80873, address: '台中市石岡區和盛街南眉巷10號', roomtype1: '山景家庭房 3113', roomtype2: '山景四人房 3896', roomtype3: '山景雙人房  2330', roomtype4: '山景家庭房 3113', roomtype5: '山景特大雙人床房 3461', score: '8.7' },
+        { name: '逢甲馨宿', lat: 24.17536, lng: 120.64604, address: '台中市西屯區福星路566號', roomtype1: '經濟四人房 1238', roomtype2: '四人房－附陽台 1333', roomtype3: '家庭房－附陽台 1714', roomtype4: '經濟雙人房 724', roomtype5: '豪華雙人房 762', score: '8.9' },
+        { name: '台中逢甲 Victoria', lat: 24.17579, lng: 120.64143, address: '台中市西屯區至善路101巷23號', roomtype1: '舒適四人房 1354', roomtype2: '高級雙人房 1269', roomtype3: '舒適三人房 857', score: '8.5' },
+        { name: '梅林親水岸', lat: 24.15295, lng: 120.81048, address: '台中市新社區南華街28-1號', roomtype1: '園景四人房 1861', roomtype2: '豪華四人房 2078', roomtype3: '雙人房 - 有淋浴間/禁菸 883', score: '6.7' },
+        { name: '谷野民宿 (台中谷野會館)', lat: 24.16129, lng: 120.95766, address: '台中市和平區東關路一段裡冷巷36號', roomtype1: '雲遊家庭房 6629', roomtype2: '豪華家庭套房 7792', roomtype3: '雲遊雙人房 3387', roomtype4: '雲遊豪華雙人房 4329', score: '7.9' },
+        { name: '小巷微宿', lat: 24.17701, lng: 120.64283, address: '台中市西屯區西屯路二段291號', roomtype1: '舒適四人房 1390', roomtype2: '標準加大雙人床房－附兩張加大雙人床 1714', roomtype3: '樓中樓套房 2000', roomtype4: '家庭房 3810', roomtype5: '樓中樓單房公寓 3810', roomtype6: '標準雙人房 629', roomtype7: '豪華雙人房 857', score: '6.8' },
+        { name: '高美燈塔園區', lat: 24.31251, lng: 120.55126, address: '台中市清水區高美路748號', roomtype1: '高級家庭房 3154', roomtype2: '雙人房－附共用衛浴 4329', roomtype3: '高級雙人房 1742', score: '8.8' },
+        { name: '雲山初露民宿 Kumokuru', lat: 24.29212, lng: 120.807, address: '台中市東勢區東蘭路石排巷26-118號', roomtype1: '客房(2張大床)-有陽台 3420', roomtype2: '山景四人房 3420', roomtype3: '雙人房-有窗 2088', roomtype4: '山景雙人房 2088', roomtype5: '雙人房-有陽台 2088', score: '9.2' },
+        { name: '一中北極熊', lat: 24.15289, lng: 120.68725, address: '台中市北區錦新街35-2號', roomtype1: '四人房－附衛浴 1143', roomtype2: '小型雙人房 800', roomtype3: '雙人房－附私人衛浴 571', roomtype4: '大型雙人房 590', score: '8.6' },
+        { name: '台中高鐵民宿', lat: 24.11521, lng: 120.60316, address: '台中市烏日區成功東路47號', roomtype1: '四人房－附陽台 1818', roomtype2: '標準雙人或雙床房 1558', roomtype3: '標準雙人或雙床房 1126', score: '8.1' },
+        { name: '享自在生態園區', lat: 24.20139, lng: 120.78821, address: '台中市北屯區東山路二段民興巷民興路207-5號', roomtype1: '標準四人房 2261', roomtype2: '園景雙人房 1304', score: '7.6' },
+        { name: '星月文旅溫泉民宿', lat: 24.33264, lng: 120.70192, address: '台中市后里區月眉北路482號', score: '8.1', roomtype1: '四人房 - 有獨立衛浴 4848', roomtype2: '豪華雙人房－附浴缸 3636' },
+        { name: '梨的故事館', lat: 24.27143, lng: 120.86403, address: '台中市東勢區東崎路三段688巷62弄168號', score: '8.8', roomtype1: '山景家庭房 4348', roomtype2: '山景家庭房 5217', roomtype3: '山景雙人房 1739', roomtype4: '園景雙人房 2174' },
+        { name: '逢甲比熊屋', lat: 24.18156, lng: 120.64571, address: '台中市西屯區文華路157巷10弄9號4樓', score: '8.6', roomtype1: '四人房 952', roomtype2: '經濟雙人房 693' },
+        { name: '岸渡陳艙', lat: 24.31158, lng: 120.56559, address: '清水區, 台中市, 台灣', score: '7', roomtype1: '8 床混合宿舍房 1732', roomtype2: '經典四人房 2165', roomtype3: '標準雙人房 2320', roomtype4: '加大雙人床房 1108' },
+        { name: '后里庄園', lat: 24.31063, lng: 120.66288, address: '台中市后里區公館路20-20號', score: '8.2', roomtype1: '四人房 - 有獨立衛浴 2338', roomtype2: '豪華雙人房－附淋浴 2597', roomtype3: '雙人房－附外部私人衛浴 1558' },
+        { name: '馬卡龍旅棧', lat: 24.18279, lng: 120.64638, address: '台中市西屯區文華路138號', score: '7.3', roomtype1: '標準四人房 5108', roomtype2: '雙人房 3290', roomtype3: '基本三人房 4242' },
+        { name: '童之心樂園', lat: 24.25624, lng: 120.72734, address: '台中市豐原區豐勢路一段285號', score: '8.6', roomtype1: '家庭房－附淋浴 2487', roomtype2: '家庭房－附淋浴 2487', roomtype3: '家庭房－附私人衛浴 2678', roomtype4: '標準雙人房 1339', roomtype5: '標準雙人房 1339', roomtype6: '家庭房－附淋浴 2678' },
+        { name: '有機書店文旅 - 東勢店', lat: 24.25118, lng: 120.83024, address: '台中市東勢區豐勢路234號', score: '8.8', roomtype1: '【男女混合】客房 - 無床/自助服務 1886', roomtype2: '上下舖床 1056', roomtype3: '日式雙人房 1056' },
+        { name: '歐森View包棟Villa', lat: 24.21223, lng: 120.8744, address: '台中市東勢區東坑路石麻巷101號', score: '9.2', roomtype1: '三臥室房屋 11238' },
+        { name: '劦陶宛陶藝民宿', lat: 24.19326, lng: 120.81444, address: '台中市東勢區東坑路石麻巷101號', score: '8.3', roomtype1: '園景四人房 2944', roomtype2: '山景四人房 3463', roomtype3: '家庭套房 4502', roomtype4: '園景雙人房 1905', roomtype5: '山景雙人房 2597' },
+        { name: '一中街星辰', lat: 24.15386, lng: 120.68677, address: '台中市北區一中街249號', score: '8.6', roomtype1: '四人房 - 有獨立衛浴 1126', roomtype2: '雙人房－附私人衛浴 693' },
+        { name: '松鶴山水', lat: 24.17857, lng: 120.98038, address: '台中市和平區東關路一段松鶴二巷4之3號', score: '8.9', roomtype1: '樓中樓四人房 2316', roomtype2: '四人房 2696', roomtype3: '四人房 2316', roomtype4: '雙人房 2696', roomtype5: '標準雙人房 2316' },
+        { name: '極旅inn', lat: 24.15346, lng: 120.68761, address: '台中市北區一中街162號', score: '8.4', roomtype1: '四人房 - 有獨立衛浴 1429', roomtype2: '豪華雙人房－附淋浴 948' },
+        { name: '逢甲AS House', lat: 24.18085, lng: 120.64385, address: '台中西屯區西安街130巷28號', score: '8.6', roomtype1: '豪華家庭套房 1238', roomtype2: '標準四人房 1238', roomtype3: '四人房 - 有獨立衛浴 1333', roomtype4: '標準雙人房 667', roomtype5: '雙人房－附私人衛浴 762', roomtype6: '三人房－附衛浴 1143' },
+        { name: '逢甲Jocy House', lat: 24.17833, lng: 120.64558, address: '台中市西屯區逢甲路19巷10號3樓', score: '8.2', roomtype1: '豪華四人房 1410', roomtype2: '經濟雙人房 724', roomtype3: '高級雙人房 838', roomtype4: '基本三人房 1143' },
+        { name: '昭月民宿', lat: 24.19507, lng: 120.85633, address: '台中市東勢區慶福街39號', score: '8.8', roomtype1: '園景四人房 3636', roomtype2: '高級加大雙人床房－附 2 張加大雙人床 3636', roomtype3: '加大雙人床房 2165', roomtype4: '園景雙人房 2165' },
+        { name: '翔羚逢甲住宿', lat: 24.17479, lng: 120.64837, address: '台中市西屯區福上巷267號', score: '8.1', roomtype1: '四人房－附衛浴 1299', roomtype2: '家庭房－附私人衛浴 1558', roomtype3: '雙人房－附私人衛浴 779', roomtype4: '三人房－附私人衛浴 1039' },
+        { name: '織丘莊園', lat: 24.13696, lng: 120.81302, address: '台中市太平區山田路長青巷28號', score: '9.3', roomtype1: '四人房－附陽台 6109', roomtype2: '山景四人房 6926', roomtype3: '山景雙人房 6109' },
+        { name: '逢甲Jumbo', lat: 24.17902, lng: 120.64525, address: '台中市西屯區福星路427號', score: '8.2', roomtype1: '標準四人房 866', roomtype2: '經濟雙人房 606', roomtype3: '標準三人房 779' },
+        { name: '山沐斯達民宿', lat: 24.23307, lng: 120.78542, address: '台中市新社區崑南街29-7號', score: '9.1', roomtype1: '山景家庭房 3117' },
+        { name: '168活水源民宿', lat: 24.18312, lng: 120.84178, address: '台中市東勢區東關路四段1078巷51號', score: '8.6', roomtype1: '標準公寓 6783' },
+        { name: '花田民宿', lat: 24.22293, lng: 120.80543, address: '台中市新社區興中街17-6號', score: '9.3', roomtype1: '經典四人房 4190', roomtype2: '雙人房 3048' },
+        { name: '享樂旅宿逢甲館', lat: 24.18161, lng: 120.64405, address: '台中西屯區西安街132-6號', score: '8.4', roomtype1: '標準四人房 1299', roomtype2: '標準雙人房 779', roomtype3: '三人房 1013' },
+        { name: '星光山悦景觀民宿', lat: 24.20522, lng: 120.89354, address: '台中市和平區雪山路出雲巷18號', score: '7.9', roomtype1: '標準家庭房 5714' },
+        { name: '大雪山莊園民宿', lat: 24.2259, lng: 120.89557, address: '台中市和平區雪山路2之1號', score: '6.5', roomtype1: '四人房 3619', roomtype2: '山景家庭房 4476', roomtype3: '豪華雙人房－附陽台 2381', roomtype4: '園景雙人房 2762' },
+        { name: '溫暖逢甲', lat: 24.17492, lng: 120.65095, address: '台中市西屯區福上巷186號', score: '8.1', roomtype1: '四人房－附衛浴 43290', roomtype2: '豪華雙人房 43290', roomtype3: '經濟雙人房 43290' },
+        { name: '樂萄萄逢甲', lat: 24.18036, lng: 120.64514, address: '台中市西屯區福星路357號', score: '8.3', roomtype1: '四人房-有獨立衛浴 2772', roomtype2: '雙人房－附私人衛浴 1991', roomtype3: '三人房－附私人衛浴 2186' },
+        { name: '一中宿屋', lat: 24.1533, lng: 120.68723, address: '台中市北區一中街138-11號三樓', score: '9.3', roomtype1: '四人房 - 有獨立衛浴 1295', roomtype2: '標準雙人房 762', roomtype3: '大型雙人房 914' },
+        { name: '高美大有貨櫃民宿 Homestay)', lat: 24.30952, lng: 120.55011, address: '台中市清水區美堤街160號', score: '6.9', roomtype1: '家庭房－附衛浴 3810', roomtype2: '小型雙人／雙床房 1619', roomtype3: '四人房－附衛浴 2381', roomtype4: '', roomtype5: '', roomtype6: '', roomtype7: '', roomtype8: '' },
+        { name: '逢甲Mickey House', lat: 24.17481, lng: 120.64806, address: '台中市西屯區福上巷271號', score: '8', roomtype1: '四人房 - 有獨立衛浴 1410', roomtype2: '三人房－附淋浴 1267' },
+        { name: '一中街藻宿', lat: 24.15332, lng: 120.68648, address: '台中市北區錦新街72-3號', score: '8.2', roomtype1: '四人房（不指定房型） 1619' },
+        { name: '逢甲阿里普羅達 (Fengchia Aliproda)', lat: 24.17711, lng: 120.64352, address: '台中市西屯區西屯路二段284巷13號', score: '7.8', roomtype1: '四人房 - 有獨立衛浴 1158', roomtype2: '雙人房－附私人衛浴 688' },
+    ];
+
+    var Kaohsiung_homestay = [
+        { name: '荷本 Urban', lat: 22.67105, lng: 120.30044, address: '高雄市左營區新莊一路292號', roomtype1: '雙臥室房(雙人床) 1403', roomtype2: '套房(2張床) 1403', roomtype3: '豪華四人房 1517', score: '8.1' },
+        { name: '塩晨•宿', lat: 22.62667, lng: 120.28442, address: '高雄市鹽埕區大公路29號', roomtype1: '標準四人房 1986', roomtype2: '標準雙人房 2961', score: '9.0' },
+        { name: '高雄南喃至嶼 (Nan Nan)', lat: 22.63263, lng: 120.30316, address: '高雄市新興區南華路101號', roomtype1: '經典四人房 2455', roomtype2: '高級四人房－有浴缸 3557', roomtype3: '雙臥室套房 2836', roomtype4: '樓中樓家庭套房 3794', roomtype5: '樓中樓套房 3544', score: '8.9' },
+        { name: '吃吃睡設計宅 EATzzZ Hostel', lat: 22.66244, lng: 120.29689, address: '高雄市鼓山區華榮路49號', roomtype1: '家庭房 2664', score: '9.2' },
+        { name: '道時尚悠然山莊', lat: 23.03464, lng: 120.66286, address: '高雄市六龜區和平路130-5號', roomtype1: '豪華房 - 可住4人 1746', roomtype2: '頂級豪華別墅 2050', roomtype3: '單室套房 - 無陽台 2991', score: '7.6' },
+        { name: '草地人Spa民宿', lat: 23.05719, lng: 120.6775, address: '高雄市六龜區新開路33之1號', roomtype1: '豪華雙人房 - 有陽台 2064', roomtype2: '豪華房 - 有陽台 2494', roomtype3: '四人房 2482', roomtype4: '舒適雙人房 - 禁菸 2753', roomtype5: '山景豪華房(雙人床或兩床) 3612', score: '8.3' },
+        { name: '悠活農16HOUSE', lat: 22.65893, lng: 120.29476, address: '高雄市鼓山區美術東五路46號', roomtype1: '四人房，帶陽台 1957', roomtype2: '舒適雙人房 - 有陽台 1174', roomtype3: '舒適雙人房 - 有淋浴間 1174', roomtype4: '標準雙人房 1174', score: '8.1' },
+        { name: '海軍官邸三號院', lat: 22.6939, lng: 120.29169, address: '高雄市左營區3號', roomtype1: '四人房－附外部私人衛浴 3186', roomtype2: '四人房－附外部私人衛浴 4052', roomtype3: '豪華園景平房小屋 10459', score: '9.5' },
+        { name: '望峰息心民宿', lat: 22.9062, lng: 120.54111, address: '高雄市美濃區雙峰街8之18號', roomtype1: '四人房 2043', roomtype2: '單人房 1177', roomtype3: '雙人房－附私人衛浴 1524', score: '9.2' },
+        { name: '高雄包棟阿爾兔兔旅店', lat: 22.63005, lng: 120.30035, address: '高雄市新興區南台路43巷1弄6號', roomtype1: '三人房 1367', roomtype2: '標準房 - 四人用 1714', roomtype3: '豪華四人房 1671', roomtype4: '高級四人房 1671', score: '7.8' },
+        { name: '美濃百果園民宿', lat: 22.88348, lng: 120.53624, address: '高雄市美濃區復興街一段58巷5號', roomtype1: '四人房 1669', roomtype2: '日式客房，可供6位客人入住 1939', roomtype3: '雙人房 3130', score: '8.3' },
+        { name: '大港小住', lat: 22.6241, lng: 120.30232, address: '高雄市新興區文橫一路5巷33號', roomtype1: '豪華套房 1412', roomtype2: '陽光客房 1412', roomtype3: '高級雙人房 2835', roomtype4: '雙人房－附陽台 3232', roomtype5: '經濟雙人房 2835', score: '8.7 ' },
+        { name: '星旅店', lat: 22.6337, lng: 120.30394, address: '高雄市新興區南華橫一路14號', roomtype1: '豪華雙人房－附浴缸 935', roomtype2: '豪華雙人房－附陽台 1039', roomtype3: '園景雙人房 935', roomtype4: '菁英雙人房 1039', roomtype5: '舒適雙人房 1013', score: '7.8' },
+        { name: '梨幸日和', lat: 22.79399, lng: 120.2992, address: '高雄市岡山區中山北路34巷6號', roomtype1: '四人房 - 有獨立衛浴 3206', roomtype2: '家庭房－附私人衛浴 4306', roomtype3: '標準雙人房 2250', score: '8.3' },
+        { name: '月緹電梯主題套房', lat: 22.6697, lng: 120.29791, address: '高雄市左營區南屏路241號', roomtype1: '四人房 2669', roomtype2: '經典雙人房 2840', roomtype3: '高級房(雙人床或兩床) 1637', roomtype4: '豪華房(大床) 1660', roomtype5: '三人房 1714', score: '9.0' },
+        { name: '明山莊', lat: 22.72555, lng: 120.42881, address: '高雄市大樹區三和路120-1號', roomtype1: '標準四人房 3948', roomtype2: '雙人房 3126', score: '8.5' },
+        { name: '旅人小棧', lat: 22.67622, lng: 120.30707, address: '高雄市左營區孟子路462號', roomtype1: '四人房 - 有獨立衛浴 1325', roomtype2: '豪華雙人房 810', roomtype3: '標準雙人房 810', roomtype4: '雙人房－附私人衛浴 810', roomtype5: '豪華房 810', score: '8.0' },
+        { name: '美濃客家庄民宿', lat: 22.8871, lng: 120.52274, address: '高雄市美濃區中興路二段6-1號', roomtype1: '三人房 1418', roomtype2: '家庭房 - 可住5人 2289', roomtype3: '雙人套房 1391', score: '7.7' },
+        { name: 'A.R.T.(時，間 A Room Time)', lat: 22.62301, lng: 120.30234, address: '高雄市新興區文橫二路167巷43號', roomtype1: '經典雙人房 1066', roomtype2: '英國工業風雙人房 2338', roomtype3: '設計風格雙人套房 1558', roomtype4: 'Loft雙人房 1325', roomtype5: '藝術雙人房 1252', score: '8.9' },
+        { name: '美濃德旺山莊', lat: 22.94285, lng: 120.5854, address: '高雄市美濃區朝元15912號', roomtype1: '標準四人房 2381', roomtype2: '標準雙人房 1524', roomtype3: '標準三人房 1905', score: '7.8' },
+        { name: '旗山三合院', lat: 22.84777, lng: 120.48763, address: '高雄市旗山區中興街6號', roomtype1: '四人房－附淋浴 1905', roomtype2: '四人房－附衛浴 1905', roomtype3: '四人房－附衛浴 1905', roomtype4: '四人房－附淋浴 1905', roomtype5: '家庭房－附淋浴 2771', score: '8.4' },
+        { name: '莉莉的家 Lilys - 高雄橋頭老街民宿', lat: 22.75836, lng: 120.31067, address: '高雄市橋頭區橋頭路81號', roomtype1: '豪華家庭房 2696', roomtype2: '豪華雙人房－附浴缸 1809', score: '8.7' },
+        { name: '美濃雲山居民宿', lat: 22.86684, lng: 120.55748, address: '高雄市美濃區龍山街56-1號', roomtype1: '經濟四人房 2424', roomtype2: '舒適四人房 2771', roomtype3: '單人房－附私人衛浴 952', roomtype4: '雙人房－附露台 1732', roomtype5: '園景三人房 1991', score: '8.5' },
+        { name: '高雄親子溜滑梯High Fun旅店', lat: 22.62569, lng: 120.35258, address: '高雄市鳳山區平等路3號', roomtype1: '奢華四人房 4179', roomtype2: '豪華四人房 3512', score: '8.5' },
+        { name: '高雄旅人驛站', lat: 22.63322, lng: 120.30051, address: '高雄市新興區民主路13之2號', roomtype1: '四人房 - 有獨立衛浴 1409', roomtype2: '四人房－附淋浴 1409', roomtype3: '四人房－附衛浴 1409', roomtype4: '經濟房 - 需共用衛浴 551', roomtype5: '標準雙人房 783', score: '7.6' },
+        { name: '中正湖民宿', lat: 22.91323, lng: 120.55141, address: '高雄市美濃區福美路30號', roomtype1: 'VIP四人房 1892', roomtype2: '貴賓雙人房 1488', score: '5.6' },
+        { name: 'Kaohsiung Rouen', lat: 22.6676, lng: 120.29471, address: '高雄市鼓山區慶豐街98號', roomtype1: '家庭房 1403', roomtype2: '巴黎左岸四人房 1529', roomtype3: '標準雙人房 1448', roomtype4: '雙人房 623', score: '7.3' },
+        { name: '高雄Do咕', lat: 22.62383, lng: 120.28459, address: '高雄市鹽埕區莒光街173號', roomtype1: '豪華公寓 4901', score: '8.9' },
+        { name: 'No.1899 人文旅宿', lat: 22.89686, lng: 120.55359, address: '高雄市美濃區民族路18巷9之9號', score: '9.6', roomtype1: '四人房－附陽台 4696', roomtype2: '四人房－附陽台 4870', roomtype3: '雙人房－附私人衛浴 3304', roomtype4: '豪華雙人房－附陽台 3652' },
+        { name: '隱君子的撒野', lat: 22.81127, lng: 120.34077, address: '高雄市岡山區三和里菜寮路2-26號', score: '9.4', roomtype1: '家庭房 5455', roomtype2: '6 床宿舍房的單人床  779', roomtype3: '雙人房 2424' },
+        { name: '巢鴨青年館', lat: 22.63911, lng: 120.30065, address: '高雄市三民區建國三路46巷19-3號', score: '7.9', roomtype1: '四人房 991', roomtype2: '家庭房-需共用衛浴 1043', roomtype3: '【按床位計價】6人女生宿舍 1117', roomtype4: '【1張床位】8人宿舍-男女混合 1230', roomtype5: '單人房-需共用衛浴 289' },
+        { name: '涵園民宿', lat: 22.86789, lng: 120.54736, address: '高雄市美濃區五穀街7-11號', score: '8.9', roomtype1: '園景四人房 3983', roomtype2: '標準家庭房 3377', roomtype3: '豪華雙人房 4329', roomtype4: '高級雙人房  2165' },
+        { name: '自由宿-鹽埕館', lat: 22.62152, lng: 120.28425, address: '高雄市鹽埕區光榮街37巷1號', score: '9.2', roomtype1: '豪華四人房 2115', roomtype2: '標準雙人房 1231', roomtype3: '豪華雙人房 1520' },
+        { name: '鳳山79背包客', lat: 22.61953, lng: 120.36445, address: '高雄市鳳山區東一巷79號', score: '8.7', roomtype1: '四人房-可住4人 2447', roomtype2: '六人房 3491', roomtype3: '女性客房 690', roomtype4: '合住房 690', roomtype5: '客房 1615' },
+        { name: '美濃煙城民宿', lat: 22.87976, lng: 120.56183, address: '高雄市美濃區中華路7巷17號', score: '8.2', roomtype1: '豪華四人房 3117', roomtype2: '日式四人房 3117', roomtype3: '豪華四人房 3117', roomtype4: '頂級四人房 3463', roomtype5: '豪華房(大床) 2684', roomtype6: '加大雙人床房 2944', roomtype7: '大型雙人房 3030' },
+        { name: '迎曦醉月主題會館', lat: 22.66612, lng: 120.29812, address: '高雄市鼓山區明倫路115號', score: '8.6', roomtype1: '四人房－附浴缸 2328', roomtype2: '豪華四人房 1799', roomtype3: '豪華雙人房－附浴缸 2434', roomtype4: '三人房－附浴缸 1693' },
+        { name: '餅弄民宿', lat: 22.62866, lng: 120.28476, address: '高雄市鹽埕區大有街45-1號', score: '8.7', roomtype1: '雙臥室套房 1390' },
+        { name: '登雲Villa民宿', lat: 22.96529, lng: 120.53706, address: '高雄市杉林區清水路朝雲巷20號', score: '9.6', roomtype1: '家庭房－附淋浴 5195', roomtype2: '豪華四人房  6061', roomtype3: '豪華雙人房－附浴缸 4762', roomtype4: '園景特大雙人床房 5195' },
+        { name: '米果民宿', lat: 22.61149, lng: 120.30442, address: '高雄市前鎮區新光路21號', score: '8.1', roomtype1: '雙床房－附陽台 1398', roomtype2: '小型套房－附陽台 1069', roomtype3: '三人房－附陽台 1316' },
+        { name: '迎曦醉月電梯民宿', lat: 22.66963, lng: 120.29352, address: '高雄市鼓山區華泰路226號', score: '9.8', roomtype1: '舒適四人房 2434', roomtype2: '豪華四人房 2434', roomtype3: '奢華四人房 1799', roomtype4: '豪華雙人房 2434', roomtype5: '高級雙人房 1799' },
+        { name: '鶴宮寓', lat: 22.63052, lng: 120.30039, address: '高雄市新興區中正四路41號中正四路41號2樓', score: '8.9', roomtype1: '6 床混合宿舍房 4377', roomtype2: '家庭房－附私人衛浴 4468', roomtype3: '上下舖房－附私人衛浴 2546', roomtype4: '雙床房－附私人衛浴 2820', roomtype5: '雙人房－附私人衛浴 2870' },
+        { name: '中正湖歐式山莊民宿', lat: 22.91371, lng: 120.55132, address: '高雄市美濃區福美路28號', score: '6', roomtype1: 'VIP四人房 2571' },
+        { name: '海軍官邸四號院', lat: 22.69353, lng: 120.29178, address: '高雄市左營區緯12路四號', score: '8.9', roomtype1: '家庭房－附私人衛浴 3532', roomtype2: '園景四人房 4225', roomtype3: '園景家庭房 10892', roomtype4: '雙人房－附外部私人衛浴 2061', roomtype5: '標準雙人房 2320' },
+        { name: '71 Cafe溫度民宿', lat: 22.64168, lng: 120.28816, address: '高雄市三民區西安街71號', score: '8.3', roomtype1: '標準四人房 3359', roomtype2: '客房(特大床) 1628', roomtype3: '標準房 1628', roomtype4: '四人房-有陽台 3359' },
+        { name: '六合911包棟民宿', lat: 22.63274, lng: 120.2996, address: '高雄市新興區南台路91號', score: '9.2', roomtype1: '整棟住宅 13048' },
+        { name: '香蕉與黑膠三合院', lat: 22.91791, lng: 120.5619, address: '高雄市美濃區興隆一街112巷34號', score: '9.1', roomtype1: '雙床房－附私人衛浴 7352', roomtype2: '頂級四人房 (Premium Quadruple Room) 7739', roomtype3: '家庭房－附露台 7352' },
+        { name: '茄萣黃金海岸民宿', lat: 22.87525, lng: 120.19337, address: '高雄市茄萣區民族路178號', score: '9', roomtype1: '四人房 - 有獨立衛浴 2000', roomtype2: '雙人房－附私人衛浴 1667' },
+        { name: '依依.良品風格民宿', lat: 22.6947, lng: 120.29181, address: '高雄市左營區纬十路建業新村54-11號', score: '7.2', roomtype1: '豪華全公寓 3074' },
+        { name: '日景園', lat: 22.98392, lng: 120.63685, address: '高雄市六龜區光明巷37之1號', score: '6.8', roomtype1: '四人房－附共用衛浴 1299', roomtype2: '山景雙人房 1299', roomtype3: '山景四人房 1732', roomtype4: '小型雙人房 866', roomtype5: '山景雙人房 1039', roomtype6: '園景雙人房 1385', roomtype7: '三人房－附私人衛浴 1472' },
+
+        { name: '老媽寶眷村民宿 Old Mamaboy Marines Hostel', lat: 22.69486, lng: 120.29167, address: '高雄市左營區建業新村54之8號54-7號', score: '8.5', roomtype1: '標準雙人房 7238' },
+        { name: '興達港民宿', lat: 22.87232, lng: 120.19212, address: '高雄市茄萣區健康路318號', score: '8.8', roomtype1: '海景四人房 1991', roomtype2: '雙人房－附私人衛浴 1602' },
+        { name: 'J.S 23溜滑梯親子民宿', lat: 22.70904, lng: 120.29945, address: '高雄市楠梓區新昌街10巷15弄23號', score: '9.9', roomtype1: '四人房－附衛浴 3290', roomtype2: '四人房－附陽台 3896', roomtype3: '家庭房－附陽台 5368', roomtype4: '標準雙人房 3030', roomtype5: '三人房－附陽台 3896' },
+    ];
+    var rank50to69_homestay = [
+        { name: '田園民宿', lat: 23.42019, lng: 121.34462, address: '花蓮縣玉里鎮號', roomtype1: '四人房－附共用衛浴 1385', roomtype2: '家庭房（四人房）－附共用衛浴 1039', roomtype3: '標準四人房 1732', roomtype4: '標準雙人房－附共用衛浴 1732', roomtype5: '標準雙人房 1385', score: '6.9' },
+
+        { name: '梅林親水岸', lat: 24.15295, lng: 120.81048, address: '台中市新社區南華街28-1號', roomtype1: '園景四人房 1861', roomtype2: '豪華四人房 2078', roomtype3: '雙人房-有淋浴間/禁菸 883', score: '6.7' },
+        { name: '小巷微宿', lat: 24.17701, lng: 120.64283, address: '台中市西屯區西屯路二段291號', roomtype1: '舒適四人房 1390', roomtype2: '標準加大雙人床房－附兩張加大雙人床 1714', roomtype3: '樓中樓套房 2000', roomtype4: '家庭房 3810', roomtype5: '樓中樓單房公寓 3810', roomtype6: '標準雙人房 629', roomtype7: '豪華雙人房 857', score: '6.8' },
+        { name: '大雪山莊園民宿', lat: 24.2259, lng: 120.89557, address: '台中市和平區雪山路2之1號', score: '6.5', roomtype1: '四人房 3619', roomtype2: '山景家庭房 4476', roomtype3: '豪華雙人房－附陽台 2381', roomtype4: '園景雙人房 2762' },
+        { name: '高美大有貨櫃民宿', lat: 24.30952, lng: 120.55011, address: '台中市清水區美堤街160號', score: '6.9', roomtype1: '家庭房－附衛浴 3810', roomtype2: '小型雙人／雙床房 1619', roomtype3: '四人房－附衛浴 2381' },
+        { name: '中正湖民宿', lat: 22.91323, lng: 120.55141, address: '高雄市美濃區福美路30號', roomtype1: 'VIP四人房 1892', roomtype2: '貴賓雙人房 1488', score: '5.6' },
+        { name: '中正湖歐式山莊民宿', lat: 22.91371, lng: 120.55132, address: '高雄市美濃區福美路28號', score: '6.0', roomtype1: 'VIP四人房 2571' },
+        { name: '日景園', lat: 22.98392, lng: 120.63685, address: '高雄市六龜區光明巷37之1號', score: '6.8', roomtype1: '四人房－附共用衛浴 1299', roomtype2: '山景雙人房 1299', roomtype3: '山景四人房 1732', roomtype4: '小型雙人房 866', roomtype5: '山景雙人房 1039', roomtype6: '園景雙人房 1385', roomtype7: '三人房－附私人衛浴 1472' },
+    ];
+    var rank70to79_homestay = [
+        { name: '好漾民宿1館', lat: 23.33997, lng: 121.31595, address: '花蓮縣玉里鎮中華路255號', roomtype1: '標準四人房 1652', roomtype2: '標準雙人房 1043', roomtype3: '豪華雙人房 1217', score: '7.8' },
+        { name: '好漾民宿2館', lat: 23.33125, lng: 121.31423, address: '花蓮縣玉里鎮光復路109-3號', roomtype1: '標準四人房 1645', roomtype2: '標準雙人房 1039', roomtype3: '豪華雙人房 1212', score: '7.7' },
+        { name: '7街160民宿', lat: 23.94642, lng: 121.59174, address: '花蓮縣吉安鄉南海七街160號', roomtype1: '加大雙人床房－附 2 張加大雙人床 2095', roomtype2: '', roomtype3: '', roomtype4: '', roomtype5: '', score: '7.6' },
+        { name: '地球村車站民宿', lat: 23.99374, lng: 121.60548, address: '花蓮縣花蓮市國盛一街193號', roomtype1: '家庭房－附私人衛浴 9809', roomtype2: '雙人房－附私人衛浴 10094', roomtype3: '', roomtype4: '', roomtype5: '', score: '7.2' },
+        { name: '星空說渡假A館', lat: 23.91154, lng: 121.53372, address: '花蓮縣壽豐鄉中山路三段158巷12號', roomtype1: '園景雙人／雙床房 4398', roomtype2: '雙人／雙床房－附陽台 2507', roomtype3: '高級豪華雙人或雙床房 4398', roomtype4: '高級雙人房 4398', roomtype5: '', score: ' 7.9' },
+        { name: '旅途中海邊民宿', lat: 25.24998, lng: 121.4667, address: '新北市三芝區54之六號三樓', roomtype1: '四人房－附衛浴 3619', roomtype2: '雙人房－附外部私人衛浴 1886', roomtype3: '雙人房 2667', score: '7.9' },
+
+        { name: '綠峯渡假山莊', lat: 25.18815, lng: 121.58884, address: '新北市金山區重和里三重橋22號', roomtype1: '四人房 1634', score: '7.5' },
+        { name: '九份山旅', lat: 25.10641, lng: 121.84197, address: '新北市瑞芳區基山街204號', roomtype1: '四人房A 2890', roomtype2: '單人房 3066', roomtype3: '雙人房-有空調 1281', roomtype4: '雙人房-禁菸 1353', roomtype5: '雙人房B-禁菸 1366', score: '7.4' },
+        { name: '三才靈芝農場民宿', lat: 25.01335, lng: 121.67503, address: '新北市石碇區中民村十八重溪52-1號', score: '7.1', roomtype1: '四人房 2300', roomtype2: '閒情雅致四人房 2632', roomtype3: '家庭房 - 可住6人 2625', roomtype4: '雙人房 3256' },
+        { name: '夢想旅行 (Dream Travel)', lat: 25.04091, lng: 121.50613, address: '台北市萬華區西寧南路211號', score: '7.1', roomtype1: '四人房 - 有專用衛浴 1565', roomtype2: '夾層樓家庭間 2174', roomtype3: '六人房 2348', roomtype4: '單人房 - 需共用衛浴 435', roomtype5: '雙人房 - 有專用衛浴 870' },
+        { name: '九份緣憶民宿', lat: 25.10877, lng: 121.84594, address: '新北市瑞芳區烏勢巷52號', score: '7.4', roomtype1: '四人房 1948', roomtype2: '家庭房 - 需共用衛浴 2087', roomtype3: '海景四人房 2226', roomtype4: '8人日式客房- 共用浴室 2783', roomtype5: '家庭房 3130' },
+        { name: '凱微精品旅館', lat: 25.05848, lng: 121.52566, address: '台北市中山區林森北路381號9-10樓', roomtype1: '雙人房 1558', score: '7.5' },
+        { name: '延平棧', lat: 25.0425, lng: 121.51094, address: '台北市中正區延平南路101巷4號', roomtype1: '四人房 1948', roomtype2: '雙人房 2221', score: '7.8' },
+        { name: '宰相民宿', lat: 25.17156, lng: 121.44558, address: '新北市淡水區英專路79巷2號', roomtype1: '四人房 - 有獨立衛浴 2424', roomtype2: '雙人房－附私人衛浴 1385', roomtype3: '三人房－附私人衛浴 2078', score: '7.6' },
+        { name: '九份安逸民宿', lat: 25.10921, lng: 121.84416, address: '新北市瑞芳區輕便路117號', roomtype1: '四人房 2364', roomtype2: '標準雙人房 1225', score: '7.9' },
+
+        { name: 'Inn 逢甲Home', lat: 24.17613, lng: 120.64709, address: '台中市西屯區慶和街51號', roomtype1: '標準四人房 866', roomtype2: '家庭房 1472', roomtype3: '家庭房 1732', roomtype4: '家庭房 1991', roomtype5: '家庭房 2424', roomtype6: '標準雙人房 519', roomtype7: '標準三人房 779', score: '7.6' },
+        { name: '台中住宿逢甲 Cinema lnn', lat: 24.17613, lng: 120.64709, address: '台中市西屯區慶和街51號', roomtype1: '四人房 - 有獨立衛浴 1170', roomtype2: '家庭房－附私人衛浴 1492', roomtype3: '家庭房－附私人衛浴 1600', roomtype4: '男性宿舍房的 1 個上下鋪床位 322', roomtype5: "標準雙人房 633", score: '7.9' },
+        { name: '谷野民宿 (台中谷野會館)', lat: 24.16129, lng: 120.95766, address: '台中市和平區東關路一段裡冷巷36號', roomtype1: '雲遊家庭房 6629', roomtype2: '豪華家庭套房 7792', roomtype3: '雲遊雙人房 3387', roomtype4: '雲遊豪華雙人房 4329', score: '7.9' },
+        { name: '享自在生態園區', lat: 24.20139, lng: 120.78821, address: '台中市北屯區東山路二段民興巷民興路207-5號', roomtype1: '標準四人房 2261', roomtype2: '園景雙人房 1304', score: '7.6' },
+        { name: '岸渡陳艙', lat: 24.31158, lng: 120.56559, address: '台中市清水區三美路262號', score: '7.0', roomtype1: '8 床混合宿舍房 1732', roomtype2: '經典四人房 2165', roomtype3: '標準雙人房 2320', roomtype4: '加大雙人床房 1108' },
+        { name: '馬卡龍旅棧', lat: 24.18279, lng: 120.64638, address: '台中市西屯區文華路138號', score: '7.3', roomtype1: '標準四人房 5108', roomtype2: '雙人房 3290', roomtype3: '基本三人房 4242' },
+        { name: '星光山悦景觀民宿', lat: 24.20522, lng: 120.89354, address: '台中市和平區雪山路出雲巷18號', score: '7.9', roomtype1: '標準家庭房 5714' },
+        { name: '逢甲阿里普羅達 (Fengchia Aliproda)', lat: 24.17711, lng: 120.64352, address: '台中市西屯區西屯路二段284巷13號', score: '7.8', roomtype1: '四人房 - 有獨立衛浴 1158', roomtype2: '雙人房－附私人衛浴 688' },
+
+        { name: '道時尚悠然山莊', lat: 23.03464, lng: 120.66286, address: '高雄市六龜區和平路130-5號', roomtype1: '豪華房 - 可住4人 1746', roomtype2: '頂級豪華別墅 2050', roomtype3: '單室套房 - 無陽台 2991', score: '7.6' },
+        { name: '高雄包棟阿爾兔兔旅店', lat: 22.63005, lng: 120.30035, address: '高雄市新興區南台路43巷1弄6號', roomtype1: '三人房 1367', roomtype2: '標準房 - 四人用 1714', roomtype3: '豪華四人房 1671', roomtype4: '高級四人房 1671', score: '7.8' },
+        { name: '星旅店', lat: 22.6337, lng: 120.30394, address: '高雄市新興區南華橫一路14號', roomtype1: '豪華雙人房－附浴缸 935', roomtype2: '豪華雙人房－附陽台 1039', roomtype3: '園景雙人房 935', roomtype4: '菁英雙人房 1039', roomtype5: '舒適雙人房 1013', score: '7.8' },
+        { name: '美濃客家庄民宿', lat: 22.8871, lng: 120.52274, address: '高雄市美濃區中興路二段6-1號', roomtype1: '三人房 1418', roomtype2: '家庭房 - 可住5人 2289', roomtype3: '雙人套房 1391', score: '7.7' },
+        { name: '美濃德旺山莊', lat: 22.94285, lng: 120.5854, address: '高雄市美濃區朝元15912號', roomtype1: '標準四人房 2381', roomtype2: '標準雙人房 1524', roomtype3: '標準三人房 1905', score: '7.8' },
+        { name: '高雄旅人驛站', lat: 22.63322, lng: 120.30051, address: '高雄市新興區民主路13之2號', roomtype1: '四人房 - 有獨立衛浴 1409', roomtype2: '四人房－附淋浴 1409', roomtype3: '四人房－附衛浴 1409', roomtype4: '經濟房 - 需共用衛浴 551', roomtype5: '標準雙人房 783', score: '7.6' },
+        { name: 'Kaohsiung Rouen', lat: 22.6676, lng: 120.29471, address: '高雄市鼓山區慶豐街98號', roomtype1: '家庭房 1403', roomtype2: '巴黎左岸四人房 1529', roomtype3: '標準雙人房 1448', roomtype4: '雙人房 623', score: '7.3' },
+        { name: '巢鴨青年館', lat: 22.63911, lng: 120.30065, address: '高雄市三民區建國三路46巷19-3號', score: '7.9', roomtype1: '四人房 991', roomtype2: '家庭房-需共用衛浴 1043', roomtype3: '【按床位計價】6人女生宿舍 1117', roomtype4: '【1張床位】8人宿舍-男女混合 1230', roomtype5: '單人房-需共用衛浴 289' },
+        { name: '依依.良品風格民宿', lat: 22.6947, lng: 120.29181, address: '高雄市左營區纬十路建業新村54-11號', score: '7.2', roomtype1: '豪華全公寓 3074' },
+    ];
+    var rank80to84_homestay = [
+        { name: '東畔民宿', lat: 23.89596, lng: 121.55367, address: '花蓮縣壽豐鄉大學路二段63巷39號', roomtype1: '四人房－附陽台 1524', roomtype2: '', score: '8.1' },
+        { name: '信號腳ㄟ厝', lat: 23.49553, lng: 121.37632, address: '花蓮縣瑞穗鄉成功南路12號', roomtype1: '四人房－附衛浴 1299', roomtype2: '', score: '8.3' },
+        { name: '19窩窩', lat: 3.97214, lng: 121.60102, address: '花蓮縣花蓮市上海街19號', roomtype1: '標準四人房 1473', roomtype2: '雙人房－附外部私人衛浴 1145', roomtype3: '標準雙人房 1145', score: '8.0' },
+        { name: '鏷石民宿', lat: 23.32677, lng: 121.31657, address: '花蓮縣玉里鎮忠勇路62號', roomtype1: '四人房 2121', roomtype2: '三臥室房屋 10823', roomtype3: '雙人房 1558', score: '8.4' },
+        { name: '七里霧民宿', lat: 23.3422, lng: 121.3413, address: '花蓮縣玉里鎮四鄰石崗53-1號', roomtype1: '豪華加大雙人床房－附 2 張加大雙人床 3463', roomtype2: '標準雙人房－附共用衛浴 2944', roomtype3: '加大雙人床房－附陽台 1126', roomtype4: '豪華雙人房－附陽台 1732', score: '8.4' },
+        { name: '花蓮站全民宿', lat: 23.99386, lng: 121.60805, address: '花蓮縣花蓮市國民八街135號', roomtype1: '四人房－附陽台 3029', roomtype2: '三臥室房屋 7863', roomtype3: '四臥室度假屋 7863', roomtype4: '雙人房－附陽台 2171', score: '8.4' },
+        { name: '花蓮安隱民宿', lat: 23.99452, lng: 121.60654, address: '花蓮縣花蓮市國民九街50號', roomtype1: '四人房－附衛浴 1255', roomtype2: '家庭套房 1558', roomtype3: '8 床混合宿舍房的 1 個床位 277', roomtype4: '雙人房－附共用衛浴 563', roomtype5: '經濟雙人房 736', score: '8.0' },
+        { name: '鼓道民宿', lat: 23.97417, lng: 121.60695, address: '花蓮縣花蓮市成功街213號', roomtype1: '標準四人房 2310', roomtype2: '標準雙人房 2079', roomtype3: '大型雙人房 1155', roomtype4: '', roomtype5: '', score: '8.4' },
+        { name: '花蓮米拉賓民宿', lat: 23.97402, lng: 121.58526, address: '花蓮縣吉安鄉中華路二段120巷1號', roomtype1: '標準四人房 1826', roomtype2: '雙人房 1304', roomtype3: '', roomtype4: '', roomtype5: '', score: '8.1' },
+        { name: '百合民宿', lat: 23.9747, lng: 121.58404, address: '花蓮縣吉安鄉吉祥四街20號', roomtype1: '四人房 1732', roomtype2: '家庭房（6 位成人） 2251', roomtype3: '雙人房 1299', roomtype4: '', roomtype5: '', score: '8.1' },
+        { name: '東立茶行民宿', lat: 23.45671, lng: 121.35394, address: '花蓮縣瑞穗鄉中正南路二段251號', roomtype1: '經典四人房 1713', roomtype2: '家庭房 1142', roomtype3: '', roomtype4: '', roomtype5: '', score: '8.4' },
+        { name: '花蓮鐵道手作民宿', lat: 24.11573, lng: 121.62983, address: '花蓮縣秀林鄉秀林村秀林路100號之1號', roomtype1: '舒適四人房 2944', roomtype2: '山景雙人房 1732', roomtype3: '', roomtype4: '', roomtype5: '', score: '8.3' },
+
+        { name: '劍潭青年活動中心', lat: 25.0776, lng: 121.52437, address: '台北市士林區中山北路四段16號', roomtype1: '客房(4張單人床) 3647', roomtype2: '家庭房 4283', roomtype3: '客房(兩床) 4255', roomtype4: '套房 - 有陽台 4,997', roomtype5: '', score: '8.2' },
+        { name: '白沙啾啾 (Chill Chill House)', lat: 25.28389, lng: 121.52099, address: '新北市石門區八甲路1-5號', roomtype1: '家庭房 3864', roomtype2: '海景四人房 4442', roomtype3: '豪華家庭房 4154', roomtype4: '豪華雙人房 4606', roomtype5: '側面海景房 4299', score: '8.2' },
+        { name: '北海岸愛之船', lat: 25.29111, lng: 121.56031, address: '新北市石門區中央路1-25號', roomtype1: '客房(2張大床/1樓)-禁菸 2475', roomtype2: '家庭房 3316', roomtype3: '海景家庭房 2986', roomtype4: '客房(大床/1樓)-禁菸 3853', roomtype5: '海景雙人房 2087', score: '8.0' },
+        { name: '九份風箏博物館民宿', lat: 25.11049, lng: 121.84428, address: '新北市瑞芳區頌德里坑尾巷20號', roomtype1: '標準四人房 2141', roomtype2: '家庭房 2966', roomtype3: '海景四人房 2630', roomtype4: '高級家庭房 3496', score: '8.2' }, ,
+        { name: '雨天晴民宿', lat: 25.10734, lng: 121.84652, address: '新北市瑞芳區烏勢巷146號', score: '8.3', roomtype1: '家庭房 2120', roomtype2: '海景標準雙人房 2597', roomtype3: '豪華房 1224' },
+        { name: '清芳民宿 Delicateperfume Hotel', lat: 25.10727, lng: 121.80548, address: '新北市瑞芳區民生街30巷14號', score: '8.2', roomtype1: '豪華四人房 1590', roomtype2: '四人房 1856', roomtype3: '標準雙人房 2506', roomtype4: '標準雙人房 - 需共用衛浴 935', roomtype5: '舒適雙人房 941' },
+        { name: '苓旅萬年-LIN INN Wan Nian', lat: 25.04351, lng: 121.50589, address: '台北市萬華區西寧南路70號7樓', score: '8.3', roomtype1: '高級四人房 2100', roomtype2: '經濟單人房 1205', roomtype3: '經濟雙人房 1286', roomtype4: '豪華雙人房 1367', roomtype5: '經濟房(兩床) 1449' },
+        { name: '波麗士河堤景觀民宿', lat: 25.1072, lng: 121.81107, address: '新北市瑞芳區三爪子坑路99之1號', roomtype1: '標準四人房 1834', roomtype2: '豪華家庭套房 2147', roomtype3: '豪華房 - 有陽台 1992', roomtype4: '標準房 2234', roomtype5: '豪華經典客房 1992', score: '8.2' },
+        { name: '九份施家景觀民宿', lat: 25.10856, lng: 121.8441, address: '新北市瑞芳區基山街106-3號', roomtype1: '家庭房 2120', roomtype2: '雙人房 2597', score: '8.0' },
+        { name: '愉園 (Happy House B&B)', lat: 25.10827, lng: 121.80781, address: '新北市瑞芳區民權街鐵路巷3-1號', roomtype1: '豪華四人房 3695', roomtype2: '四人房－附浴缸 3810', roomtype3: '標準雙人房 4535', roomtype4: '高級雙人房 4909', roomtype5: '園景雙人房 2352', score: '8.3' },
+        { name: '未央居景觀民宿', lat: 25.11155, lng: 121.84696, address: '新北市瑞芳區輕便路1-1號', roomtype1: '標準四人房－無窗戶 2571', roomtype2: '標準雙人房－無窗戶 2857', roomtype3: '海景雙人房 1905', score: '8.4' },
+        { name: '九居', lat: 25.10781, lng: 121.84517, address: '新北市瑞芳區街頂巷20號', roomtype1: '海景四人房 3304', roomtype2: '海景豪華雙床房 3635', roomtype3: '家庭平房小屋 3913', roomtype4: '豪華小屋 4304', score: '8.3' },
+
+        { name: '想想逢甲', lat: 24.1801, lng: 120.6416, address: '台中市西屯區西安街76巷16弄26號', roomtype1: '豪華四人房 3446', roomtype2: '四人房 - 有獨立衛浴 2757', roomtype3: '單臥室別墅 3455', roomtype4: '度假屋 3948', roomtype5: '豪華家庭套房 4073', score: '8.1' },
+        { name: '逢甲 Toy RooM', lat: 24.17833, lng: 120.64558, address: '台中市西屯區逢甲路19巷10號5樓之5', roomtype1: '四人房 - 有獨立衛浴 1108', roomtype2: '標準雙人房 693', roomtype3: '雙人房－附私人衛浴 952', roomtype4: '經典三人房 1022', score: '8.2' },
+        { name: '豐原綠自住民宿', lat: 24.25296, lng: 120.7146, address: '台中市豐原區忠孝街105巷45號', roomtype1: '四人房 - 有陽台 2829', roomtype2: '標準房 - 四人用 2856', roomtype3: '經典四人房 2856', roomtype4: '標準家庭房 2856', roomtype5: '豪華家庭房 3142', roomtype6: '高級家庭房 3142', roomtype7: '平價雙人房 1905', score: '8.3' },
+        { name: '逢甲樂愛度假', lat: 24.1769, lng: 120.64483, address: '台中市西屯區福星路526巷6號', roomtype1: '家庭房(3張雙人床) 1836', roomtype2: '雙人房－附陽台 2126', roomtype3: '舒適雙人房 - 有陽台 806', score: '8.3' },
+        { name: '一中迪士尼', lat: 24.15348, lng: 120.68688, address: '台中市北區一中街138號', roomtype1: '四人房 - 有獨立衛浴 957', roomtype2: '標準雙床房 609', score: '8.4' },
+        { name: '逢甲禮盒', lat: 24.18002, lng: 120.64558, address: '台中市西屯區逢甲路20巷37號之2', roomtype1: '標準四人房 996', roomtype2: '經濟四人房 1082', roomtype3: '家庭房－附私人衛浴 1472"', roomtype4: '家庭房－附私人衛浴 1905', roomtype5: '家庭房－附私人衛浴 2424', roomtype6: '小型雙人房 563', roomtype7: '大型雙人房 632', score: '8.1' },
+        { name: '后麗安心親子時尚旅宿（風自然2館）', lat: 24.33325, lng: 120.7155, address: '台中市后里區安眉路85-19號', roomtype1: '四人房 3794', roomtype2: '標準四人房 4918', roomtype3: '四人房-可住4人 3794', roomtype4: '豪華家庭房 4918', roomtype5: '四人家庭房 4073', roomtype6: '標準家庭房-可住5人 4220', roomtype7: '經濟四人房 5957', score: '8.1' },
+        { name: '台中高鐵民宿', lat: 24.11521, lng: 120.60316, address: '台中市烏日區成功東路47號', roomtype1: '四人房－附陽台 1818', roomtype2: '標準雙人或雙床房 1558', roomtype3: '標準雙人或雙床房 1126', score: '8.1' },
+        { name: '星月文旅溫泉民宿', lat: 24.33264, lng: 120.70192, address: '台中市后里區月眉北路482號', score: '8.1', roomtype1: '四人房 - 有獨立衛浴 4848', roomtype2: '豪華雙人房－附浴缸 3636' },
+        { name: '后里庄園', lat: 24.31063, lng: 120.66288, address: '台中市后里區公館路20-20號', score: '8.2', roomtype1: '四人房 - 有獨立衛浴 2338', roomtype2: '豪華雙人房－附淋浴 2597', roomtype3: '雙人房－附外部私人衛浴 1558' },
+        { name: '劦陶宛陶藝民宿', lat: 24.19326, lng: 120.81444, address: '台中市東勢區東坑路石麻巷101號', score: '8.3', roomtype1: '園景四人房 2944', roomtype2: '山景四人房 3463', roomtype3: '家庭套房 4502', roomtype4: '園景雙人房 1905', roomtype5: '山景雙人房 2597' },
+        { name: '極旅inn', lat: 24.15346, lng: 120.68761, address: '台中市北區一中街162號', score: '8.4', roomtype1: '四人房 - 有獨立衛浴 1429', roomtype2: '豪華雙人房－附淋浴 948' },
+        { name: '逢甲Jocy House', lat: 24.17833, lng: 120.64558, address: '台中市西屯區逢甲路19巷10號3樓', score: '8.2', roomtype1: '豪華四人房 1410', roomtype2: '經濟雙人房 724', roomtype3: '高級雙人房 838', roomtype4: '基本三人房 1143' },
+        { name: '翔羚逢甲住宿', lat: 24.17479, lng: 120.64837, address: '台中市西屯區福上巷267號', score: '8.1', roomtype1: '四人房－附衛浴 1299', roomtype2: '家庭房－附私人衛浴 1558', roomtype3: '雙人房－附私人衛浴 779', roomtype4: '三人房－附私人衛浴 1039' },
+        { name: '逢甲Jumbo', lat: 24.17902, lng: 120.64525, address: '台中市西屯區福星路427號', score: '8.2', roomtype1: '標準四人房 866', roomtype2: '經濟雙人房 606', roomtype3: '標準三人房 779' },
+        { name: '享樂旅宿逢甲館', lat: 24.18161, lng: 120.64405, address: '台中西屯區西安街132-6號', score: '8.4', roomtype1: '標準四人房 1299', roomtype2: '標準雙人房 779', roomtype3: '三人房 1013' },
+        { name: '溫暖逢甲', lat: 24.17492, lng: 120.65095, address: '台中市西屯區福上巷186號', score: '8.1', roomtype1: '四人房－附衛浴 43290', roomtype2: '豪華雙人房 43290', roomtype3: '經濟雙人房 43290' },
+        { name: '樂萄萄逢甲', lat: 24.18036, lng: 120.64514, address: '台中市西屯區福星路357號', score: '8.3', roomtype1: '四人房-有獨立衛浴 2772', roomtype2: '雙人房－附私人衛浴 1991', roomtype3: '三人房－附私人衛浴 2186' },
+        { name: '逢甲Mickey House', lat: 24.17481, lng: 120.64806, address: '台中市西屯區福上巷271號', score: '8.0', roomtype1: '四人房 - 有獨立衛浴 1410', roomtype2: '三人房－附淋浴 1267' },
+        { name: '一中街藻宿', lat: 24.15332, lng: 120.68648, address: '台中市北區錦新街72-3號', score: '8.2', roomtype1: '四人房（不指定房型） 1619' },
+
+        { name: '荷本 Urban', lat: 22.67105, lng: 120.30044, address: '高雄市左營區新莊一路292號', roomtype1: '雙臥室房(雙人床) 1403', roomtype2: '套房(2張床) 1403', roomtype3: '豪華四人房 1517', score: '8.1' },
+        { name: '草地人Spa民宿', lat: 23.05719, lng: 120.6775, address: '高雄市六龜區新開路33之1號', roomtype1: '豪華雙人房 - 有陽台 2064', roomtype2: '豪華房 - 有陽台 2494', roomtype3: '四人房 2482', roomtype4: '舒適雙人房 - 禁菸 2753', roomtype5: '山景豪華房(雙人床或兩床) 3612', score: '8.3' },
+        { name: '悠活農16HOUSE', lat: 22.65893, lng: 120.29476, address: '高雄市鼓山區美術東五路46號', roomtype1: '四人房，帶陽台 1957', roomtype2: '舒適雙人房 - 有陽台 1174', roomtype3: '舒適雙人房 - 有淋浴間 1174', roomtype4: '標準雙人房 1174', score: '8.1' },
+        { name: '美濃百果園民宿', lat: 22.88348, lng: 120.53624, address: '高雄市美濃區復興街一段58巷5號', roomtype1: '四人房 1669', roomtype2: '日式客房，可供6位客人入住 1939', roomtype3: '雙人房 3130', score: '8.3' },
+        { name: '梨幸日和', lat: 22.79399, lng: 120.2992, address: '高雄市岡山區中山北路34巷6號', roomtype1: '四人房 - 有獨立衛浴 3206', roomtype2: '家庭房－附私人衛浴 4306', roomtype3: '標準雙人房 2250', score: '8.3' },
+        { name: '旅人小棧', lat: 22.67622, lng: 120.30707, address: '高雄市左營區孟子路462號', roomtype1: '四人房 - 有獨立衛浴 1325', roomtype2: '豪華雙人房 810', roomtype3: '標準雙人房 810', roomtype4: '雙人房－附私人衛浴 810', roomtype5: '豪華房 810', score: '8.0' },
+        { name: '旗山三合院', lat: 22.84777, lng: 120.48763, address: '高雄市旗山區中興街6號', roomtype1: '四人房－附淋浴 1905', roomtype2: '四人房－附衛浴 1905', roomtype3: '四人房－附衛浴 1905', roomtype4: '四人房－附淋浴 1905', roomtype5: '家庭房－附淋浴 2771', score: '8.4' },
+        { name: '美濃煙城民宿', lat: 22.87976, lng: 120.56183, address: '高雄市美濃區中華路7巷17號', score: '8.2', roomtype1: '豪華四人房 3117', roomtype2: '日式四人房 3117', roomtype3: '豪華四人房 3117', roomtype4: '頂級四人房 3463', roomtype5: '豪華房(大床) 2684', roomtype6: '加大雙人床房 2944', roomtype7: '大型雙人房 3030' },
+        { name: '米果民宿', lat: 22.61149, lng: 120.30442, address: '高雄市前鎮區新光路21號', score: '8.1', roomtype1: '雙床房－附陽台 1398', roomtype2: '小型套房－附陽台 1069', roomtype3: '三人房－附陽台 1316' },
+        { name: '71 Cafe溫度民宿', lat: 22.64168, lng: 120.28816, address: '高雄市三民區西安街71號', score: '8.3', roomtype1: '標準四人房 3359', roomtype2: '客房(特大床) 1628', roomtype3: '標準房 1628', roomtype4: '四人房-有陽台 3359' },
+    ];
+    var rank85to89_homestay = [
+        { name: '夏舞民宿', lat: 23.99037, lng: 121.60506, address: '花蓮縣花蓮市國聯三路81號', roomtype1: '四人房－有獨立衛浴 2694', roomtype2: '家庭房（六人房）－附私人衛浴 3878', roomtype3: '經濟雙人房 1497', score: '8.5' },
+        { name: '松邑莊園', lat: 23.485, lng: 121.35157, address: '花蓮縣瑞穗鄉溫泉路三段2巷37號', roomtype1: '四人住－帳篷 3172', roomtype2: '家庭房（四人房） 2683', roomtype3: '山景雙人房 4202', roomtype4: '小型套房（雙人房）－有露臺 5132', score: '8.8' },
+        { name: '悅庭民宿', lat: 23.90456, lng: 121.52694, address: '花蓮縣壽豐鄉路內136號', roomtype1: '標準四人房 2095', roomtype2: '加大雙人床房（四人房） 2381', roomtype3: '豪華四人房 2667', roomtype4: '家庭套房（六人房） 3333', roomtype5: '加大雙人床房（雙人房） 1619', score: '8.8' },
+        { name: '回憶民宿', lat: 24.12477, lng: 121.65145, address: '花蓮縣新城鄉中山路6-7號', roomtype1: '日式四人房 1870', roomtype2: '海景四人房 2338', roomtype3: '四人房 1870', roomtype4: '雙人房 2338', roomtype5: '客房（單人床*2） 1870', score: '8.9' },
+        { name: '鳳林好日子', lat: 23.7458, lng: 121.45194, address: '花蓮縣鳳林鎮大同街6-6號', roomtype1: '四人房－附陽台 2165', roomtype2: '四人房 2165', roomtype3: '標準雙人房（大床） 1472', roomtype4: '標準雙人房（特大床） 1472', score: '8.8' },
+        { name: '芳草古樹花園民宿', lat: 23.7467, lng: 121.45398, address: '花蓮縣鳳林鎮中和路71號', roomtype1: '標準四人房 2597', roomtype2: '園景四人房 3117', roomtype3: ' 標準家庭房（四人房） 3117', score: '8.7' },
+        { name: '蘋果樹青年旅社', lat: 23.99293, lng: 121.60375, address: '花蓮縣花蓮市國聯一路43號', roomtype1: '豪華四人房 1747', roomtype2: '雙人房 1924', score: '8.5' },
+        { name: '花漾·夏卡爾', lat: 23.98823, lng: 121.60329, address: '花蓮縣花蓮市國興五街138-2號', roomtype1: '金輝四人房 3429', roomtype2: '四人房－附衛浴 3429', roomtype5: '三人房 - 有陽台 2857', score: '8.5' },
+        { name: '吉美民宿', lat: 23.98371, lng: 121.58391, address: '花蓮縣吉安鄉民治路436號', roomtype1: '標準房 - 四人用 1979', roomtype2: '四人房 - 有陽台 2424', roomtype3: '標準雙人房 2262', roomtype4: '舒適雙人房 2771', roomtype5: '', score: '8.8' },
+        { name: '發現七星潭海景民宿', lat: 24.02806, lng: 121.62938, address: '花蓮縣新城鄉明潭街58號', roomtype1: '海景四人房 3377', roomtype2: '豪華四人房 3636', roomtype3: '頂級四人房 5714', roomtype4: '海景雙人房－附陽台 2494', roomtype5: '海景豪華雙人房－附陽台 2857', score: '8.8' },
+        { name: '看見七星潭民宿', lat: 24.02659, lng: 121.63058, address: '花蓮縣新城鄉七星街106號', roomtype1: '海景雙人房 1796', roomtype2: '山景房(兩床) 2313', roomtype3: '山景雙人房 1796', roomtype4: '海景標準房 1796', roomtype5: '海景三人房 2313', score: '8.8' },
+        { name: '輝太郎民宿', lat: 23.32612, lng: 121.32262, address: '花蓮縣玉里鎮興國路一段45-1號', roomtype1: '四人房 - 有獨立衛浴 2166', roomtype2: '雙人房－附私人衛浴 1733', roomtype3: '標準雙人或雙床房 1248', roomtype4: '', roomtype5: '', score: '8.9' },
+        { name: '海芸旅人窩', lat: 23.97339, lng: 121.61482, address: '花蓮縣花蓮市海濱街43號', roomtype1: '四人房 2597', roomtype2: '側面海景豪華雙人房 1645', roomtype3: '三人房 1905', roomtype4: '', roomtype5: '', score: '8.7' },
+        { name: '文創輕旅民宿', lat: 23.97203, lng: 121.60713, address: '花蓮縣花蓮市仁愛街2-11號', roomtype1: '四人房 3505', roomtype2: '小型雙人房 2267', roomtype3: '大型雙人房 2552', score: '8.8' },
+        { name: '春沐七星潭海岸旅店', lat: 24.02667, lng: 121.63083, address: '花蓮縣新城鄉七星街69號', roomtype1: '高級套房 13304', roomtype2: '豪華雙人房 9609', roomtype3: '加大雙人床房 10348', score: '8.8' },
+        { name: '天空之城民宿', lat: 23.66503, lng: 121.54273, address: '花蓮縣豐濱鄉11號', roomtype1: '海景四人房 4242', roomtype2: '海景標準雙人或雙床房 2251', roomtype3: '海景雙人房－附陽台 2251', roomtype4: '海景豪華雙人房－附陽台 2944', roomtype5: '海景三人房 3463', score: '8.8' },
+        { name: '花蓮吉安福星民宿', lat: 23.96636, lng: 121.56138, address: '花蓮縣吉安鄉舊村六街146號', roomtype1: '豪華四人房 1576', roomtype2: '四人房 - 有獨立衛浴 1688', roomtype3: '標準雙人房 1013', roomtype4: '標準雙人房 1463', roomtype5: '雙人房－附私人衛浴 1463', score: '8.8' },
+        { name: '海傳民宿', lat: 23.97158, lng: 121.61373, address: '花蓮縣花蓮市海濱街4號', roomtype1: '海景豪華雙床房 4364', roomtype2: '標準雙人房 4713', roomtype3: '海景豪華雙人房 3315', roomtype4: '海景高級雙人房 3581', roomtype5: '豪華雙人房 3570', score: '8.7' },
+        { name: '花蓮浪淘沙看海民宿', lat: 23.97228, lng: 121.6143, address: '花蓮縣花蓮市海濱街20號', roomtype1: '街景四人房 2251', roomtype2: '海景四人房 2684', roomtype3: '山景雙人房 1558', roomtype4: '海景豪華雙人房－附陽台 2251', roomtype5: '海景豪華雙人房 2251', score: '8.8' },
+        { name: '歐客莊園', lat: 23.99625, lng: 121.57537, address: '花蓮縣花蓮市建興街122號', roomtype1: '經濟四人房 1368', roomtype2: '日式四人房 2234', roomtype3: '客房(兩床) 2540', score: '8.7' },
+        { name: '櫻田野民宿', lat: 23.95988, lng: 121.56303, address: '花蓮縣吉安鄉福興七街8號', roomtype1: '四人房 1978', roomtype2: '雙人房 1582', score: '8.5' },
+        { name: '大方花園小木屋民宿', lat: 23.79568, lng: 121.46824, address: '花蓮縣鳳林鎮榮開路168號', roomtype1: '園景四人房 2771', roomtype2: '雙人房 2165', score: '8.5' },
+        { name: '喜揚揚民宿', lat: 23.32614, lng: 121.32256, address: '花蓮縣玉里鎮興國路一段45號', roomtype1: '四人房－附陽台 2165', roomtype2: '雙人房－附私人衛浴 1840', roomtype3: '標準雙人或雙床房 1247', score: '8.9' },
+        { name: '上大和景觀民宿', lat: 23.67064, lng: 121.42882, address: '花蓮縣光復鄉中學街78號', roomtype1: '四人房 1991', roomtype2: '大型雙床房 1299', score: '8.8' },
+        { name: '發現樹湖', lat: 23.83562, lng: 121.47533, address: '花蓮縣壽豐鄉大湖角1-1號', roomtype1: '標準雙人房 3838', roomtype2: '園景四人房 3483', roomtype3: '奢華四人房 4716', roomtype4: '高級雙人房 4990', score: '8.8' },
+        { name: '艾米爾電梯時尚民宿', lat: 23.99025, lng: 121.60252, address: '花蓮縣花蓮市國興二街100號', roomtype1: '雙人房－附私人衛浴 1603', roomtype2: '豪華房 1905', roomtype3: '雙人房 - 有陽台 2035', roomtype4: '', roomtype5: '', score: '8.5' },
+        { name: '藍色貓頭鷹民宿', lat: 23.99954, lng: 121.59171, address: '花蓮縣花蓮市中山路一段101號', roomtype1: '四人房－附陽台 2797', roomtype2: '園景四人房 2797', roomtype3: '四人房－附陽台 2797', roomtype4: '四人房－附陽台 2797', roomtype5: '雙人房－附陽台 1656', score: '8.8' },
+        { name: '藍屋民宿 ', lat: 23.98191, lng: 121.60769, address: '花蓮縣花蓮市三民街86號', roomtype1: '豪華 Villa 7429', roomtype2: '豪華 Villa 8667', roomtype3: '豪華 Villa 11143', roomtype4: '豪華 Villa 13371', roomtype5: '豪華 Villa 14610', score: '8.7' },
+        { name: '小小鋼琴家民宿', lat: 23.97691, lng: 121.60244, address: '花蓮縣花蓮市民國路23號', roomtype1: '客房(雙人床或兩床) - 有陽台 2295', roomtype2: '雙人房 - 有專用衛浴 2832', roomtype3: '', roomtype4: '', roomtype5: '', score: '8.9' },
+        { name: '幸福圓民宿', lat: 23.89895, lng: 121.55825, address: '花蓮縣壽豐鄉豐坪路三段1135巷16號', roomtype1: '四人房 1732', roomtype2: '家庭套房 2165', roomtype3: '加大雙人床房 866', roomtype4: '標準雙床房 1126', roomtype5: '', score: '8.8' },
+        { name: '法羅米民宿-時尚館', lat: 23.49413, lng: 121.37935, address: '花蓮縣瑞穗鄉中興路80號', roomtype1: '四人房－附陽台 2165', roomtype2: '雙人房－附陽台 1385', roomtype3: '豪華雙人房－附陽台 1385', roomtype4: '', roomtype5: '', score: '8.7' },
+        { name: 'I STAY B&B 愛思黛民宿', lat: 23.99082, lng: 121.60305, address: '花蓮縣花蓮市國興二街66號', roomtype1: '豪華四人房 2424', roomtype2: '豪華雙人房 1299', roomtype3: '', roomtype4: '', roomtype5: '', score: '8.9 ' },
+        { name: '花蓮遊民宿', lat: 24.0392, lng: 121.61067, address: '花蓮縣新城鄉立業街4巷16之1號', roomtype1: '日式四人房 1558', roomtype2: '山景四人房 1732', roomtype3: '標準雙人房 1126', roomtype4: '', roomtype5: '', score: '8.6' },
+
+        { name: '陽光味宿', lat: 25.11062, lng: 121.84233, address: '新北市瑞芳區豎崎路56號', roomtype1: '海景四人房 3107', roomtype2: '海景四人房-有陽台 3706', roomtype3: '標準雙人套房 3833', roomtype4: '海景Xcelerate小型套房(雙人床) 4571', roomtype5: '雙人房－附陽台 1662', score: '8.8' },
+        { name: 'H&九份海論海景民宿', lat: 25.10718, lng: 121.84408, address: '新北市瑞芳區崙頂路59號', roomtype1: '海景四人房 4431', roomtype2: '標準雙人房 5395', roomtype3: '高級雙人房 1888', roomtype4: '山景雙人房 2205', roomtype5: '山景高級雙人房 2041', score: '8.8' },
+        { name: '玫瑰山城', lat: 25.12127, lng: 121.86126, address: '新北市瑞芳區洞頂路155-1號', roomtype1: '四人房 2026', roomtype2: '四人房-禁菸 2244', roomtype3: '四人家庭房 2026', roomtype4: '海景家庭房 2244', roomtype5: '四人房－附共用衛浴 2469', score: '8.6' },
+        { name: '半島海悅渡假會館', lat: 25.28634, lng: 121.53037, address: '新北市石門區崁子腳58之15號', roomtype1: '海景家庭房 4308', roomtype2: '側面海景家庭房 5217', roomtype3: '側海景豪華雙人房 2877', roomtype4: '海景套房 3478', roomtype5: '', score: '8.7' },
+        { name: '這一站幸福', lat: 25.17179, lng: 121.44763, address: '新北市淡水區水源街一段149號', roomtype1: '家庭房 3644', roomtype2: '雙人套房 4762', roomtype3: '標準雙人房 1376', roomtype4: '高級雙人房－有窗 1449', roomtype5: '小型雙人房 1886', score: '8.9' },
+        { name: '十分幸福民宿', lat: 25.04828, lng: 121.78021, address: '新北市平溪區十分街273-6號', roomtype1: '四人房－附淋浴 3810', roomtype2: '家庭房－附淋浴 5195', roomtype3: '家庭房－附私人衛浴 6234', roomtype4: '雙人房－附淋浴 2771', roomtype5: '三人房－附淋浴 3377', score: '8.9' },
+        { name: '烏來溫泉山莊', lat: 24.873, lng: 121.54733, address: '新北市烏來區新烏路五段66號', roomtype1: '山景四人房 4156', roomtype2: '日式四人房 4156', roomtype3: '雙人房－附加床 2771', roomtype4: '山景雙人房 2771', roomtype5: '豪華雙人房－附浴缸 3117', score: '8.7' },
+        { name: 'H&九份山經海景民宿', lat: 25.1069, lng: 121.84223, address: '九份山經海景民宿', roomtype1: '局部海景豪華四人間 3248', roomtype2: '海景豪華房-有浴缸 3954', roomtype3: '標準雙人房-無窗 3395', roomtype4: '高級雙人房 4134', roomtype5: '標準房 1630', score: '8.5' },
+        { name: '台北5號商旅', lat: 25.03794, lng: 121.50828, address: '台北市中正區延平南路160-5號', roomtype1: '精緻四人房 1824', roomtype2: '豪華房(兩床) 2338', roomtype3: '豪華雙人房-禁菸 1792', roomtype4: '', roomtype5: '', score: '8.8' },
+        { name: '九份九重町民宿', lat: 25.10907, lng: 121.84561, address: '新北市瑞芳區基山街29號', roomtype1: '山景豪華房 4788', roomtype2: 'VIP套房 5262', roomtype3: '標準單人房 6580', roomtype4: '標準雙人房 6840', roomtype5: '舒適房(兩床) 1836', score: '8.5' },
+        { name: '烏來足立司拉溫泉會館', lat: 24.87286, lng: 121.54827, address: '新北市烏來區新烏路五段99號', roomtype1: '園景雙人／雙床房 6026', roomtype2: '山景雙人／雙床房 6234', roomtype3: '山景豪華房(雙人床或兩床) 7567', roomtype4: '', roomtype5: '', score: '8.9' },
+        { name: 'OwlStay 故事所 山中', lat: 25.10703, lng: 121.84141, address: '新北市瑞芳區基山街247號', roomtype1: '樹屋 3247', roomtype2: '高級小屋 3510', roomtype3: '小型雙人房-需共用衛浴 3,247', roomtype4: '雙人套房 3510', roomtype5: '標準套房 1277', score: '8.7' },
+        { name: '淡水民宿-台北yes', lat: 25.17112, lng: 121.444, address: '新北市淡水區長興街24號', score: '8.7', roomtype1: '家庭房4 2088', roomtype2: '三人房－附私人衛浴 2424', roomtype3: '經濟雙人房 2147', roomtype4: '標準房(雙人床) 1714', roomtype5: '三臥室客房 1078' },
+        { name: '嫚嫚窩民宿', lat: 25.10941, lng: 121.80832, address: '新北市瑞芳區逢甲路146號', score: '8.8', roomtype1: '經濟四人房 1732', roomtype2: '四人房 - 有獨立衛浴 1558', roomtype3: '標準雙人房 1905', roomtype4: '雙人房－附私人衛浴 1169', roomtype5: '雙人房－附私人衛浴 1169' },
+        { name: '小希臘民宿 (Ample Villa)', lat: 25.12291, lng: 121.86038, address: '新北市瑞芳區洞頂路335號', score: '8.8', roomtype1: '海景別墅 9972', roomtype2: '海景家庭房 12987', roomtype3: '海景家庭別墅 22034' },
+        { name: '魚旅背包客棧 (Fish Hostel)', lat: 24.95414, lng: 121.35559, address: '新北市鶯歌區文化路171號', score: '8.8', roomtype1: '雙人房 1086', roomtype2: '家庭房(2張雙人床) 1368', roomtype3: '四人房 - 有獨立衛浴 2070', roomtype4: '【1張床位】6人宿舍 - 限女性 2251', roomtype5: '【1張床位】8人宿舍 - 有空調/男女混合 2261' },
+        { name: '永遠是晴天民宿', lat: 25.1332, lng: 121.80705, address: '新北市瑞芳區建基路二段27號', roomtype1: '四人房 4000', roomtype2: '標準雙人房 3048', score: '8.6' },
+        { name: '長虹民宿', lat: 25.10825, lng: 121.84419, address: '新北市瑞芳區街頂巷86號', roomtype1: '家庭房－附私人衛浴 2121', score: '8.5' },
+        { name: '九份閒情民宿', lat: 25.10878, lng: 121.84459, address: '新北市瑞芳區市下巷1號', roomtype1: '園景四人房 3645', roomtype2: '花園小屋 3896', roomtype3: '經濟雙人房 6988', roomtype4: '山景豪華雙人房 7481', score: '8.8' },
+        { name: '山嶼海親子民宿', lat: 25.11119, lng: 121.84486, address: '新北市瑞芳區汽車路80號', roomtype1: '標準大房(2張大床) 3891', roomtype2: '山景四人房 5644', roomtype3: '海景單室套房 4825', roomtype4: '標準雙人房 5362', roomtype5: '標準雙人房 8336', score: '8.9' },
+        { name: '溪隱之宿', lat: 25.02504, lng: 121.73785, address: '新北市平溪區公園街15號', roomtype1: '標準房 - 四人用 2468', roomtype2: '豪華四人房 3096', roomtype3: '河景豪華房(兩床) 3290', roomtype4: '標準雙人房 3960', roomtype5: '豪華雙人房 - 有陽台 1703', score: '8.7' },
+        { name: '自然山居', lat: 25.19544, lng: 121.64503, address: '新北市萬里區員潭路16之9號', roomtype1: '四人房－附淋浴 2771', roomtype2: '標準雙人房 1905', score: '8.5' },
+        { name: '旅行邦尼青年旅店', lat: 25.17027, lng: 121.44246, address: '新北市淡水區中山路87巷7號', roomtype1: '家庭雙層床間 1891', roomtype2: '四人房 - 有獨立衛浴 2078', roomtype3: '家庭房 - 可住6人 2147', roomtype4: '家庭房－附衛浴 2746', roomtype5: '【1張床位】6人宿舍 - 限女性 3030', score: '8.7' },
+        { name: '一畝田民宿', lat: 25.25457, lng: 121.51875, address: '新北市三芝區茂長村4鄰陳厝坑19-2號', roomtype1: '四人房 3043', roomtype2: '四人房 3130', roomtype3: '家庭房 4696', roomtype4: '標準雙人房 2261', score: '8.8' },
+        { name: '九份山海觀民宿', lat: 25.10707, lng: 121.84235, address: '新北市瑞芳區基山街217號', roomtype1: '海景家庭房 2909', roomtype2: '海景雙人房 2327', roomtype3: '海景豪華雙人房－附陽台 2618', roomtype4: '海景豪華雙人房 2909', score: '8.5' },
+        { name: 'Sea Cafe九份金瓜石景觀民宿', lat: 25.11949, lng: 121.861, address: '新北市瑞芳區水湳洞明里路166號', roomtype1: '海景豪華房 3610', roomtype2: '海景房 2313', roomtype3: '海景房 2313', score: '8.9' },
+        { name: 'OwlStay 故事所 綠光', lat: 25.10703, lng: 121.84141, address: '新北市瑞芳區基山街247號', roomtype1: '海景尊享豪華房 3031', roomtype2: '海景豪華房 7490', roomtype3: '山景豪華房 7490', roomtype4: '山景雙人房 2081', roomtype5: '海景雙人房－附陽台 3842', score: '8.9' },
+        { name: '輕便露民宿', lat: 25.11058, lng: 121.84533, address: '新北市瑞芳區汽車路21-3號', roomtype1: '海景標準四人間- 帶陽台 3179', roomtype2: '標準四人間- 底層 4166', roomtype3: '標準雙人房 3179', score: '8.7' },
+        { name: '九份小町民宿', lat: 25.1069, lng: 121.84565, address: '新北市瑞芳區崙頂路70號', roomtype1: '標準房 1991', score: '8.6' },
+        { name: '良辰美瑾民宿', lat: 25.02836, lng: 121.83344, address: '新北市雙溪區內平林60號之 5', roomtype1: '四人房－附淋浴 3290', roomtype2: '家庭房－附淋浴 4675', roomtype3: '三人房－附淋浴 2251', roomtype4: '大型雙人房 2251', score: '8.7' },
+        { name: '九份愛琴海民宿', lat: 25.10956, lng: 121.84383, address: '新北市瑞芳區汽車路79-1號', roomtype1: '山景四人房 3117', roomtype2: '海景雙人房 2251', roomtype3: '山景雙人房 2251', roomtype4: '海景雙人房－附陽台 2771', score: '8.6' },
+        { name: 'H& 九份龍門客棧', lat: 25.10741, lng: 121.84424, address: '新北市瑞芳區崙頂路110號, 九份, 台北市, 台灣, 224', roomtype1: '高級四人房 3585', roomtype2: '標準雙人房－無窗 4121', roomtype3: '標準雙人房 1741', roomtype4: '街景雙人房 2059', roomtype5: '豪華雙人房－附陽台 2246', roomtype6: '側面海景豪華雙人房 2468', score: '8.9' },
+        { name: '琚九屋', lat: 25.10916, lng: 121.84399, address: '新北市瑞芳區輕便路121號', roomtype1: '標準四人房 1806', roomtype2: '經典四人房 2579', roomtype3: '標準雙人房 1806', roomtype4: '高級雙人房 2579', score: '8.6' },
+        { name: '緩慢金瓜石', lat: 25.11398, lng: 121.85452, address: '新北市瑞芳區山尖路93-1號 22450', roomtype1: 'Quad Room with Mountain View 8704', score: '8.9' },
+        { name: '井上天花', lat: 25.10682, lng: 121.81013, address: '新北市瑞芳區三爪子坑路6號', roomtype1: '混合宿舍房 2296', roomtype2: '四人房 - 有獨立衛浴 730', roomtype3: '豪華雙人房－附淋浴 2678', roomtype4: '豪華雙人房－附淋浴 2330', roomtype5: '混合宿舍房 3252', score: '8.8' },
+
+        { name: '默默旅宿', lat: 24.32144, lng: 120.69883, address: '台中市后里區安眉路116巷105號', roomtype1: '家庭房 3127', roomtype2: ' 客房(1張大床+1張大上下舖床) - 禁菸 3273', roomtype3: '六人房 3573', roomtype4: '一樓雙人間 3740', roomtype5: '頂樓房 - 有露台 4169', score: '8.5' },
+        { name: '一中自在居', lat: 24.15423, lng: 120.68682, address: '台中市北區錦南街19-15號', roomtype1: '豪華四人房 1143', score: '8.6' },
+        { name: '一中小窩馨', lat: 24.15316, lng: 120.68684, address: '台中市北區錦新街70-2號', roomtype1: '豪華四人房 1237', roomtype2: '經濟雙人房 657', roomtype3: '小型雙人房 667', roomtype4: '標準雙人房 677', roomtype5: '標準雙人房 677', score: '8.6' },
+        { name: '風自然親子時尚旅宿1館', lat: 24.32461, lng: 120.71391, address: '台中市后里區月湖東路358巷102號', roomtype1: '四人房B 4553', roomtype2: '金輝四人房 4553', roomtype3: '四人房 4553', roomtype4: '四人房A 4553', roomtype5: '樓中樓四人房 6043', roomtype6: '樓中樓四人房 6043', roomtype7: '日式客房 6043', score: "8.8" },
+        { name: '逢甲旅樹', lat: 24.17769, lng: 120.6456, address: '台中市西屯區文華路55巷', roomtype1: '豪華四人房 1368', roomtype2: '高級家庭房 3896', roomtype3: '經濟雙人房 693', roomtype4: '豪華雙人房 779', score: '8.6' },
+        { name: '彩虹山舍', lat: 24.25682, lng: 120.80873, address: '台中市石岡區和盛街南眉巷10號', roomtype1: '山景家庭房 3113', roomtype2: '山景四人房 3896', roomtype3: '山景雙人房  2330', roomtype4: '山景家庭房 3113', roomtype5: '山景特大雙人床房 3461', score: '8.7' },
+        { name: '逢甲馨宿', lat: 24.17536, lng: 120.64604, address: '台中市西屯區福星路566號', roomtype1: '經濟四人房 1238', roomtype2: '四人房－附陽台 1333', roomtype3: '家庭房－附陽台 1714', roomtype4: '經濟雙人房 724', roomtype5: '豪華雙人房 762', score: '8.9' },
+        { name: '台中逢甲 Victoria', lat: 24.17579, lng: 120.64143, address: '台中市西屯區至善路101巷23號', roomtype1: '舒適四人房 1354', roomtype2: '高級雙人房 1269', roomtype3: '舒適三人房 857', score: '8.5' },
+        { name: '高美燈塔園區', lat: 24.31251, lng: 120.55126, address: '台中市清水區高美路748號', roomtype1: '高級家庭房 3154', roomtype2: '雙人房－附共用衛浴 4329', roomtype3: '高級雙人房 1742', score: '8.8' },
+        { name: '一中北極熊', lat: 24.15289, lng: 120.68725, address: '台中市北區錦新街35-2號', roomtype1: '四人房－附衛浴 1143', roomtype2: '小型雙人房 800', roomtype3: '雙人房－附私人衛浴 571', roomtype4: '大型雙人房 590', score: '8.6' },
+        { name: '梨的故事館', lat: 24.27143, lng: 120.86403, address: '台中市東勢區東崎路三段688巷62弄168號', score: '8.8', roomtype1: '山景家庭房 4348', roomtype2: '山景家庭房 5217', roomtype3: '山景雙人房 1739', roomtype4: '園景雙人房 2174' },
+        { name: '逢甲比熊屋', lat: 24.18156, lng: 120.64571, address: '台中市西屯區文華路157巷10弄9號4樓', score: '8.6', roomtype1: '四人房 952', roomtype2: '經濟雙人房 693' },
+        { name: '童之心樂園', lat: 24.25624, lng: 120.72734, address: '台中市豐原區豐勢路一段285號', score: '8.6', roomtype1: '家庭房－附淋浴 2487', roomtype2: '家庭房－附淋浴 2487', roomtype3: '家庭房－附私人衛浴 2678', roomtype4: '標準雙人房 1339', roomtype5: '標準雙人房 1339', roomtype6: '家庭房－附淋浴 2678' },
+        { name: '有機書店文旅 - 東勢店', lat: 24.25118, lng: 120.83024, address: '台中市東勢區豐勢路234號', score: '8.8', roomtype1: '【男女混合】客房 - 無床/自助服務 1886', roomtype2: '上下舖床 1056', roomtype3: '日式雙人房 1056' },
+        { name: '一中街星辰', lat: 24.15386, lng: 120.68677, address: '台中市北區一中街249號', score: '8.6', roomtype1: '四人房 - 有獨立衛浴 1126', roomtype2: '雙人房－附私人衛浴 693' },
+        { name: '松鶴山水', lat: 24.17857, lng: 120.98038, address: '台中市和平區東關路一段松鶴二巷4之3號', score: '8.9', roomtype1: '樓中樓四人房 2316', roomtype2: '四人房 2696', roomtype3: '四人房 2316', roomtype4: '雙人房 2696', roomtype5: '標準雙人房 2316' },
+        { name: '逢甲AS House', lat: 24.18085, lng: 120.64385, address: '台中西屯區西安街130巷28號', score: '8.6', roomtype1: '豪華家庭套房 1238', roomtype2: '標準四人房 1238', roomtype3: '四人房 - 有獨立衛浴 1333', roomtype4: '標準雙人房 667', roomtype5: '雙人房－附私人衛浴 762', roomtype6: '三人房－附衛浴 1143' },
+        { name: '昭月民宿', lat: 24.19507, lng: 120.85633, address: '台中市東勢區慶福街39號', score: '8.8', roomtype1: '園景四人房 3636', roomtype2: '高級加大雙人床房－附 2 張加大雙人床 3636', roomtype3: '加大雙人床房 2165', roomtype4: '園景雙人房 2165' },
+        { name: '168活水源民宿', lat: 24.18312, lng: 120.84178, address: '台中市東勢區東關路四段1078巷51號', score: '8.6', roomtype1: '標準公寓 6783' },
+
+        { name: '高雄南喃至嶼 (Nan Nan)', lat: 22.63263, lng: 120.30316, address: '高雄市新興區南華路101號', roomtype1: '經典四人房 2455', roomtype2: '高級四人房－有浴缸 3557', roomtype3: '雙臥室套房 2836', roomtype4: '樓中樓家庭套房 3794', roomtype5: '樓中樓套房 3544', score: '8.9' },
+        { name: '大港小住', lat: 22.6241, lng: 120.30232, address: '高雄市新興區文橫一路5巷33號', roomtype1: '豪華套房 1412', roomtype2: '陽光客房 1412', roomtype3: '高級雙人房 2835', roomtype4: '雙人房－附陽台 3232', roomtype5: '經濟雙人房 2835', score: '8.7' },
+        { name: '明山莊', lat: 22.72555, lng: 120.42881, address: '高雄市大樹區三和路120-1號', roomtype1: '標準四人房 3948', roomtype2: '雙人房 3126', score: '8.5' },
+        { name: 'A.R.T.(時，間 A Room Time)', lat: 22.62301, lng: 120.30234, address: '高雄市新興區文橫二路167巷43號', roomtype1: '經典雙人房 1066', roomtype2: '英國工業風雙人房 2338', roomtype3: '設計風格雙人套房 1558', roomtype4: 'Loft雙人房 1325', roomtype5: '藝術雙人房 1252', score: '8.9' },
+        { name: '莉莉的家 Lilys - 高雄橋頭老街民宿', lat: 22.75836, lng: 120.31067, address: '高雄市橋頭區橋頭路81號', roomtype1: '豪華家庭房 2696', roomtype2: '豪華雙人房－附浴缸 1809', score: '8.7' },
+        { name: '美濃雲山居民宿', lat: 22.86684, lng: 120.55748, address: '高雄市美濃區龍山街56-1號', roomtype1: '經濟四人房 2424', roomtype2: '舒適四人房 2771', roomtype3: '單人房－附私人衛浴 952', roomtype4: '雙人房－附露台 1732', roomtype5: '園景三人房 1991', score: '8.5' },
+        { name: '高雄親子溜滑梯High Fun旅店', lat: 22.62569, lng: 120.35258, address: '高雄市鳳山區平等路3號', roomtype1: '奢華四人房 4179', roomtype2: '豪華四人房 3512', score: '8.5' },
+        { name: '高雄Do咕', lat: 22.62383, lng: 120.28459, address: '高雄市鹽埕區莒光街173號', roomtype1: '豪華公寓 4901', score: '8.9' },
+        { name: '涵園民宿', lat: 22.86789, lng: 120.54736, address: '高雄市美濃區五穀街7-11號', score: '8.9', roomtype1: '園景四人房 3983', roomtype2: '標準家庭房 3377', roomtype3: '豪華雙人房 4329', roomtype4: '高級雙人房  2165' },
+        { name: '鳳山79背包客', lat: 22.61953, lng: 120.36445, address: '高雄市鳳山區東一巷79號', score: '8.7', roomtype1: '四人房-可住4人 2447', roomtype2: '六人房 3491', roomtype3: '女性客房 690', roomtype4: '合住房 690', roomtype5: '客房 1615' },
+
+        { name: '迎曦醉月主題會館', lat: 22.66612, lng: 120.29812, address: '高雄市鼓山區明倫路115號', score: '8.6', roomtype1: '四人房－附浴缸 2328', roomtype2: '豪華四人房 1799', roomtype3: '豪華雙人房－附浴缸 2434', roomtype4: '三人房－附浴缸 1693' },
+        { name: '餅弄民宿', lat: 22.62866, lng: 120.28476, address: '高雄市鹽埕區大有街45-1號', score: '8.7', roomtype1: '雙臥室套房 1390' },
+        { name: '鶴宮寓', lat: 22.63052, lng: 120.30039, address: '高雄市新興區中正四路41號中正四路41號2樓', score: '8.9', roomtype1: '6 床混合宿舍房 4377', roomtype2: '家庭房－附私人衛浴 4468', roomtype3: '上下舖房－附私人衛浴 2546', roomtype4: '雙床房－附私人衛浴 2820', roomtype5: '雙人房－附私人衛浴 2870' },
+        { name: '海軍官邸四號院', lat: 22.69353, lng: 120.29178, address: '高雄市左營區緯12路四號', score: '8.9', roomtype1: '家庭房－附私人衛浴 3532', roomtype2: '園景四人房 4225', roomtype3: '園景家庭房 10892', roomtype4: '雙人房－附外部私人衛浴 2061', roomtype5: '標準雙人房 2320' },
+        { name: '老媽寶眷村民宿 Old Mamaboy Marines Hostel', lat: 22.69486, lng: 120.29167, address: '高雄市左營區建業新村54之8號54-7號', score: '8.5', roomtype1: '標準雙人房 7238' },
+        { name: '興達港民宿', lat: 22.87232, lng: 120.19212, address: '高雄市茄萣區健康路318號', score: '8.8', roomtype1: '海景四人房 1991', roomtype2: '雙人房－附私人衛浴 1602' },
+    ];
+    var rank90to94_homestay = [
+        { name: '旅人の宿', lat: 23.98568, lng: 121.60083, address: '花蓮縣花蓮市建中街56號', roomtype1: '四人房－附共用衛浴 1086', roomtype2: '四人房－附衛浴 1207', roomtype3: '四人房－附浴缸 1478', roomtype4: '五臥室度假屋 1642', roomtype5: '雙人房－附私人衛浴 1478', roomtype6: '加大雙人床房 1642', score: '9.2' },
+        { name: '達魯瑪民宿', lat: 23.9803, lng: 121.60563, address: '花蓮縣花蓮市大同街31號', roomtype1: '標準四人房 1983', roomtype2: '經典四人房 2157', roomtype3: '豪華雙人房 1461', roomtype4: '標準三人房 1722', score: '9.2' },
+        { name: '玉里東好民宿', lat: 23.33221, lng: 121.31853, address: '花蓮縣玉里鎮仁愛路一段199號', roomtype1: '四人房 2580', roomtype2: '雙人房－附陽台 1974', roomtype3: '', roomtype4: '', roomtype5: '', score: '9.3' },
+        { name: '東華八號民宿', lat: 23.88739, lng: 121.53981, address: '花蓮縣壽豐鄉平和村三區8號', roomtype1: '四人房 - 有獨立衛浴 1558', roomtype2: '四人房 - 有獨立衛浴 1299', roomtype3: '雙人房－附私人衛浴 1645', roomtype4: '雙人房－附私人衛浴 693', roomtype5: '', score: '9.0' },
+        { name: '迴音谷森林民宿', lat: 24.0171, lng: 121.57794, address: '花蓮縣花蓮市國福街289巷168弄21號', roomtype1: '四人房 - 有獨立衛浴 9524', roomtype2: '山景雙人房 5108', roomtype3: '山景雙人房 5108', roomtype4: '', roomtype5: '', score: '9.2' },
+        { name: '白色地中海民宿', lat: 24.02509, lng: 121.63286, address: '花蓮縣新城鄉七星街19之1號', roomtype1: '四人房 3577', roomtype2: '海景雙人房 4261', roomtype3: '雙人房 - 有陽台 2710', roomtype4: '海景豪華雙人房 3043', score: '9.1' },
+        { name: '歡迎光臨_Welcome Hostel', lat: 23.97645, lng: 121.60925, address: '花蓮縣花蓮市大禹街4號', roomtype1: '6 床女性宿舍房的 1 個床位 416', score: '9.2' },
+        { name: '瑞穗伍壹民宿', lat: 23.4948, lng: 121.38022, address: '花蓮縣瑞穗鄉中興路51號', roomtype1: '標準四人房 2165', roomtype2: '標準雙人房 1385', score: '9.4' },
+        { name: 'S.E.A.民宿', lat: 23.97347, lng: 121.61515, address: '花蓮縣花蓮市海濱街72號', roomtype1: '海景豪華雙床房 11169', roomtype2: '標準雙人房－附陽台和浴缸 3896', roomtype3: '豪華雙人房－附陽台和浴缸 4502', roomtype4: '豪華海景雙人房－附陽台和浴缸 5195', score: '9.1' },
+        { name: '去七星潭海景民宿', lat: 24.02709, lng: 121.63073, address: '花蓮縣新城鄉明潭街8-1號', roomtype1: '四人房－附陽台 3429', roomtype2: '海景四人房 2762', roomtype3: '海景四人房 4286', roomtype4: '雙人房－附陽台 3619', roomtype5: '海景雙人房 4952', score: '9.1' },
+        { name: '愛放假 Pourquoi pas', lat: 23.97451, lng: 121.61465, address: '花蓮縣花蓮市北濱街26號', roomtype1: '四人房－附陽台 2210', roomtype2: '雙人房－附私人衛浴 1448', roomtype3: '雙人房－附私人衛浴 1562', roomtype4: '雙人房－附陽台 1790', roomtype5: '海景雙人房－附陽台 1867', score: '9.0' },
+        { name: '茉白電梯民宿', lat: 23.97329, lng: 121.6137, address: '花蓮縣花蓮市北濱街8號', roomtype1: '山景四人房 4095', roomtype2: '雙人房 2381', roomtype3: '雙人房 2381', roomtype4: '標準雙人房 2381', score: '9.2' },
+        { name: '漫庭民宿', lat: 23.99627, lng: 121.59723, address: '花蓮縣花蓮市富陽路109號', roomtype1: '四人房－附衛浴 2580', roomtype2: '標準雙床房 1801', roomtype3: '加大雙人床房－附陽台 1801', score: '9.3' },
+        { name: '單行道民宿', lat: 23.97518, lng: 121.61606, address: '花蓮縣花蓮市海濱街103號', roomtype1: '海景雙人房－附陽台 4416', roomtype2: '標準雙人房 3030', roomtype3: '海景豪華雙人房－附陽台 1714', roomtype4: '海景豪華雙人房－附陽台 3290', score: '9.2' },
+        { name: '花蓮齊愔居電梯民宿', lat: 23.98725, lng: 121.59988, address: '花蓮縣花蓮市國興五街212號', roomtype1: '四人房－附陽台 1974', roomtype2: '附陽台的公寓 2078', roomtype3: '標準雙人房 4762', roomtype4: '市景標準雙床房 5195', roomtype5: '標準雙床房 1212', score: '9.4' },
+        { name: '幸福列車民宿', lat: 24.11722, lng: 121.63236, address: '花蓮縣秀林鄉秀林村民治78之30號', roomtype1: '標準四人房 3030', roomtype2: '標準雙人或雙床房 1905', score: '9.4' },
+        { name: '菓香101民宿', lat: 23.86905, lng: 121.50886, address: '花蓮縣壽豐鄉中山路五段101號', roomtype1: '雙人／雙床房－附陽台 1913', roomtype2: '豪華雙人／雙床房－附陽台 2087', roomtype3: '雙人或雙床房－附衛浴 1478', roomtype4: '雙人房－附私人衛浴 1478', score: '9.0' },
+        { name: '東門小棧', lat: 23.97259, lng: 121.60793, address: '花蓮縣花蓮市廣東街276號', roomtype1: '四人房－附露台 3478', roomtype2: '四人房－附陽台 3478', roomtype3: '雙人房－附陽台 2261', roomtype4: '三人房－附陽台 2957', score: '9.2' },
+        { name: '美村民宿', lat: 23.86819, lng: 121.55441, address: '花蓮縣壽豐鄉月眉路三段61-2號', roomtype1: '景觀四人房 3030', roomtype2: '標準雙人房 2485', roomtype3: '家庭房 3030', roomtype4: '雙人房 - 需共用浴室 2078', roomtype5: '景觀雙人房 3810', score: '9.0' },
+        { name: '童心童趣親子民宿', lat: 23.96449, lng: 121.58775, address: '花蓮縣吉安鄉吉豐路一段16巷1號', roomtype1: '四人房 - 有陽台 3463', roomtype2: '豪華家庭套房 3478', roomtype3: '家庭房 - 有陽台 3810', score: '9.1' },
+        { name: 'Coffee&Drinks bnb公主咖啡', lat: 23.97381, lng: 121.60056, address: '花蓮縣花蓮市中福路197-1號1樓', roomtype1: '舒適四人房 2338', roomtype2: '雙人房－附私人衛浴 1714', score: '9.4' },
+        { name: '花蓮BV文旅民宿', lat: 23.98563, lng: 121.60517, address: '花蓮縣花蓮市明智街108-1號', roomtype1: '家庭套房－附陽台 2532', roomtype2: '家庭房－附浴缸 2597', roomtype3: '加大雙人床房 1740', score: '9.4' },
+        { name: '靜樹湖民宿', lat: 23.84255, lng: 121.48067, address: '花蓮壽豐鄉樹湖村荖山43-10號', roomtype1: '高級四人房 5437', roomtype2: '樓中樓四人房 5437', roomtype3: '雙人房 5351', roomtype4: '高級三人房 3792', score: '9.3' },
+        { name: '蒔菓民宿', lat: 24.05117, lng: 121.59593, address: '花蓮縣秀林鄉佳民101之12號', roomtype1: '四人房 2504', roomtype2: '雙人房 1896', score: '9.1' },
+        { name: '佑尼可海景民宿 Unique Sea View Homestay', lat: 23.97259, lng: 121.6145, address: '花蓮縣花蓮市海濱街38-1號', roomtype1: '海景四人房－附陽台 3723', roomtype2: '山景雙人房－附陽台 2078', roomtype3: '海景雙人房－附陽台 2597', roomtype4: '海景豪華雙人房－附陽台 2857', roomtype5: '', score: '9.1' },
+        { name: '迦南奇緣民宿', lat: 23.81598, lng: 121.4944, address: '花蓮縣壽豐鄉牧場90-28號', roomtype1: '四人房－附淋浴 2758', roomtype2: '四人房 2980', roomtype3: '雙人房 2165', roomtype4: '', roomtype5: '', score: '9.0' },
+        { name: '且市隱民宿', lat: 23.97589, lng: 121.60898, address: '花蓮縣花蓮市中華路43巷3之1號', roomtype1: '四人房 3048', roomtype2: '加大雙人床房－附陽台 1714', roomtype3: '大型雙人房 2095', roomtype4: '', roomtype5: '', score: '9.2' },
+        { name: '牛轉乾坤(better future) 民宿', lat: 23.97388, lng: 121.59855, address: '花蓮縣花蓮市榮正街78巷20號', roomtype1: '四人房－附浴缸 1983', roomtype2: '家庭套房－附陽台 3652', roomtype3: '豪華雙人房 1113', roomtype4: '豪華雙人房 1113', roomtype5: '', score: '9.1' },
+        { name: '一宿來民宿', lat: 23.83108, lng: 121.5073, address: '花蓮縣壽豐鄉豐坪路二段12-2號', roomtype1: '四人房 1732', roomtype2: '雙人房 1385', roomtype3: '', roomtype4: '', roomtype5: '', score: '9.3' },
+        { name: '弘果民宿', lat: 23.49752, lng: 121.37731, address: '花蓮縣瑞穗鄉中山路一段16號', roomtype1: '家庭房 1948', roomtype2: '', roomtype3: '', roomtype4: '', roomtype5: '', score: '9.0' }, ,
+        { name: '淳境之光民宿', lat: 23.90514, lng: 121.52822, address: '花蓮縣壽豐鄉路內126號', roomtype1: '四人房－附陽台 3304', roomtype2: '雙人房－附陽台 2435', roomtype3: '', roomtype4: '', roomtype5: '', score: '9.3' },
+        { name: '七星潭118海景民宿', lat: 24.02658, lng: 121.62981, address: '花蓮縣新城鄉七星街118號', roomtype1: '四人房－附陽台 2857', roomtype2: '海景四人房 3238', roomtype3: '雙人雙床房－附陽台 1905', roomtype4: '海景豪華雙人房－附陽台 2095', roomtype5: '', score: '9.2' },
+        { name: '橄欖樹農坊', lat: 23.79906, lng: 121.47693, address: '花蓮縣鳳林鎮永豐路37號', roomtype1: '樓中樓四人房 3304', roomtype2: '加大雙人床房 2609', roomtype3: '', roomtype4: '', roomtype5: '', score: '9.3' },
+        { name: '藝田民宿', lat: 23.84036, lng: 121.50957, address: '花蓮縣壽豐鄉中山路325號', roomtype1: '園景四人房 3463', roomtype2: '山景雙人房－附陽台 3117', roomtype3: '加大雙人床房－附陽台 2424', roomtype4: '', roomtype5: '', score: '9.3' },
+        { name: 'Light Time B&B', lat: 23.9938, lng: 121.59486, address: '花蓮縣花蓮市國富十街220號', roomtype1: '四人房 1732', roomtype2: '家庭套房 2165', roomtype3: '加大雙人床房 866', roomtype4: '標準雙床房 1126', roomtype5: '', score: '9.0' },
+        { name: '輕井澤民宿', lat: 23.96688, lng: 121.60029, address: '花蓮縣花蓮市重慶路77號', roomtype1: '家庭房 2340', roomtype2: '四人房－附陽台 2424', roomtype3: '雙人房 1510', roomtype4: '', roomtype5: '', score: '9.0' },
+        { name: '雅漾民宿', lat: 23.97198, lng: 121.60618, address: '花蓮縣花蓮市信義街8號', roomtype1: '四人房 - 有陽台 3551', roomtype2: '四人房-附露臺 3896', roomtype3: '客房(特大床) 3551', roomtype4: '雙人房 - 有陽台 3896', roomtype5: '奢華特大雙人床房 2592', score: '9.2' },
+
+        { name: '95行館', lat: 25.10879, lng: 121.84488, address: '新北市瑞芳區輕便路95號', roomtype1: '豪華套房 1875', roomtype2: '海景豪華房 2387', roomtype3: '海景高級雙人房 2671', roomtype4: '海景頂級房 3125', roomtype5: '海景高級房 3125', score: '9.2' },
+        { name: '金漫會館', lat: 25.10899, lng: 121.85733, address: '新北市瑞芳區祈堂路197號', roomtype1: '頂級套房附浴缸 4855', roomtype2: '山景家庭房 4855', roomtype3: '庭園景高級房(特大床) 6783', roomtype4: '豪華三人房 3394', roomtype5: '', score: '9.2' },
+        { name: '九份溫莎堡日光涵館民宿', lat: 25.10734, lng: 121.84259, address: '新北市瑞芳區基山街200號', roomtype1: '海景家庭房 4898', roomtype2: '海景雙人房 5714', roomtype3: '海景豪華雙人房 2925', roomtype4: '', roomtype5: '', score: '9.2' },
+        { name: '九份溫莎堡微風館', lat: 25.10777, lng: 121.8423, address: '新北市瑞芳區石碑巷63號', roomtype1: '四人房 3495', roomtype2: '海景家庭房 4069', score: '9.2' },
+        { name: '不厭晴民宿', lat: 25.11093, lng: 121.84602, address: '新北市瑞芳區汽車路9-12號', roomtype1: '海景超豪華四人房 6476', roomtype2: '雙人房 3238', roomtype3: '雙人房 3238', roomtype4: '海景雙人房 4571', roomtype5: '海景雙人房－附陽台  5524', score: '9.0' },
+        { name: '九份慕心原宿', lat: 25.10659, lng: 121.84561, address: '新北市瑞芳區崙頂路21號', roomtype1: '豪華房(兩床) - 有窗 2403', roomtype2: '雙人房 - 2人 (Double - 2pax) 1,526', roomtype3: '豪華房-有窗 1726', roomtype4: '高級房-禁菸 1726', roomtype5: '豪華房-有浴缸 1726', score: '9.0' },
+        { name: '九份溫莎堡香草庭院民宿', lat: 25.10903, lng: 121.84521, address: '新北市瑞芳區基山街62號', roomtype1: '景觀四人房 4156', roomtype2: '家庭房 4156', roomtype3: '景觀三人房 3532', roomtype4: '', roomtype5: '', score: '9.4' },
+        { name: '九份山午', lat: 25.10967, lng: 121.84469, address: '新北市瑞芳區汽車路35之1號', roomtype1: '四人房-有浴缸 4348', roomtype2: '雙人套房 4087', roomtype3: '雙人房(小型雙人床)-禁菸 2174', roomtype4: '雙床房B-禁煙 2174', roomtype5: '加大雙人床套房 2609', score: '9.0' },
+        { name: 'H& 九份龍門客棧', lat: 25.10741, lng: 121.84424, address: '新北市瑞芳區崙頂路110號', score: '9.2', roomtype1: '高級四人房 2878', roomtype2: '標準雙人房 - 無窗 1276', roomtype3: '標準雙人房 1509', roomtype4: '街景雙人房 1647', roomtype5: '豪華雙人房 - 有陽台 1809' },
+        { name: '九份貓窩', lat: 25.10884, lng: 121.8458, address: '新北市瑞芳區基山街烏勢巷25號', score: '9.0', roomtype1: '四人房 1727', roomtype2: '雙人房 999', roomtype3: '側面海景房 1249', roomtype4: '海景雙人套房 1249', roomtype5: '海景雙人房 1249' },
+        { name: '九份岑品民宿', lat: 25.10823, lng: 121.84592, address: '新北市瑞芳區烏勢巷81號', score: '9.0', roomtype1: '和洋室客房 - 可住4人/禁菸 2404', roomtype2: '家庭房 - 可住4人 3614', roomtype3: '雙人房 - 可住2人 1603', roomtype4: '雙人房 - 2人 2445' },
+        { name: '金瓜石101民宿', lat: 25.10896, lng: 121.8601, address: '新北勢瑞芳區祈堂路101號', score: '9.2', roomtype1: '四人房 3723', roomtype2: '山景四人房 3723', roomtype3: '山景四人間- A 3723', roomtype4: '山景雙人間- C 2424', roomtype5: '山景雙人間-B 2424' },
+        { name: '夜海民宿', lat: 25.10954, lng: 121.84392, address: '新北市瑞芳區汽車路79號', roomtype1: '海景四人房 3896', roomtype2: '標準雙人房 3117', score: '9.0' },
+        { name: '九份慢慢民宿', lat: 25.10747, lng: 121.84112, address: '新北市瑞芳區基山街267號', roomtype1: '標準雙人房－附 2 張雙人床 2840', roomtype2: '三人房－附露台 2320', roomtype3: '海景四人房 3439', roomtype4: '標準雙人房 3822', score: '9.0' },
+        { name: '天馬旅宿', lat: 25.10808, lng: 121.85551, address: '新北市瑞芳區新山路35號', roomtype1: '豪華四人房 2875', roomtype2: '日式四人房 4091', roomtype3: '景觀雙人房 2875', roomtype4: '園景雙人房 4091', score: '9.0' },
+        { name: '聽風的歌民宿', lat: 25.10692, lng: 121.84475, address: '新北市瑞芳區崙頂路111號', roomtype1: '海景四人房 6926', roomtype2: '頂級四人房 10390', roomtype3: '海景豪華雙人或雙床房 4329', score: '9.1' },
+        { name: '樹之城檜木民宿', lat: 24.92977, lng: 121.40779, address: '新北市三峽區溪東路218巷46號', roomtype1: '園景四人房 3619', roomtype2: '豪華雙人房－附陽台 2667', roomtype3: '豪華家庭套房 3143', score: '9.0' },
+        { name: '悠然居', lat: 25.11151, lng: 121.84506, address: '新北市瑞芳區汽車路76號', roomtype1: '四人房 2424', roomtype2: '標準家庭房 3290', roomtype3: '雙人房 1558', score: '9.0' },
+        { name: '想住就住民宿', lat: 25.10997, lng: 121.84534, address: '新北市瑞芳區汽車路24號', roomtype1: '四人房 - 有獨立衛浴 2597', roomtype2: '四人房 - 有獨立衛浴 3030', roomtype3: '雙人房－附私人衛浴 1732', roomtype4: '雙人房－附私人衛浴 2165', score: '9.2' },
+        { name: '淡水棧民宿', lat: 25.17125, lng: 121.444, address: '新北市淡水區長興街31號', roomtype1: '挑高套房 2424', roomtype2: '豪華KTV房 3290', roomtype3: '樓中樓家庭房 3619', roomtype4: '高級家庭房 3948', roomtype5: '公寓（1名成人） 4277', score: '9.2' },
+        { name: '雲山水小築', lat: 25.11503, lng: 121.85402, address: '新北市瑞芳區石山里山尖路72-1號', roomtype1: '海景別墅 6926', score: '9.0' },
+
+        { name: '想窩11餐旅館', lat: 24.2197, lng: 120.57832, address: '台中市沙鹿區東晉一街11號', roomtype1: '標準四人房 - 禁菸 3829', roomtype2: '標準雙人套房 4862', score: '9.1' },
+        { name: '和和旅宿', lat: 24.32157, lng: 120.69957, address: '台中市后里區安眉路134巷2弄19號', roomtype1: '標準四人房 3324', roomtype2: '商務雙床房 3891', roomtype3: '雙人房 1888', roomtype4: '客房(兩床) 2286', roomtype5: '三人房 1888', score: '9.1' },
+        { name: '雲山初露民宿 Kumokuru', lat: 24.29212, lng: 120.807, address: '台中市東勢區東蘭路石排巷26-118號', roomtype1: '客房(2張大床)-有陽台 3420', roomtype2: '山景四人房 3420', roomtype3: '雙人房-有窗 2088', roomtype4: '山景雙人房 2088', roomtype5: '雙人房-有陽台 2088', score: '9.2' },
+        { name: '歐森View包棟Villa', lat: 24.21223, lng: 120.8744, address: '台中市東勢區東坑路石麻巷101號', score: '9.2', roomtype1: '三臥室房屋 11238' },
+        { name: '織丘莊園', lat: 24.13696, lng: 120.81302, address: '台中市太平區山田路長青巷28號', score: '9.3', roomtype1: '四人房－附陽台 6109', roomtype2: '山景四人房 6926', roomtype3: '山景雙人房 6109' },
+        { name: '山沐斯達民宿', lat: 24.23307, lng: 120.78542, address: '台中市新社區崑南街29-7號', score: '9.1', roomtype1: '山景家庭房 3117' },
+        { name: '花田民宿', lat: 24.22293, lng: 120.80543, address: '台中市新社區興中街17-6號', score: '9.3', roomtype1: '經典四人房 4190', roomtype2: '雙人房 3048' },
+        { name: '一中宿屋', lat: 24.1533, lng: 120.68723, address: '台中市北區一中街138-11號三樓', score: '9.3', roomtype1: '四人房 - 有獨立衛浴 1295', roomtype2: '標準雙人房 762', roomtype3: '大型雙人房 914' },
+
+        { name: '塩晨•宿', lat: 22.62667, lng: 120.28442, address: '高雄市鹽埕區大公路29號', roomtype1: '標準四人房 1986', roomtype2: '標準雙人房 2961', score: '9.0' },
+        { name: '吃吃睡設計宅 EATzzZ Hostel', lat: 22.66244, lng: 120.29689, address: '高雄市鼓山區華榮路49號', roomtype1: '家庭房 2664', score: '9.2' },
+        { name: '望峰息心民宿', lat: 22.9062, lng: 120.54111, address: '高雄市美濃區雙峰街8之18號', roomtype1: '四人房 2043', roomtype2: '單人房 1177', roomtype3: '雙人房－附私人衛浴 1524', score: '9.2' },
+        { name: '月緹電梯主題套房', lat: 22.6697, lng: 120.29791, address: '高雄市左營區南屏路241號', roomtype1: '四人房 2669', roomtype2: '經典雙人房 2840', roomtype3: '高級房(雙人床或兩床) 1637', roomtype4: '豪華房(大床) 1660', roomtype5: '三人房 1714', score: '9.0' },
+        { name: '隱君子的撒野', lat: 22.81127, lng: 120.34077, address: '高雄市岡山區三和里菜寮路2-26號', score: '9.4', roomtype1: '家庭房 5455', roomtype2: '6 床宿舍房的單人床  779', roomtype3: '雙人房 2424' },
+        { name: '自由宿-鹽埕館', lat: 22.62152, lng: 120.28425, address: '高雄市鹽埕區光榮街37巷1號', score: '9.2', roomtype1: '豪華四人房 2115', roomtype2: '標準雙人房 1231', roomtype3: '豪華雙人房 1520' },
+        { name: '六合911包棟民宿', lat: 22.63274, lng: 120.2996, address: '高雄市新興區南台路91號', score: '9.2', roomtype1: '整棟住宅 13048' },
+        { name: '香蕉與黑膠三合院', lat: 22.91791, lng: 120.5619, address: '高雄市美濃區興隆一街112巷34號', score: '9.1', roomtype1: '雙床房－附私人衛浴 7352', roomtype2: '頂級四人房 (Premium Quadruple Room) 7739', roomtype3: '家庭房－附露台 7352' },
+        { name: '茄萣黃金海岸民宿', lat: 22.87525, lng: 120.19337, address: '高雄市茄萣區民族路178號', score: '9.0', roomtype1: '四人房 - 有獨立衛浴 2000', roomtype2: '雙人房－附私人衛浴 1667' },
+    ];
+    var rank95to100_homestay = [
+        { name: '宿里旅行舍', lat: 23.97533, lng: 121.61577, address: '花蓮縣花蓮市光華街10號', roomtype1: '四人房（單人床*4）－附陽臺 3324', roomtype2: '四人房（雙人床*2）－附陽臺2371', roomtype3: '加大雙人床房－附陽臺 3324', score: '9.8' },
+        { name: '像個家plus民宿', lat: 23.97376, lng: 121.61447, address: '花蓮縣花蓮市北濱街12巷16號', roomtype1: '家庭房－附浴缸 3636', roomtype2: '高級房(兩床) 6646', roomtype3: '雙人房－附加床 2338', roomtype4: '豪華雙人房－附浴缸 2468', roomtype5: '', score: '9.7' },
+        { name: '渡日號Dotoday.teahouse', lat: 23.97471, lng: 121.61482, address: '花蓮縣花蓮市北濱街34號', roomtype1: '加大雙人床房 3463', roomtype2: '加大雙人床房－附陽台 2944', roomtype3: '加大雙人床房 2165', score: '9.5' },
+        { name: '山禾曙旅宿', lat: 23.99441, lng: 121.60803, address: '花蓮縣花蓮市國盛五街67號', roomtype1: '日式四人房 4430', roomtype2: '豪華四人房 7623', roomtype3: '雙人／雙床房 8472', roomtype4: '高級雙人房 5673', roomtype5: '豪華雙人房－附浴缸 5673', score: '9.5' },
+        { name: '太魯閣767農莊民宿', lat: 24.1232, lng: 121.63931, address: '花蓮縣秀林鄉秀林村民治35-22號', roomtype1: '山景四人房 5314', score: '9.9' },
+
+        { name: '魚礁十五號民宿 Fish Home 15', lat: 25.13303, lng: 121.80719, address: '新北市瑞芳區建基路二段15號2樓', roomtype1: '海景家庭房 3295', roomtype2: '四人房－附浴缸 3896', roomtype3: '海景房-有陽台 3896', roomtype4: '海景房 2197', roomtype5: '', score: '9.5' },
+        { name: '酒內民宿', lat: 25.04528, lng: 121.6212, address: '新北市汐止區國興街21巷13號', roomtype1: '豪華家庭套房 4130', score: '9.6' },
+        { name: '九山八海民宿', lat: 25.10786, lng: 121.84491, address: '新北市瑞芳區街頂巷61之2號', roomtype1: '景觀雙人房 2775', roomtype2: '四人房 - 有衛浴 3664', roomtype3: '標準雙人房 2920', score: '9.6' },
+
+        { name: '海軍官邸三號院', lat: 22.6939, lng: 120.29169, address: '高雄市左營區3號', roomtype1: '四人房－附外部私人衛浴 3186', roomtype2: '四人房－附外部私人衛浴 4052', roomtype3: '豪華園景平房小屋 10459', score: '9.5' },
+        { name: 'No.1899 人文旅宿', lat: 22.89686, lng: 120.55359, address: '高雄市美濃區民族路18巷9之9號', score: '9.6', roomtype1: '四人房－附陽台 4696', roomtype2: '四人房－附陽台 4870', roomtype3: '雙人房－附私人衛浴 3304', roomtype4: '豪華雙人房－附陽台 3652' },
+        { name: '登雲Villa民宿', lat: 22.96529, lng: 120.53706, address: '高雄市杉林區清水路朝雲巷20號', score: '9.6', roomtype1: '家庭房－附淋浴 5195', roomtype2: '豪華四人房  6061', roomtype3: '豪華雙人房－附浴缸 4762', roomtype4: '園景特大雙人床房 5195' },
+        { name: '迎曦醉月電梯民宿', lat: 22.66963, lng: 120.29352, address: '高雄市鼓山區華泰路226號', score: '9.8', roomtype1: '舒適四人房 2434', roomtype2: '豪華四人房 2434', roomtype3: '奢華四人房 1799', roomtype4: '豪華雙人房 2434', roomtype5: '高級雙人房 1799' },
+        { name: 'J.S 23溜滑梯親子民宿', lat: 22.70904, lng: 120.29945, address: '高雄市楠梓區新昌街10巷15弄23號', score: '9.9', roomtype1: '四人房－附衛浴 3290', roomtype2: '四人房－附陽台 3896', roomtype3: '家庭房－附陽台 5368', roomtype4: '標準雙人房 3030', roomtype5: '三人房－附陽台 3896' },
+    ];
+
+    var single_homestay = [
+        { name: '九份山旅', lat: 25.10641, lng: 121.84197, address: '新北市瑞芳區基山街204號', roomtype1: '單人房 3066', score: '7.4' },
+        { name: '夢想旅行 (Dream Travel)', lat: 25.04091, lng: 121.50613, address: '台北市萬華區西寧南路211號', score: '7.1', roomtype1: '單人房 - 需共用衛浴 435' },
+        { name: '台中住宿逢甲 Cinema lnn', lat: 24.17613, lng: 120.64709, address: '台中市西屯區慶和街51號', roomtype1: '男性宿舍房的 1 個上下鋪床位 322', score: '7.9' },
+        { name: '巢鴨青年館', lat: 22.63911, lng: 120.30065, address: '高雄市三民區建國三路46巷19-3號', score: '7.9', roomtype1: '【按床位計價】6人女生宿舍 1117', roomtype2: '【1張床位】8人宿舍-男女混合 1230', roomtype3: '單人房-需共用衛浴 289' },
+        { name: '岸渡陳艙', lat: 24.31158, lng: 120.56559, address: '台中市清水區三美路262號', score: '7.0', roomtype1: '8 床混合宿舍房 1732' },
+        { name: '花蓮安隱民宿', lat: 23.99452, lng: 121.60654, address: '花蓮縣花蓮市國民九街50號', roomtype1: '8 床混合宿舍房的 1 個床位 277', score: '8.0' },
+        { name: '苓旅萬年-LIN INN Wan Nian', lat: 25.04351, lng: 121.50589, address: '台北市萬華區西寧南路70號7樓', score: '8.3', roomtype1: '經濟單人房 1205' }
+    ];
+
+    var doublebelow1000_homestay = [
+        { name: '梅林親水岸', lat: 24.15295, lng: 120.81048, address: '台中市新社區南華街28-1號', roomtype1: '雙人房-有淋浴間/禁菸 883', score: '6.7' },
+        { name: '小巷微宿', lat: 24.17701, lng: 120.64283, address: '台中市西屯區西屯路二段291號', roomtype1: '標準雙人房 629', roomtype2: '豪華雙人房 857', score: '6.8' },
+        { name: '日景園', lat: 22.98392, lng: 120.63685, address: '高雄市六龜區光明巷37之1號', score: '6.8', roomtype1: '小型雙人房 866' },
+        { name: '夢想旅行 (Dream Travel)', lat: 25.04091, lng: 121.50613, address: '台北市萬華區西寧南路211號', score: '7.1', roomtype1: '雙人房 - 有專用衛浴 870' },
+        { name: 'Inn 逢甲Home', lat: 24.17613, lng: 120.64709, address: '台中市西屯區慶和街51號', roomtype1: '標準雙人房 519', score: '7.6' },
+        { name: '台中住宿逢甲 Cinema lnn', lat: 24.17613, lng: 120.64709, address: '台中市西屯區慶和街51號', roomtype1: "標準雙人房 633", score: '7.9' },
+        { name: '逢甲阿里普羅達 (Fengchia Aliproda)', lat: 24.17711, lng: 120.64352, address: '台中市西屯區西屯路二段284巷13號', score: '7.8', roomtype1: '雙人房－附私人衛浴 688' },
+        { name: '星旅店', lat: 22.6337, lng: 120.30394, address: '高雄市新興區南華橫一路14號', roomtype1: '豪華雙人房－附浴缸 935', roomtype2: '園景雙人房 935', score: '7.8' },
+        { name: '高雄旅人驛站', lat: 22.63322, lng: 120.30051, address: '高雄市新興區民主路13之2號', roomtype1: '經濟房 - 需共用衛浴 551', roomtype2: '標準雙人房 783', score: '7.6' },
+        { name: 'Kaohsiung Rouen', lat: 22.6676, lng: 120.29471, address: '高雄市鼓山區慶豐街98號', roomtype1: '雙人房 623', score: '7.3' },
+        { name: '花蓮安隱民宿', lat: 23.99452, lng: 121.60654, address: '花蓮縣花蓮市國民九街50號', roomtype1: '雙人房－附共用衛浴 563', roomtype2: '經濟雙人房 736', score: '8.0' },
+        { name: '清芳民宿 Delicateperfume Hotel', lat: 25.10727, lng: 121.80548, address: '新北市瑞芳區民生街30巷14號', score: '8.2', roomtype1: '標準雙人房 - 需共用衛浴 935', roomtype2: '舒適雙人房 941' },
+        { name: '逢甲 Toy RooM', lat: 24.17833, lng: 120.64558, address: '台中市西屯區逢甲路19巷10號5樓之5', roomtype1: '標準雙人房 693', roomtype2: '雙人房－附私人衛浴 952', score: '8.2' },
+        { name: '逢甲樂愛度假', lat: 24.1769, lng: 120.64483, address: '台中市西屯區福星路526巷6號', roomtype1: '舒適雙人房 - 有陽台 806', score: '8.3' },
+        { name: '一中迪士尼', lat: 24.15348, lng: 120.68688, address: '台中市北區一中街138號', roomtype1: '標準雙床房 609', score: '8.4' },
+        { name: '逢甲禮盒', lat: 24.18002, lng: 120.64558, address: '台中市西屯區逢甲路20巷37號之2', roomtype1: '小型雙人房 563', roomtype2: '大型雙人房 632', score: '8.1' },
+        { name: '極旅inn', lat: 24.15346, lng: 120.68761, address: '台中市北區一中街162號', score: '8.4', roomtype1: '豪華雙人房－附淋浴 948' },
+        { name: '逢甲Jocy House', lat: 24.17833, lng: 120.64558, address: '台中市西屯區逢甲路19巷10號3樓', score: '8.2', roomtype1: '經濟雙人房 724', roomtype2: '高級雙人房 838' },
+        { name: '翔羚逢甲住宿', lat: 24.17479, lng: 120.64837, address: '台中市西屯區福上巷267號', score: '8.1', roomtype1: '雙人房－附私人衛浴 779' },
+        { name: '逢甲Jumbo', lat: 24.17902, lng: 120.64525, address: '台中市西屯區福星路427號', score: '8.2', roomtype1: '經濟雙人房 606' },
+        { name: '享樂旅宿逢甲館', lat: 24.18161, lng: 120.64405, address: '台中西屯區西安街132-6號', score: '8.4', roomtype1: '標準雙人房 779' },
+        { name: '旅人小棧', lat: 22.67622, lng: 120.30707, address: '高雄市左營區孟子路462號', roomtype1: '標準雙人房 810', roomtype2: '豪華雙人房 810', roomtype3: '雙人房－附私人衛浴 810', roomtype4: '豪華房 810', score: '8.0' },
+    ];
+
+    var double1000to1999_homestay = [
+        { name: '田園民宿', lat: 23.42019, lng: 121.34462, address: '花蓮縣玉里鎮號', roomtype1: '標準雙人房 1385', roomtype2: '標準雙人房－附共用衛浴 1732', score: '6.9' },
+        { name: '高美大有貨櫃民宿', lat: 24.30952, lng: 120.55011, address: '台中市清水區美堤街160號', score: '6.9', roomtype1: '小型雙人／雙床房 1619' },
+        { name: '中正湖民宿', lat: 22.91323, lng: 120.55141, address: '高雄市美濃區福美路30號', roomtype1: '貴賓雙人房 1488', score: '5.6' },
+        { name: '日景園', lat: 22.98392, lng: 120.63685, address: '高雄市六龜區光明巷37之1號', score: '6.8', roomtype1: '山景雙人房 1299', roomtype2: '山景雙人房 1039', roomtype3: '園景雙人房 1385' },
+        { name: '好漾民宿1館', lat: 23.33997, lng: 121.31595, address: '花蓮縣玉里鎮中華路255號', roomtype1: '標準雙人房 1043', roomtype2: '豪華雙人房 1217', score: '7.8' },
+        { name: '好漾民宿2館', lat: 23.33125, lng: 121.31423, address: '花蓮縣玉里鎮光復路109-3號', roomtype1: '標準雙人房 1039', roomtype2: '豪華雙人房 1212', score: '7.7' },
+        { name: '旅途中海邊民宿', lat: 25.24998, lng: 121.4667, address: '新北市三芝區54之六號三樓', roomtype1: '雙人房－附外部私人衛浴 1886', score: '7.9' },
+        { name: '九份山旅', lat: 25.10641, lng: 121.84197, address: '新北市瑞芳區基山街204號', roomtype1: '雙人房-有空調 1281', roomtype2: '雙人房-禁菸 1353', roomtype3: '雙人房B-禁菸 1366', score: '7.4' },
+        { name: '夢想旅行 (Dream Travel)', lat: 25.04091, lng: 121.50613, address: '台北市萬華區西寧南路211號', score: '7.1', roomtype1: '四人房 - 有專用衛浴 1565' },
+        { name: '宰相民宿', lat: 25.17156, lng: 121.44558, address: '新北市淡水區英專路79巷2號', roomtype1: '雙人房－附私人衛浴 1385', score: '7.6' },
+        { name: '九份安逸民宿', lat: 25.10921, lng: 121.84416, address: '新北市瑞芳區輕便路117號', roomtype1: '標準雙人房 1225', score: '7.9' },
+        { name: '凱微精品旅館', lat: 25.05848, lng: 121.52566, address: '台北市中山區林森北路381號9-10樓', roomtype1: '雙人房 1558', score: '7.5' },
+        { name: '享自在生態園區', lat: 24.20139, lng: 120.78821, address: '台中市北屯區東山路二段民興巷民興路207-5號', roomtype1: '園景雙人房 1304', score: '7.6' },
+        { name: '岸渡陳艙', lat: 24.31158, lng: 120.56559, address: '台中市清水區三美路262號', score: '7.0', roomtype1: '加大雙人床房 1108' },
+        { name: '星旅店', lat: 22.6337, lng: 120.30394, address: '高雄市新興區南華橫一路14號', roomtype1: '豪華雙人房－附陽台 1039', roomtype2: '菁英雙人房 1039', roomtype3: '舒適雙人房 1013', score: '7.8' },
+        { name: '美濃客家庄民宿', lat: 22.8871, lng: 120.52274, address: '高雄市美濃區中興路二段6-1號', roomtype1: '雙人套房 1391', score: '7.7' },
+        { name: '美濃德旺山莊', lat: 22.94285, lng: 120.5854, address: '高雄市美濃區朝元15912號', roomtype1: '標準雙人房 1524', score: '7.8' },
+        { name: 'Kaohsiung Rouen', lat: 22.6676, lng: 120.29471, address: '高雄市鼓山區慶豐街98號', roomtype1: '標準雙人房 1448', score: '7.3' },
+        { name: '19窩窩', lat: 3.97214, lng: 121.60102, address: '花蓮縣花蓮市上海街19號', roomtype1: '雙人房－附外部私人衛浴 1145', roomtype2: '標準雙人房 1145', score: '8.0' },
+        { name: '鏷石民宿', lat: 23.32677, lng: 121.31657, address: '花蓮縣玉里鎮忠勇路62號', roomtype1: '雙人房 1558', score: '8.4' },
+        { name: '七里霧民宿', lat: 23.3422, lng: 121.3413, address: '花蓮縣玉里鎮四鄰石崗53-1號', roomtype1: '加大雙人床房－附陽台 1126', roomtype2: '豪華雙人房－附陽台 1732', score: '8.4' },
+        { name: '鼓道民宿', lat: 23.97417, lng: 121.60695, address: '花蓮縣花蓮市成功街213號', roomtype1: '大型雙人房 1155', score: '8.4' },
+        { name: '花蓮米拉賓民宿', lat: 23.97402, lng: 121.58526, address: '花蓮縣吉安鄉中華路二段120巷1號', roomtype1: '雙人房 1304', score: '8.1' },
+        { name: '百合民宿', lat: 23.9747, lng: 121.58404, address: '花蓮縣吉安鄉吉祥四街20號', roomtype1: '雙人房 1299', score: '8.1' },
+        { name: '花蓮鐵道手作民宿', lat: 24.11573, lng: 121.62983, address: '花蓮縣秀林鄉秀林村秀林路100號之1號', roomtype1: '山景雙人房 1732', score: '8.3' },
+        { name: '雨天晴民宿', lat: 25.10734, lng: 121.84652, address: '新北市瑞芳區烏勢巷146號', score: '8.3', roomtype1: '豪華房 1224' },
+        { name: '苓旅萬年-LIN INN Wan Nian', lat: 25.04351, lng: 121.50589, address: '台北市萬華區西寧南路70號7樓', score: '8.3', roomtype1: '經濟雙人房 1286', roomtype2: '豪華雙人房 1367', roomtype3: '經濟房(兩床) 1449' },
+        { name: '波麗士河堤景觀民宿', lat: 25.1072, lng: 121.81107, address: '新北市瑞芳區三爪子坑路99之1號', roomtype1: '豪華經典客房 1992', score: '8.2' },
+        { name: '未央居景觀民宿', lat: 25.11155, lng: 121.84696, address: '新北市瑞芳區輕便路1-1號', roomtype1: '海景雙人房 1905', score: '8.4' },
+        { name: '豐原綠自住民宿', lat: 24.25296, lng: 120.7146, address: '台中市豐原區忠孝街105巷45號', roomtype1: '平價雙人房 1905', score: '8.3' },
+        { name: '台中高鐵民宿', lat: 24.11521, lng: 120.60316, address: '台中市烏日區成功東路47號', roomtype1: '標準雙人或雙床房 1558', roomtype2: '標準雙人或雙床房 1126', score: '8.1' },
+        { name: '后里庄園', lat: 24.31063, lng: 120.66288, address: '台中市后里區公館路20-20號', score: '8.2', roomtype1: '雙人房－附外部私人衛浴 1558' },
+        { name: '劦陶宛陶藝民宿', lat: 24.19326, lng: 120.81444, address: '台中市東勢區東坑路石麻巷101號', score: '8.3', roomtype1: '園景雙人房 1905' },
+        { name: '樂萄萄逢甲', lat: 24.18036, lng: 120.64514, address: '台中市西屯區福星路357號', score: '8.3', roomtype1: '雙人房－附私人衛浴 1991' },
+        { name: '悠活農16HOUSE', lat: 22.65893, lng: 120.29476, address: '高雄市鼓山區美術東五路46號', roomtype1: '舒適雙人房 - 有陽台 1174', roomtype2: '舒適雙人房 - 有淋浴間 1174', roomtype3: '標準雙人房 1174', score: '8.1' },
+        { name: '米果民宿', lat: 22.61149, lng: 120.30442, address: '高雄市前鎮區新光路21號', score: '8.1', roomtype1: '雙床房－附陽台 1398', roomtype2: '小型套房－附陽台 1069' },
+        { name: '71 Cafe溫度民宿', lat: 22.64168, lng: 120.28816, address: '高雄市三民區西安街71號', score: '8.3', roomtype1: '客房(特大床) 1628', roomtype2: '標準房 1628' },
+    ];
+
+    var double2000to2999_homestay = [
+        { name: '大雪山莊園民宿', lat: 24.2259, lng: 120.89557, address: '台中市和平區雪山路2之1號', score: '6.5', roomtype1: '豪華雙人房－附陽台 2381', roomtype2: '園景雙人房 2762' },
+        { name: '星空說渡假A館', lat: 23.91154, lng: 121.53372, address: '花蓮縣壽豐鄉中山路三段158巷12號', roomtype1: '雙人／雙床房－附陽台 2507', score: ' 7.9' },
+        { name: '旅途中海邊民宿', lat: 25.24998, lng: 121.4667, address: '新北市三芝區54之六號三樓', roomtype1: '雙人房 2667', score: '7.9' },
+        { name: '九份山旅', lat: 25.10641, lng: 121.84197, address: '新北市瑞芳區基山街204號', roomtype1: '四人房A 2890', score: '7.4' },
+        { name: '三才靈芝農場民宿', lat: 25.01335, lng: 121.67503, address: '新北市石碇區中民村十八重溪52-1號', score: '7.1', roomtype1: '四人房 2300', roomtype2: '閒情雅致四人房 2632' },
+        { name: '延平棧', lat: 25.0425, lng: 121.51094, address: '台北市中正區延平南路101巷4號', roomtype1: '雙人房 2221', score: '7.8' },
+        { name: '岸渡陳艙', lat: 24.31158, lng: 120.56559, address: '台中市清水區三美路262號', score: '7.0', roomtype1: '標準雙人房 2320' },
+        { name: '道時尚悠然山莊', lat: 23.03464, lng: 120.66286, address: '高雄市六龜區和平路130-5號', roomtype1: '單室套房 - 無陽台 2991', score: '7.6' },
+        { name: '七里霧民宿', lat: 23.3422, lng: 121.3413, address: '花蓮縣玉里鎮四鄰石崗53-1號', roomtype1: '標準雙人房－附共用衛浴 2944', score: '8.4' },
+        { name: '花蓮站全民宿', lat: 23.99386, lng: 121.60805, address: '花蓮縣花蓮市國民八街135號', roomtype1: '雙人房－附陽台 2171', score: '8.4' },
+        { name: '鼓道民宿', lat: 23.97417, lng: 121.60695, address: '花蓮縣花蓮市成功街213號', roomtype1: '標準雙人房 2079', score: '8.4' },
+        { name: '北海岸愛之船', lat: 25.29111, lng: 121.56031, address: '新北市石門區中央路1-25號', roomtype1: '海景雙人房 2087', score: '8.0' },
+        { name: '雨天晴民宿', lat: 25.10734, lng: 121.84652, address: '新北市瑞芳區烏勢巷146號', score: '8.3', roomtype1: '海景標準雙人房 2597' },
+        { name: '清芳民宿 Delicateperfume Hotel', lat: 25.10727, lng: 121.80548, address: '新北市瑞芳區民生街30巷14號', score: '8.2', roomtype1: '標準雙人房 2506' },
+        { name: '波麗士河堤景觀民宿', lat: 25.1072, lng: 121.81107, address: '新北市瑞芳區三爪子坑路99之1號', roomtype1: '標準房 2234', score: '8.2' },
+        { name: '九份施家景觀民宿', lat: 25.10856, lng: 121.8441, address: '新北市瑞芳區基山街106-3號', roomtype1: '雙人房 2597', score: '8.0' },
+        { name: '愉園 (Happy House B&B)', lat: 25.10827, lng: 121.80781, address: '新北市瑞芳區民權街鐵路巷3-1號', roomtype1: '園景雙人房 2352', score: '8.3' },
+        { name: '未央居景觀民宿', lat: 25.11155, lng: 121.84696, address: '新北市瑞芳區輕便路1-1號', roomtype1: '標準雙人房－無窗戶 2857', score: '8.4' },
+        { name: '逢甲樂愛度假', lat: 24.1769, lng: 120.64483, address: '台中市西屯區福星路526巷6號', roomtype1: '雙人房－附陽台 2126', score: '8.3' },
+        { name: '后里庄園', lat: 24.31063, lng: 120.66288, address: '台中市后里區公館路20-20號', score: '8.2', roomtype1: '豪華雙人房－附淋浴 2597' },
+        { name: '劦陶宛陶藝民宿', lat: 24.19326, lng: 120.81444, address: '台中市東勢區東坑路石麻巷101號', score: '8.3', roomtype1: '山景雙人房 2597' },
+        { name: '梨幸日和', lat: 22.79399, lng: 120.2992, address: '高雄市岡山區中山北路34巷6號', roomtype1: '標準雙人房 2250', score: '8.3' },
+        { name: '美濃煙城民宿', lat: 22.87976, lng: 120.56183, address: '高雄市美濃區中華路7巷17號', score: '8.2', roomtype1: '豪華房(大床) 2684', roomtype2: '加大雙人床房 2944' },
+    ];
+
+    var doubleover3000_homestay = [
+        { name: '地球村車站民宿', lat: 23.99374, lng: 121.60548, address: '花蓮縣花蓮市國盛一街193號', roomtype1: '雙人房－附私人衛浴 10094', score: '7.2' },
+        { name: '星空說渡假A館', lat: 23.91154, lng: 121.53372, address: '花蓮縣壽豐鄉中山路三段158巷12號', roomtype1: '園景雙人／雙床房 4398', roomtype2: '高級豪華雙人或雙床房 4398', roomtype3: '高級雙人房 4398', score: ' 7.9' },
+        { name: '三才靈芝農場民宿', lat: 25.01335, lng: 121.67503, address: '新北市石碇區中民村十八重溪52-1號', score: '7.1', roomtype1: '雙人房 3256' },
+        { name: '谷野民宿 (台中谷野會館)', lat: 24.16129, lng: 120.95766, address: '台中市和平區東關路一段裡冷巷36號', roomtype1: '雲遊雙人房 3387', roomtype2: '雲遊豪華雙人房 4329', score: '7.9' },
+        { name: '馬卡龍旅棧', lat: 24.18279, lng: 120.64638, address: '台中市西屯區文華路138號', score: '7.3', roomtype1: '雙人房 3290' },
+        { name: '劍潭青年活動中心', lat: 25.0776, lng: 121.52437, address: '台北市士林區中山北路四段16號', roomtype1: '客房(兩床) 4255', roomtype2: '套房 - 有陽台 4,997', score: '8.2' },
+        { name: '白沙啾啾 (Chill Chill House)', lat: 25.28389, lng: 121.52099, address: '新北市石門區八甲路1-5號', roomtype1: '豪華雙人房 4606', roomtype2: '側面海景房 4299', score: '8.2' },
+        { name: '北海岸愛之船', lat: 25.29111, lng: 121.56031, address: '新北市石門區中央路1-25號', roomtype1: '客房(大床/1樓)-禁菸 3853', score: '8.0' },
+        { name: '愉園 (Happy House B&B)', lat: 25.10827, lng: 121.80781, address: '新北市瑞芳區民權街鐵路巷3-1號', roomtype1: '標準雙人房 4535', roomtype2: '高級雙人房 4909', score: '8.3' },
+        { name: '九居', lat: 25.10781, lng: 121.84517, address: '新北市瑞芳區街頂巷20號', roomtype1: '豪華小屋 4304', score: '8.3' },
+        { name: '星月文旅溫泉民宿', lat: 24.33264, lng: 120.70192, address: '台中市后里區月眉北路482號', score: '8.1', roomtype1: '豪華雙人房－附浴缸 3636' },
+        { name: '溫暖逢甲', lat: 24.17492, lng: 120.65095, address: '台中市西屯區福上巷186號', score: '8.1', roomtype1: '豪華雙人房 43290', roomtype2: '經濟雙人房 43290' },
+        { name: '草地人Spa民宿', lat: 23.05719, lng: 120.6775, address: '高雄市六龜區新開路33之1號', roomtype1: '舒適雙人房 - 禁菸 2753', roomtype2: '山景豪華房(雙人床或兩床) 3612', score: '8.3' },
+        { name: '美濃百果園民宿', lat: 22.88348, lng: 120.53624, address: '高雄市美濃區復興街一段58巷5號', roomtype1: '雙人房 3130', score: '8.3' },
+        { name: '美濃煙城民宿', lat: 22.87976, lng: 120.56183, address: '高雄市美濃區中華路7巷17號', score: '8.2', roomtype1: '大型雙人房 3030' },
+    ];
+
+    var three_homestay = [
+        { name: '日景園', lat: 22.98392, lng: 120.63685, address: '高雄市六龜區光明巷37之1號', score: '6.8', roomtype1: '三人房－附私人衛浴 1472' },
+        { name: '宰相民宿', lat: 25.17156, lng: 121.44558, address: '新北市淡水區英專路79巷2號', roomtype1: '三人房－附私人衛浴 2078', score: '7.6' },
+        { name: 'Inn 逢甲Home', lat: 24.17613, lng: 120.64709, address: '台中市西屯區慶和街51號', roomtype1: '標準三人房 779', score: '7.6' },
+        { name: '馬卡龍旅棧', lat: 24.18279, lng: 120.64638, address: '台中市西屯區文華路138號', score: '7.3', roomtype1: '基本三人房 4242' },
+        { name: '高雄包棟阿爾兔兔旅店', lat: 22.63005, lng: 120.30035, address: '高雄市新興區南台路43巷1弄6號', roomtype1: '三人房 1367', score: '7.8' },
+        { name: '美濃客家庄民宿', lat: 22.8871, lng: 120.52274, address: '高雄市美濃區中興路二段6-1號', roomtype1: '三人房 1418', score: '7.7' },
+        { name: '美濃德旺山莊', lat: 22.94285, lng: 120.5854, address: '高雄市美濃區朝元15912號', roomtype1: '標準三人房 1905', score: '7.8' },
+        { name: '逢甲 Toy RooM', lat: 24.17833, lng: 120.64558, address: '台中市西屯區逢甲路19巷10號5樓之5', roomtype1: '經典三人房 1022', score: '8.2' },
+        { name: '逢甲Jocy House', lat: 24.17833, lng: 120.64558, address: '台中市西屯區逢甲路19巷10號3樓', score: '8.2', roomtype1: '基本三人房 1143' },
+        { name: '翔羚逢甲住宿', lat: 24.17479, lng: 120.64837, address: '台中市西屯區福上巷267號', score: '8.1', roomtype1: '三人房－附私人衛浴 1039' },
+        { name: '逢甲Jumbo', lat: 24.17902, lng: 120.64525, address: '台中市西屯區福星路427號', score: '8.2', roomtype1: '標準三人房 779' },
+        { name: '享樂旅宿逢甲館', lat: 24.18161, lng: 120.64405, address: '台中西屯區西安街132-6號', score: '8.4', roomtype1: '三人房 1013' },
+        { name: '樂萄萄逢甲', lat: 24.18036, lng: 120.64514, address: '台中市西屯區福星路357號', score: '8.3', roomtype1: '三人房－附私人衛浴 2186' },
+        { name: '逢甲Mickey House', lat: 24.17481, lng: 120.64806, address: '台中市西屯區福上巷271號', score: '8.0', roomtype1: '三人房－附淋浴 1267' },
+        { name: '米果民宿', lat: 22.61149, lng: 120.30442, address: '高雄市前鎮區新光路21號', score: '8.1', roomtype1: '三人房－附陽台 1316' },
+    ];
+
+    var fourbelow1000_homestay = [
+        { name: 'Inn 逢甲Home', lat: 24.17613, lng: 120.64709, address: '台中市西屯區慶和街51號', roomtype1: '標準四人房 866', score: '7.6' },
+        { name: '巢鴨青年館', lat: 22.63911, lng: 120.30065, address: '高雄市三民區建國三路46巷19-3號', score: '7.9', roomtype1: '四人房 991' },
+        { name: '一中迪士尼', lat: 24.15348, lng: 120.68688, address: '台中市北區一中街138號', roomtype1: '四人房 - 有獨立衛浴 957', score: '8.4' },
+        { name: '逢甲禮盒', lat: 24.18002, lng: 120.64558, address: '台中市西屯區逢甲路20巷37號之2', roomtype1: '標準四人房 996', score: '8.1' },
+        { name: '逢甲Jumbo', lat: 24.17902, lng: 120.64525, address: '台中市西屯區福星路427號', score: '8.2', roomtype1: '標準四人房 866' },
+    ];
+
+    var four1000to1999_homestay = [
+        { name: '田園民宿', lat: 23.42019, lng: 121.34462, address: '花蓮縣玉里鎮號', roomtype1: '四人房－附共用衛浴 1385', roomtype2: '家庭房（四人房）－附共用衛浴 1039', roomtype3: '標準四人房 1732', score: '6.9' },
+        { name: '小巷微宿', lat: 24.17701, lng: 120.64283, address: '台中市西屯區西屯路二段291號', roomtype1: '舒適四人房 1390', score: '6.8' },
+        { name: '梅林親水岸', lat: 24.15295, lng: 120.81048, address: '台中市新社區南華街28-1號', roomtype1: '園景四人房 1861', score: '6.7' },
+        { name: '高美大有貨櫃民宿', lat: 24.30952, lng: 120.55011, address: '台中市清水區美堤街160號', score: '6.9', roomtype1: '四人房－附衛浴 2381' },
+        { name: '中正湖民宿', lat: 22.91323, lng: 120.55141, address: '高雄市美濃區福美路30號', roomtype1: 'VIP四人房 1892', score: '5.6' },
+        { name: '日景園', lat: 22.98392, lng: 120.63685, address: '高雄市六龜區光明巷37之1號', score: '6.8', roomtype1: '四人房－附共用衛浴 1299', roomtype2: '山景四人房 1732', roomtype3: '園景雙人房 1385' },
+        { name: '好漾民宿1館', lat: 23.33997, lng: 121.31595, address: '花蓮縣玉里鎮中華路255號', roomtype1: '標準四人房 1652', score: '7.8' },
+        { name: '好漾民宿2館', lat: 23.33125, lng: 121.31423, address: '花蓮縣玉里鎮光復路109-3號', roomtype1: '標準四人房 1645', score: '7.7' },
+        { name: '綠峯渡假山莊', lat: 25.18815, lng: 121.58884, address: '新北市金山區重和里三重橋22號', roomtype1: '四人房 1634', score: '7.5' },
+        { name: '九份緣憶民宿', lat: 25.10877, lng: 121.84594, address: '新北市瑞芳區烏勢巷52號', score: '7.4', roomtype1: '四人房 1948' },
+        { name: '延平棧', lat: 25.0425, lng: 121.51094, address: '台北市中正區延平南路101巷4號', roomtype1: '四人房 1948', score: '7.8' },
+        { name: '台中住宿逢甲 Cinema lnn', lat: 24.17613, lng: 120.64709, address: '台中市西屯區慶和街51號', roomtype1: '四人房 - 有獨立衛浴 1170', score: '7.9' },
+        { name: '逢甲阿里普羅達 (Fengchia Aliproda)', lat: 24.17711, lng: 120.64352, address: '台中市西屯區西屯路二段284巷13號', score: '7.8', roomtype1: '四人房 - 有獨立衛浴 1158' },
+        { name: '道時尚悠然山莊', lat: 23.03464, lng: 120.66286, address: '高雄市六龜區和平路130-5號', roomtype1: '豪華房 - 可住4人 1746', score: '7.6' },
+        { name: '高雄包棟阿爾兔兔旅店', lat: 22.63005, lng: 120.30035, address: '高雄市新興區南台路43巷1弄6號', roomtype1: '標準房 - 四人用 1714', roomtype2: '豪華四人房 1671', roomtype3: '高級四人房 1671', score: '7.8' },
+        { name: '高雄旅人驛站', lat: 22.63322, lng: 120.30051, address: '高雄市新興區民主路13之2號', roomtype1: '四人房 - 有獨立衛浴 1409', roomtype2: '四人房－附淋浴 1409', roomtype3: '四人房－附衛浴 1409', score: '7.6' },
+        { name: 'Kaohsiung Rouen', lat: 22.6676, lng: 120.29471, address: '高雄市鼓山區慶豐街98號', roomtype1: '家庭房 1403', roomtype2: '巴黎左岸四人房 1529', score: '7.3' },
+        { name: '東畔民宿', lat: 23.89596, lng: 121.55367, address: '花蓮縣壽豐鄉大學路二段63巷39號', roomtype1: '四人房－附陽台 1524', roomtype2: '', score: '8.1' },
+        { name: '信號腳ㄟ厝', lat: 23.49553, lng: 121.37632, address: '花蓮縣瑞穗鄉成功南路12號', roomtype1: '四人房－附衛浴 1299', roomtype2: '', score: '8.3' },
+        { name: '19窩窩', lat: 3.97214, lng: 121.60102, address: '花蓮縣花蓮市上海街19號', roomtype1: '標準四人房 1473', score: '8.0' },
+        { name: '花蓮安隱民宿', lat: 23.99452, lng: 121.60654, address: '花蓮縣花蓮市國民九街50號', roomtype1: '四人房－附衛浴 1255', score: '8.0' },
+        { name: '花蓮米拉賓民宿', lat: 23.97402, lng: 121.58526, address: '花蓮縣吉安鄉中華路二段120巷1號', roomtype1: '標準四人房 1826', score: '8.1' },
+        { name: '百合民宿', lat: 23.9747, lng: 121.58404, address: '花蓮縣吉安鄉吉祥四街20號', roomtype1: '四人房 1732', score: '8.1' },
+        { name: '東立茶行民宿', lat: 23.45671, lng: 121.35394, address: '花蓮縣瑞穗鄉中正南路二段251號', roomtype1: '經典四人房 1713', roomtype2: '家庭房 1142', score: '8.4' },
+        { name: '清芳民宿 Delicateperfume Hotel', lat: 25.10727, lng: 121.80548, address: '新北市瑞芳區民生街30巷14號', score: '8.2', roomtype1: '豪華四人房 1590', roomtype2: '四人房 1856' },
+        { name: '波麗士河堤景觀民宿', lat: 25.1072, lng: 121.81107, address: '新北市瑞芳區三爪子坑路99之1號', roomtype1: '標準四人房 1834', roomtype2: '豪華房 - 有陽台 1992', score: '8.2' },
+        { name: '巢鴨青年館', lat: 22.63911, lng: 120.30065, address: '高雄市三民區建國三路46巷19-3號', score: '7.9', roomtype1: '家庭房-需共用衛浴 1043' },
+        { name: '逢甲 Toy RooM', lat: 24.17833, lng: 120.64558, address: '台中市西屯區逢甲路19巷10號5樓之5', roomtype1: '四人房 - 有獨立衛浴 1108', score: '8.2' },
+        { name: '逢甲禮盒', lat: 24.18002, lng: 120.64558, address: '台中市西屯區逢甲路20巷37號之2', roomtype1: '經濟四人房 1082', score: '8.1' },
+        { name: '台中高鐵民宿', lat: 24.11521, lng: 120.60316, address: '台中市烏日區成功東路47號', roomtype1: '四人房－附陽台 1818', score: '8.1' },
+        { name: '極旅inn', lat: 24.15346, lng: 120.68761, address: '台中市北區一中街162號', score: '8.4', roomtype1: '四人房 - 有獨立衛浴 1429' },
+        { name: '逢甲Jocy House', lat: 24.17833, lng: 120.64558, address: '台中市西屯區逢甲路19巷10號3樓', score: '8.2', roomtype1: '豪華四人房 1410' },
+        { name: '翔羚逢甲住宿', lat: 24.17479, lng: 120.64837, address: '台中市西屯區福上巷267號', score: '8.1', roomtype1: '四人房－附衛浴 1299' },
+        { name: '享樂旅宿逢甲館', lat: 24.18161, lng: 120.64405, address: '台中西屯區西安街132-6號', score: '8.4', roomtype1: '標準四人房 1299' },
+        { name: '逢甲Mickey House', lat: 24.17481, lng: 120.64806, address: '台中市西屯區福上巷271號', score: '8.0', roomtype1: '四人房 - 有獨立衛浴 1410' },
+        { name: '一中街藻宿', lat: 24.15332, lng: 120.68648, address: '台中市北區錦新街72-3號', score: '8.2', roomtype1: '四人房（不指定房型） 1619' },
+        { name: '荷本 Urban', lat: 22.67105, lng: 120.30044, address: '高雄市左營區新莊一路292號', roomtype1: '雙臥室房(雙人床) 1403', roomtype2: '套房(2張床) 1403', roomtype3: '豪華四人房 1517', score: '8.1' },
+        { name: '悠活農16HOUSE', lat: 22.65893, lng: 120.29476, address: '高雄市鼓山區美術東五路46號', roomtype1: '四人房，帶陽台 1957', score: '8.1' },
+        { name: '美濃百果園民宿', lat: 22.88348, lng: 120.53624, address: '高雄市美濃區復興街一段58巷5號', roomtype1: '四人房 1669', score: '8.3' },
+        { name: '旅人小棧', lat: 22.67622, lng: 120.30707, address: '高雄市左營區孟子路462號', roomtype1: '四人房 - 有獨立衛浴 1325', score: '8.0' },
+        { name: '旗山三合院', lat: 22.84777, lng: 120.48763, address: '高雄市旗山區中興街6號', roomtype1: '四人房－附淋浴 1905', roomtype2: '四人房－附衛浴 1905', roomtype3: '四人房－附衛浴 1905', roomtype4: '四人房－附淋浴 1905', score: '8.4' },
+    ];
+
+    var four2000to2999_homestay = [
+        { name: '梅林親水岸', lat: 24.15295, lng: 120.81048, address: '台中市新社區南華街28-1號', roomtype1: '豪華四人房 2078', score: '6.7' },
+        { name: '中正湖歐式山莊民宿', lat: 22.91371, lng: 120.55132, address: '高雄市美濃區福美路28號', score: '6.0', roomtype1: 'VIP四人房 2571' },
+        { name: '7街160民宿', lat: 23.94642, lng: 121.59174, address: '花蓮縣吉安鄉南海七街160號', roomtype1: '加大雙人床房－附 2 張加大雙人床 2095', score: '7.6' },
+        { name: '九份緣憶民宿', lat: 25.10877, lng: 121.84594, address: '新北市瑞芳區烏勢巷52號', score: '7.4', roomtype1: '海景四人房 2226' },
+        { name: '宰相民宿', lat: 25.17156, lng: 121.44558, address: '新北市淡水區英專路79巷2號', roomtype1: '四人房 - 有獨立衛浴 2424', score: '7.6' },
+        { name: '九份安逸民宿', lat: 25.10921, lng: 121.84416, address: '新北市瑞芳區輕便路117號', roomtype1: '四人房 2364', score: '7.9' },
+        { name: '享自在生態園區', lat: 24.20139, lng: 120.78821, address: '台中市北屯區東山路二段民興巷民興路207-5號', roomtype1: '標準四人房 2261', score: '7.6' },
+        { name: '岸渡陳艙', lat: 24.31158, lng: 120.56559, address: '台中市清水區三美路262號', score: '7.0', roomtype1: '經典四人房 2165' },
+        { name: '道時尚悠然山莊', lat: 23.03464, lng: 120.66286, address: '高雄市六龜區和平路130-5號', roomtype1: '頂級豪華別墅 2050', score: '7.6' },
+        { name: '美濃德旺山莊', lat: 22.94285, lng: 120.5854, address: '高雄市美濃區朝元15912號', roomtype1: '標準四人房 2381', score: '7.8' },
+        { name: '鏷石民宿', lat: 23.32677, lng: 121.31657, address: '花蓮縣玉里鎮忠勇路62號', roomtype1: '四人房 2121', score: '8.4' },
+        { name: '鼓道民宿', lat: 23.97417, lng: 121.60695, address: '花蓮縣花蓮市成功街213號', roomtype1: '標準四人房 2310', score: '8.4' },
+        { name: '花蓮鐵道手作民宿', lat: 24.11573, lng: 121.62983, address: '花蓮縣秀林鄉秀林村秀林路100號之1號', roomtype1: '舒適四人房 2944', score: '8.3' },
+        { name: '北海岸愛之船', lat: 25.29111, lng: 121.56031, address: '新北市石門區中央路1-25號', roomtype1: '客房(2張大床/1樓)-禁菸 2475', roomtype2: '海景家庭房 2986', score: '8.0' },
+        { name: '九份風箏博物館民宿', lat: 25.11049, lng: 121.84428, address: '新北市瑞芳區頌德里坑尾巷20號', roomtype1: '標準四人房 2141', roomtype2: '海景四人房 2630', score: '8.2' },
+        { name: '雨天晴民宿', lat: 25.10734, lng: 121.84652, address: '新北市瑞芳區烏勢巷146號', score: '8.3', roomtype1: '家庭房 2120' },
+        { name: '苓旅萬年-LIN INN Wan Nian', lat: 25.04351, lng: 121.50589, address: '台北市萬華區西寧南路70號7樓', score: '8.3', roomtype1: '高級四人房 2100' },
+        { name: '波麗士河堤景觀民宿', lat: 25.1072, lng: 121.81107, address: '新北市瑞芳區三爪子坑路99之1號', roomtype1: '豪華家庭套房 2147', score: '8.2' },
+        { name: '九份施家景觀民宿', lat: 25.10856, lng: 121.8441, address: '新北市瑞芳區基山街106-3號', roomtype1: '家庭房 2120', score: '8.0' },
+        { name: '未央居景觀民宿', lat: 25.11155, lng: 121.84696, address: '新北市瑞芳區輕便路1-1號', roomtype1: '標準四人房－無窗戶 2571', score: '8.4' },
+        { name: '想想逢甲', lat: 24.1801, lng: 120.6416, address: '台中市西屯區西安街76巷16弄26號', roomtype1: '四人房 - 有獨立衛浴 2757', score: '8.1' },
+        { name: '豐原綠自住民宿', lat: 24.25296, lng: 120.7146, address: '台中市豐原區忠孝街105巷45號', roomtype1: '四人房 - 有陽台 2829', roomtype2: '標準房 - 四人用 2856', roomtype3: '經典四人房 2856', roomtype4: '標準家庭房 2856', score: '8.3' },
+        { name: '后里庄園', lat: 24.31063, lng: 120.66288, address: '台中市后里區公館路20-20號', score: '8.2', roomtype1: '四人房 - 有獨立衛浴 2338' },
+        { name: '劦陶宛陶藝民宿', lat: 24.19326, lng: 120.81444, address: '台中市東勢區東坑路石麻巷101號', score: '8.3', roomtype1: '園景四人房 2944' },
+        { name: '樂萄萄逢甲', lat: 24.18036, lng: 120.64514, address: '台中市西屯區福星路357號', score: '8.3', roomtype1: '四人房-有獨立衛浴 2772' },
+        { name: '草地人Spa民宿', lat: 23.05719, lng: 120.6775, address: '高雄市六龜區新開路33之1號', roomtype1: '豪華雙人房 - 有陽台 2064', roomtype2: '豪華房 - 有陽台 2494', roomtype3: '四人房 2482', score: '8.3' },
+    ];
+
+    var four3000to3999_homestay = [
+        { name: '大雪山莊園民宿', lat: 24.2259, lng: 120.89557, address: '台中市和平區雪山路2之1號', score: '6.5', roomtype1: '四人房 3619' },
+        { name: '旅途中海邊民宿', lat: 25.24998, lng: 121.4667, address: '新北市三芝區54之六號三樓', roomtype1: '四人房－附衛浴 3619', score: '7.9' },
+        { name: '九份緣憶民宿', lat: 25.10877, lng: 121.84594, address: '新北市瑞芳區烏勢巷52號', score: '7.4', roomtype1: '家庭房 3130' },
+        { name: '七里霧民宿', lat: 23.3422, lng: 121.3413, address: '花蓮縣玉里鎮四鄰石崗53-1號', roomtype1: '豪華加大雙人床房－附 2 張加大雙人床 3463', score: '8.4' },
+        { name: '花蓮站全民宿', lat: 23.99386, lng: 121.60805, address: '花蓮縣花蓮市國民八街135號', roomtype1: '四人房－附陽台 3029', score: '8.4' },
+        { name: '劍潭青年活動中心', lat: 25.0776, lng: 121.52437, address: '台北市士林區中山北路四段16號', roomtype1: '客房(4張單人床) 3647', score: '8.2' },
+        { name: '白沙啾啾 (Chill Chill House)', lat: 25.28389, lng: 121.52099, address: '新北市石門區八甲路1-5號', roomtype1: '家庭房 3864', score: '8.2' },
+        { name: '北海岸愛之船', lat: 25.29111, lng: 121.56031, address: '新北市石門區中央路1-25號', roomtype1: '家庭房 3316', score: '8.0' },
+        { name: '愉園 (Happy House B&B)', lat: 25.10827, lng: 121.80781, address: '新北市瑞芳區民權街鐵路巷3-1號', roomtype1: '豪華四人房 3695', roomtype2: '四人房－附浴缸 3810', score: '8.3' },
+        { name: '九居', lat: 25.10781, lng: 121.84517, address: '新北市瑞芳區街頂巷20號', roomtype1: '海景四人房 3304', roomtype2: '海景豪華雙床房 3635', score: '8.3' },
+        { name: '想想逢甲', lat: 24.1801, lng: 120.6416, address: '台中市西屯區西安街76巷16弄26號', roomtype1: '豪華四人房 3446', score: '8.1' },
+        { name: '豐原綠自住民宿', lat: 24.25296, lng: 120.7146, address: '台中市豐原區忠孝街105巷45號', roomtype1: '豪華家庭房 3142', roomtype2: '高級家庭房 3142', score: '8.3' },
+        { name: '后麗安心親子時尚旅宿（風自然2館）', lat: 24.33325, lng: 120.7155, address: '台中市后里區安眉路85-19號', roomtype1: '四人房 3794', roomtype2: '四人房-可住4人 3794', score: '8.1' },
+        { name: '劦陶宛陶藝民宿', lat: 24.19326, lng: 120.81444, address: '台中市東勢區東坑路石麻巷101號', score: '8.3', roomtype1: '山景四人房 3463' },
+        { name: '梨幸日和', lat: 22.79399, lng: 120.2992, address: '高雄市岡山區中山北路34巷6號', roomtype1: '四人房 - 有獨立衛浴 3206', score: '8.3' },
+        { name: '美濃煙城民宿', lat: 22.87976, lng: 120.56183, address: '高雄市美濃區中華路7巷17號', score: '8.2', roomtype1: '豪華四人房 3117', roomtype2: '日式四人房 3117', roomtype3: '豪華四人房 3117', roomtype4: '頂級四人房 3463' },
+        { name: '71 Cafe溫度民宿', lat: 22.64168, lng: 120.28816, address: '高雄市三民區西安街71號', score: '8.3', roomtype1: '標準四人房 3359', roomtype2: '四人房-有陽台 3359' },
+    ];
+
+    var fourover4000_homestay = [
+        { name: '谷野民宿 (台中谷野會館)', lat: 24.16129, lng: 120.95766, address: '台中市和平區東關路一段裡冷巷36號', roomtype1: '雲遊家庭房 6629', roomtype2: '豪華家庭套房 7792', score: '7.9' },
+        { name: '馬卡龍旅棧', lat: 24.18279, lng: 120.64638, address: '台中市西屯區文華路138號', score: '7.3', roomtype1: '標準四人房 5108' },
+        { name: '白沙啾啾 (Chill Chill House)', lat: 25.28389, lng: 121.52099, address: '新北市石門區八甲路1-5號', roomtype1: '海景四人房 4442', roomtype2: '豪華家庭房 4154', score: '8.2' },
+        { name: '后麗安心親子時尚旅宿（風自然2館）', lat: 24.33325, lng: 120.7155, address: '台中市后里區安眉路85-19號', roomtype1: '標準四人房 4918', roomtype2: '豪華家庭房 4918', roomtype3: '四人家庭房 4073', roomtype4: '經濟四人房 5957', score: '8.1' },
+        { name: '星月文旅溫泉民宿', lat: 24.33264, lng: 120.70192, address: '台中市后里區月眉北路482號', score: '8.1', roomtype1: '四人房 - 有獨立衛浴 4848' },
+        { name: '溫暖逢甲', lat: 24.17492, lng: 120.65095, address: '台中市西屯區福上巷186號', score: '8.1', roomtype1: '四人房－附衛浴 43290' },
+        { name: '梨幸日和', lat: 22.79399, lng: 120.2992, address: '高雄市岡山區中山北路34巷6號', roomtype1: '家庭房－附私人衛浴 4306', score: '8.3' },
+    ];
+
+    var fiveorsix_homestay = [
+        { name: '三才靈芝農場民宿', lat: 25.01335, lng: 121.67503, address: '新北市石碇區中民村十八重溪52-1號', score: '7.1', roomtype1: '家庭房 - 可住6人 2625' },
+        { name: '夢想旅行 (Dream Travel)', lat: 25.04091, lng: 121.50613, address: '台北市萬華區西寧南路211號', score: '7.1', roomtype1: '夾層樓家庭間 2174', roomtype2: '六人房 2348' },
+        { name: '九份緣憶民宿', lat: 25.10877, lng: 121.84594, address: '新北市瑞芳區烏勢巷52號', score: '7.4', roomtype1: '家庭房 - 需共用衛浴 2087' },
+        { name: 'Inn 逢甲Home', lat: 24.17613, lng: 120.64709, address: '台中市西屯區慶和街51號', roomtype1: '家庭房 1472', roomtype2: '家庭房 1732', score: '7.6' },
+        { name: '台中住宿逢甲 Cinema lnn', lat: 24.17613, lng: 120.64709, address: '台中市西屯區慶和街51號', roomtype1: '家庭房－附私人衛浴 1492', score: '7.9' },
+        { name: '星光山悦景觀民宿', lat: 24.20522, lng: 120.89354, address: '台中市和平區雪山路出雲巷18號', score: '7.9', roomtype1: '標準家庭房 5714' },
+        { name: '美濃客家庄民宿', lat: 22.8871, lng: 120.52274, address: '高雄市美濃區中興路二段6-1號', roomtype1: '家庭房 - 可住5人 2289', score: '7.7' },
+        { name: '台中住宿逢甲 Cinema lnn', lat: 24.17613, lng: 120.64709, address: '台中市西屯區慶和街51號', roomtype1: '家庭房－附私人衛浴 1600', score: '7.9' },
+        { name: '花蓮站全民宿', lat: 23.99386, lng: 121.60805, address: '花蓮縣花蓮市國民八街135號', roomtype1: '三臥室房屋 7863', score: '8.4' },
+        { name: '花蓮安隱民宿', lat: 23.99452, lng: 121.60654, address: '花蓮縣花蓮市國民九街50號', roomtype1: '家庭套房 1558', score: '8.0' },
+        { name: '百合民宿', lat: 23.9747, lng: 121.58404, address: '花蓮縣吉安鄉吉祥四街20號', roomtype1: '家庭房（6 位成人） 2251', score: '8.1' },
+        { name: '劍潭青年活動中心', lat: 25.0776, lng: 121.52437, address: '台北市士林區中山北路四段16號', roomtype1: '家庭房 4283', score: '8.2' },
+        { name: '九份風箏博物館民宿', lat: 25.11049, lng: 121.84428, address: '新北市瑞芳區頌德里坑尾巷20號', roomtype1: '標準四人房 2141', roomtype2: '家庭房 2966', roomtype1: '高級家庭房 3496', score: '8.2' },
+        { name: '九居', lat: 25.10781, lng: 121.84517, address: '新北市瑞芳區街頂巷20號', roomtype1: '家庭平房小屋 3913', score: '8.3' },
+        { name: '想想逢甲', lat: 24.1801, lng: 120.6416, address: '台中市西屯區西安街76巷16弄26號', roomtype1: '單臥室別墅 3455', roomtype2: '豪華家庭套房 4073', score: '8.1' },
+        { name: '逢甲樂愛度假', lat: 24.1769, lng: 120.64483, address: '台中市西屯區福星路526巷6號', roomtype1: '家庭房(3張雙人床) 1836', score: '8.3' },
+        { name: '逢甲禮盒', lat: 24.18002, lng: 120.64558, address: '台中市西屯區逢甲路20巷37號之2', roomtype1: '家庭房－附私人衛浴 1472"', score: '8.1' },
+        { name: '后麗安心親子時尚旅宿（風自然2館）', lat: 24.333, lng: 120.7155, address: '台中市后里區安眉路85-19號', roomtype1: '標準家庭房-可住5人 4220', score: '8.1' },
+        { name: '劦陶宛陶藝民宿', lat: 24.19326, lng: 120.81444, address: '台中市東勢區東坑路石麻巷101號', score: '8.3', roomtype1: '家庭套房 4502' },
+        { name: '翔羚逢甲住宿', lat: 24.17479, lng: 120.64837, address: '台中市西屯區福上巷267號', score: '8.1', roomtype1: '家庭房－附私人衛浴 1558' },
+        { name: '美濃百果園民宿', lat: 22.88348, lng: 120.53624, address: '高雄市美濃區復興街一段58巷5號', roomtype1: '日式客房，可供6位客人入住 1939', score: '8.3' },
+        { name: '旗山三合院', lat: 22.84777, lng: 120.48763, address: '高雄市旗山區中興街6號', roomtype1: '家庭房－附淋浴 2771', score: '8.4' },
+    ];
+
+    var more_homestay = [
+        { name: '小巷微宿', lat: 24.17701, lng: 120.64283, address: '台中市西屯區西屯路二段291號', roomtype1: '標準加大雙人床房－附兩張加大雙人床 1714', roomtype2: '樓中樓套房 2000', roomtype3: '家庭房 3810', roomtype4: '樓中樓單房公寓 3810', score: '6.8' },
+        { name: '大雪山莊園民宿', lat: 24.2259, lng: 120.89557, address: '台中市和平區雪山路2之1號', score: '6.5', roomtype1: '山景家庭房 4476' },
+        { name: '高美大有貨櫃民宿', lat: 24.30952, lng: 120.55011, address: '台中市清水區美堤街160號', score: '6.9', roomtype1: '家庭房－附衛浴 3810' },
+        { name: '地球村車站民宿', lat: 23.99374, lng: 121.60548, address: '花蓮縣花蓮市國盛一街193號', roomtype1: '家庭房－附私人衛浴 9809', score: '7.2' },
+        { name: '九份緣憶民宿', lat: 25.10877, lng: 121.84594, address: '新北市瑞芳區烏勢巷52號', score: '7.4', roomtype1: '8人日式客房- 共用浴室 2783' },
+        { name: 'Inn 逢甲Home', lat: 24.17613, lng: 120.64709, address: '台中市西屯區慶和街51號', roomtype1: '家庭房 1991', roomtype2: '家庭房 2424', score: '7.6' },
+        { name: '依依.良品風格民宿', lat: 22.6947, lng: 120.29181, address: '高雄市左營區纬十路建業新村54-11號', score: '7.2', roomtype1: '豪華全公寓 3074' },
+        { name: '鏷石民宿', lat: 23.32677, lng: 121.31657, address: '花蓮縣玉里鎮忠勇路62號', roomtype1: '三臥室房屋 10823', score: '8.4' },
+        { name: '花蓮站全民宿', lat: 23.99386, lng: 121.60805, address: '花蓮縣花蓮市國民八街135號', roomtype1: '四臥室度假屋 7863', score: '8.4' },
+        { name: '九份風箏博物館民宿', lat: 25.11049, lng: 121.84428, address: '新北市瑞芳區頌德里坑尾巷20號', roomtype1: '高級家庭房 3496', score: '8.2' },
+        { name: '想想逢甲', lat: 24.1801, lng: 120.6416, address: '台中市西屯區西安街76巷16弄26號', roomtype1: '度假屋 3948', score: '8.1' },
+        { name: '逢甲禮盒', lat: 24.18002, lng: 120.64558, address: '台中市西屯區逢甲路20巷37號之2', roomtype1: '家庭房－附私人衛浴 1905', roomtype2: '家庭房－附私人衛浴 2424', score: '8.1' },
+    ];
+
+
 
 
     // 自訂座標圖層
     var hualienLayer = L.layerGroup();
-
-
     // 在自訂座標圖層上添加標記
     Hualien_homestay.forEach(function(homestay) {
         var marker = L.marker([homestay.lat, homestay.lng]).addTo(hualienLayer);
@@ -215,13 +949,14 @@
             (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
             (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
             (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
-            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "");
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
 
         marker.bindPopup(popupContent);
     });
 
     var taipeiLayer = L.layerGroup();
-
     Taipei_homestay.forEach(function(homestay) {
         var marker = L.marker([homestay.lat, homestay.lng]).addTo(taipeiLayer);
         var popupContent = "<b>" + homestay.name + "</b><br>" +
@@ -232,7 +967,387 @@
             (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
             (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
             (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
-            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "");
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var taichungLayer = L.layerGroup();
+    Taichung_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(taichungLayer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var kaohsiungLayer = L.layerGroup();
+    Kaohsiung_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(kaohsiungLayer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var rank50to69Layer = L.layerGroup();
+    rank50to69_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(rank50to69Layer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var rank70to79Layer = L.layerGroup();
+    rank70to79_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(rank70to79Layer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var rank80to84Layer = L.layerGroup();
+    rank80to84_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(rank80to84Layer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var rank85to89Layer = L.layerGroup();
+    rank85to89_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(rank85to89Layer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var rank90to94Layer = L.layerGroup();
+    rank90to94_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(rank90to94Layer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var rank95to100Layer = L.layerGroup();
+    rank95to100_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(rank95to100Layer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var singleLayer = L.layerGroup();
+    single_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(singleLayer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var doublebelow1000Layer = L.layerGroup();
+    doublebelow1000_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(doublebelow1000Layer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var double1000to1999Layer = L.layerGroup();
+    double1000to1999_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(double1000to1999Layer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var double2000to2999Layer = L.layerGroup();
+    double2000to2999_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(double2000to2999Layer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var doubleover3000Layer = L.layerGroup();
+    doubleover3000_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(doubleover3000Layer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var threeLayer = L.layerGroup();
+    three_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(threeLayer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var fourbelow1000Layer = L.layerGroup();
+    fourbelow1000_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(fourbelow1000Layer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var four1000to1999Layer = L.layerGroup();
+    four1000to1999_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(four1000to1999Layer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var four2000to2999Layer = L.layerGroup();
+    four2000to2999_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(four2000to2999Layer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var four3000to3999Layer = L.layerGroup();
+    four3000to3999_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(four3000to3999Layer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var fourover4000Layer = L.layerGroup();
+    fourover4000_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(fourover4000Layer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var fiveorsixLayer = L.layerGroup();
+    fiveorsix_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(fiveorsixLayer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
+
+        marker.bindPopup(popupContent);
+    });
+
+    var moreLayer = L.layerGroup();
+    more_homestay.forEach(function(homestay) {
+        var marker = L.marker([homestay.lat, homestay.lng]).addTo(moreLayer);
+        var popupContent = "<b>" + homestay.name + "</b><br>" +
+            "綜合評分：" + homestay.score + "<br>" +
+            "地址：" + homestay.address + "<br>" +
+            "房間類型：" + "<br>" +
+            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
+            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
 
         marker.bindPopup(popupContent);
     });
@@ -241,21 +1356,352 @@
     var basemap = {
         "底圖": baseLayer
     };
-
     var Hualien = {
         "花蓮民宿": hualienLayer
-
     };
-
     var Taipei = {
         "雙北民宿": taipeiLayer
-
+    };
+    var Taichung = {
+        "台中民宿": taichungLayer
+    };
+    var Kaohsiung = {
+        "高雄民宿": kaohsiungLayer
+    };
+    var rank50to69 = {
+        "評分：5.0-6.9": rank50to69Layer
+    };
+    var rank70to79 = {
+        "評分7.0-7.9：": rank70to79Layer
+    };
+    var rank80to84 = {
+        "評分：8.0-8.4": rank80to84Layer
+    };
+    var rank85to89 = {
+        "評分：8.5-8.9": rank85to89Layer
+    };
+    var rank90to94 = {
+        "評分：9.0-9.4": rank90to94Layer
+    };
+    var rank95to100 = {
+        "評分：9.5-10": rank95to100Layer
+    };
+    var doublebelow1000 = {
+        "雙人房 1000 NTD以下": doublebelow1000Layer
+    };
+    var double1000to1999 = {
+        "雙人房 1000-1999 NTD": double1000to1999Layer
+    };
+    var double2000to2999 = {
+        "雙人房 2000-2999 NTD": double2000to2999Layer
+    };
+    var doubleover3000 = {
+        "雙人房 超過3000 NTD": doubleover3000Layer
+    };
+    var three = {
+        "三人房 ": threeLayer
+    };
+    var fourbelow1000 = {
+        "四人房 1000 NTD以下": fourbelow1000Layer
+    };
+    var four1000to1999 = {
+        "四人房 1000-1999 NTD": four1000to1999Layer
+    };
+    var four2000to2999 = {
+        "四人房 2000-2999 NTD": four2000to2999Layer
+    };
+    var four3000to3999 = {
+        "四人房 3000-3999 NTD": four3000to3999Layer
+    };
+    var fourover4000 = {
+        "四人房 超過4000 NTD": fourover4000Layer
+    };
+    var fiveorsix = {
+        "五人房/六人房 ": fiveorsixLayer
+    };
+    var more = {
+        "多人房（六人以上） ": moreLayer
     };
 
-    L.control.layers(basemap, { "花蓮民宿": hualienLayer, "雙北民宿": taipeiLayer }).addTo(map);
+    L.control.layers(basemap, { "評分：5.0-6.9": rank50to69Layer, "評分：7.0-7.9": rank70to79Layer, "評分：8.0-8.4": rank80to84Layer, "評分：8.5-8.9": rank85to89Layer, "評分：9.0-9.4": rank90to94Layer, "評分：9.5-10": rank95to100Layer, "雙人房 1000 NTD以下": doublebelow1000Layer, "雙人房 1000-1999 NTD": double1000to1999Layer, "雙人房 2000-2999 NTD": double2000to2999Layer, "雙人房 超過3000 NTD": doubleover3000Layer, "三人房 ": threeLayer, "四人房 1000 NTD以下": fourbelow1000Layer, "四人房 1000-1999 NTD": four1000to1999Layer, "四人房 2000-2999 NTD": four2000to2999Layer, "四人房 3000-3999 NTD": four3000to3999Layer, "四人房 超過4000 NTD": fourover4000Layer, "四人房 超過4000 NTD": fourover4000Layer, "五人房/六人房 ": fiveorsixLayer, "多人房（六人以上） ": moreLayer }).addTo(map);
     // 預設顯示基礎地圖
-    hualienLayer.addTo(map);
-    taipeiLayer.addTo(map);
+    rank90to94Layer.addTo(map);
+
+    var hualientrainstation = {
+        "type": "FeatureCollection",
+        "features": [{
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            121.60116548361975,
+                            24.00595646408329
+                        ],
+                        [
+                            121.59971790478511,
+                            24.005891493489433
+                        ],
+                        [
+                            121.59828427127616,
+                            24.005697207605966
+                        ],
+                        [
+                            121.59687839395009,
+                            24.00537547809189
+                        ],
+                        [
+                            121.59551381602881,
+                            24.00492940431973
+                        ],
+                        [
+                            121.59420368252192,
+                            24.00436328349066
+                        ],
+                        [
+                            121.59296061350331,
+                            24.003682569201384
+                        ],
+                        [
+                            121.5917965824663,
+                            24.002893818863622
+                        ],
+                        [
+                            121.59072280093326,
+                            24.002004630484944
+                        ],
+                        [
+                            121.5897496104339,
+                            24.001023569422323
+                        ],
+                        [
+                            121.58888638289436,
+                            23.99996008581666
+                        ],
+                        [
+                            121.58814143039699,
+                            23.99882442350641
+                        ],
+                        [
+                            121.5875219251796,
+                            23.997627521300377
+                        ],
+                        [
+                            121.58703383064207,
+                            23.996380907563392
+                        ],
+                        [
+                            121.5866818440224,
+                            23.99509658913257
+                        ],
+                        [
+                            121.58646935128965,
+                            23.993786935636336
+                        ],
+                        [
+                            121.58639839468346,
+                            23.99246456033205
+                        ],
+                        [
+                            121.58646965320685,
+                            23.991142198611264
+                        ],
+                        [
+                            121.58668243625429,
+                            23.989832585343535
+                        ],
+                        [
+                            121.58703469042955,
+                            23.988548332240246
+                        ],
+                        [
+                            121.58752301948148,
+                            23.987301806419346
+                        ],
+                        [
+                            121.58814271715988,
+                            23.98610501133937
+                        ],
+                        [
+                            121.58888781266867,
+                            23.984969471248355
+                        ],
+                        [
+                            121.58975112827424,
+                            23.983906120258293
+                        ],
+                        [
+                            121.59072434850988,
+                            23.982925197111296
+                        ],
+                        [
+                            121.59179810030665,
+                            23.98203614664824
+                        ],
+                        [
+                            121.59296204327768,
+                            23.98124752892608
+                        ],
+                        [
+                            121.59420496928487,
+                            23.980566936856047
+                        ],
+                        [
+                            121.59551491033075,
+                            23.980000923153046
+                        ],
+                        [
+                            121.59687925373763,
+                            23.979554937296975
+                        ],
+                        [
+                            121.59828486350811,
+                            23.979233273110445
+                        ],
+                        [
+                            121.59971820670233,
+                            23.979039027455478
+                        ],
+                        [
+                            121.60116548361975,
+                            23.978974070445126
+                        ],
+                        [
+                            121.60261276053716,
+                            23.979039027455478
+                        ],
+                        [
+                            121.60404610373139,
+                            23.979233273110445
+                        ],
+                        [
+                            121.60545171350186,
+                            23.979554937296975
+                        ],
+                        [
+                            121.60681605690876,
+                            23.980000923153046
+                        ],
+                        [
+                            121.6081259979546,
+                            23.980566936856047
+                        ],
+                        [
+                            121.60936892396181,
+                            23.98124752892608
+                        ],
+                        [
+                            121.61053286693283,
+                            23.98203614664824
+                        ],
+                        [
+                            121.61160661872962,
+                            23.982925197111296
+                        ],
+                        [
+                            121.61257983896525,
+                            23.983906120258293
+                        ],
+                        [
+                            121.61344315457083,
+                            23.984969471248355
+                        ],
+                        [
+                            121.6141882500796,
+                            23.98610501133937
+                        ],
+                        [
+                            121.61480794775802,
+                            23.987301806419346
+                        ],
+                        [
+                            121.61529627680996,
+                            23.988548332240246
+                        ],
+                        [
+                            121.61564853098518,
+                            23.989832585343535
+                        ],
+                        [
+                            121.61586131403264,
+                            23.991142198611264
+                        ],
+                        [
+                            121.61593257255605,
+                            23.99246456033205
+                        ],
+                        [
+                            121.61586161594984,
+                            23.993786935636336
+                        ],
+                        [
+                            121.6156491232171,
+                            23.99509658913257
+                        ],
+                        [
+                            121.61529713659742,
+                            23.996380907563392
+                        ],
+                        [
+                            121.61480904205987,
+                            23.997627521300377
+                        ],
+                        [
+                            121.61418953684252,
+                            23.99882442350641
+                        ],
+                        [
+                            121.61344458434515,
+                            23.99996008581666
+                        ],
+                        [
+                            121.61258135680558,
+                            24.001023569422323
+                        ],
+                        [
+                            121.61160816630624,
+                            24.002004630484944
+                        ],
+                        [
+                            121.6105343847732,
+                            24.002893818863622
+                        ],
+                        [
+                            121.60937035373617,
+                            24.003682569201384
+                        ],
+                        [
+                            121.60812728471758,
+                            24.00436328349066
+                        ],
+                        [
+                            121.60681715121066,
+                            24.00492940431973
+                        ],
+                        [
+                            121.60545257328941,
+                            24.00537547809189
+                        ],
+                        [
+                            121.60404669596335,
+                            24.005697207605966
+                        ],
+                        [
+                            121.60261306245438,
+                            24.005891493489433
+                        ],
+                        [
+                            121.60116548361975,
+                            24.00595646408329
+                        ]
+                    ]
+                ]
+            }
+        }]
+    };
+    L.geoJSON(hualientrainstation).addTo(map);
     </script>
 </body>
 
