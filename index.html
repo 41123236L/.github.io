@@ -98,7 +98,7 @@
         { name: '新城火車站', lat: 24.1276005 , lng:121.640726 , adress: '花蓮縣新城鄉新城村30-7號'},
     ];
 
-    var third_trainstation_ = [
+    var third_trainstation = [
         { name: '山佳火車站', lat: 24.9725885 , lng:121.3931429, adress: '新北市樹林區中山里山佳街28號'},
         { name: '內壢火車站', lat: 24.9722604 , lng:121.2570904, adress: '桃園市中壢區中華路1段267號'},
         { name: '埔心火車站', lat: 24.9197145 , lng:121.1836968, adress: '桃園市楊梅區埔心里永美路208號'},
@@ -173,7 +173,7 @@
         { name: '知本火車站', lat: 22.7104218 , lng:121.0608923 , adress: '台東縣台東市知本路二段900巷85號'},
     ];
 
-    var simple_trainstation_ = [
+    var simple_trainstation = [
         { name: '三坑火車站', lat: 25.1222673 , lng:121.741833, adress: '基隆市仁愛區龍安街206號'},
         { name: '百福火車站', lat: 25.0777517 , lng:121.693041, adress: '基隆市七堵區明德三路1-1號'},
         { name: '五堵火車站', lat: 25.07786 , lng:121.6674663, adress: '新北市汐止區長安里長安路17號'},
@@ -345,26 +345,6 @@
     });
     
     
-
-    var four2000to2999Layer = L.layerGroup();
-    four2000to2999_homestay.forEach(function(homestay) {
-        var marker = L.marker([homestay.lat, homestay.lng]).addTo(four2000to2999Layer);
-        var popupContent = "<b>" + homestay.name + "</b><br>" +
-            "綜合評分：" + homestay.score + "<br>" +
-            "地址：" + homestay.address + "<br>" +
-            "房間類型：" + "<br>" +
-            (homestay.roomtype1 ? homestay.roomtype1 + " " + "NTD/晚" + "<br>" : "") +
-            (homestay.roomtype2 ? homestay.roomtype2 + " " + "NTD/晚" + "<br>" : "") +
-            (homestay.roomtype3 ? homestay.roomtype3 + " " + "NTD/晚" + "<br>" : "") +
-            (homestay.roomtype4 ? homestay.roomtype4 + " " + "NTD/晚" + "<br>" : "") +
-            (homestay.roomtype5 ? homestay.roomtype5 + " " + "NTD/晚" + "<br>" : "") +
-            (homestay.roomtype6 ? homestay.roomtype6 + " " + "NTD/晚" + "<br>" : "") +
-            (homestay.roomtype7 ? homestay.roomtype7 + " " + "NTD/晚" + "<br>" : "");
-
-        marker.bindPopup(popupContent);
-    });
-
-
     // 圖層控制器
     var basemap = {
         "底圖": baseLayer
